@@ -1,0 +1,155 @@
+{
+  "id": "app-04",
+  "title": "Application 4 - Les augmentations, diminutions et la TVA",
+  "intro": "Ces exercices combinent coefficient multiplicateur, calcul inverse et TVA. Prenez le temps de poser chaque calcul.",
+  "questions": [
+    {
+      "type": "table",
+      "statement": "Une boutique de vêtements applique des réductions. Complétez les prix soldés (arrondis à l'unité).",
+      "columns": ["Article", "Prix initial", "Réduction", "Prix soldé"],
+      "rows": [
+        { "cells": [ {"value":"Robe","input":false}, {"value":"79 €","input":false}, {"value":"-30 %","input":false}, {"id":"s1","input":true,"answer":55,"tolerance":1,"unit":"€","explanation":"79 x (1 - 0,30) = 79 x 0,70 = 55,30, arrondi à 55 €."} ] },
+        { "cells": [ {"value":"Veste","input":false}, {"value":"129 €","input":false}, {"value":"-40 %","input":false}, {"id":"s2","input":true,"answer":77,"tolerance":1,"unit":"€","explanation":"129 x 0,60 = 77,40, arrondi à 77 €."} ] },
+        { "cells": [ {"value":"Chemise","input":false}, {"value":"59 €","input":false}, {"value":"-25 %","input":false}, {"id":"s3","input":true,"answer":44,"tolerance":1,"unit":"€","explanation":"59 x 0,75 = 44,25, arrondi à 44 €."} ] },
+        { "cells": [ {"value":"Pantalon","input":false}, {"value":"89 €","input":false}, {"value":"-20 %","input":false}, {"id":"s4","input":true,"answer":71,"tolerance":1,"unit":"€","explanation":"89 x 0,80 = 71,20, arrondi à 71 €."} ] }
+      ],
+      "explanation": "On multiplie le prix initial par (1 - le taux de réduction)."
+    },
+    {
+      "type": "table",
+      "statement": "Un restaurateur souhaite fixer ses prix avec une marge de 45 % sur ses plats. Complétez le tableau.",
+      "columns": ["Plat", "Prix de revient", "Bénéfice (45 %)", "Prix de vente"],
+      "rows": [
+        { "cells": [ {"value":"Pizza","input":false}, {"value":"4,80 €","input":false}, {"id":"m1","input":true,"answer":2.16,"tolerance":0.05,"unit":"€","explanation":"4,80 x 0,45 = 2,16 €."}, {"id":"v1","input":true,"answer":6.96,"tolerance":0.05,"unit":"€","explanation":"4,80 x 1,45 = 6,96 €."} ] },
+        { "cells": [ {"value":"Salade","input":false}, {"value":"3,20 €","input":false}, {"id":"m2","input":true,"answer":1.44,"tolerance":0.05,"unit":"€","explanation":"3,20 x 0,45 = 1,44 €."}, {"id":"v2","input":true,"answer":4.64,"tolerance":0.05,"unit":"€","explanation":"3,20 x 1,45 = 4,64 €."} ] },
+        { "cells": [ {"value":"Burger","input":false}, {"value":"6,50 €","input":false}, {"id":"m3","input":true,"answer":2.92,"tolerance":0.05,"unit":"€","explanation":"6,50 x 0,45 = 2,92 €."}, {"id":"v3","input":true,"answer":9.42,"tolerance":0.05,"unit":"€","explanation":"6,50 x 1,45 = 9,42 €."} ] },
+        { "cells": [ {"value":"Assiette mixte","input":false}, {"value":"8,70 €","input":false}, {"id":"m4","input":true,"answer":3.91,"tolerance":0.05,"unit":"€","explanation":"8,70 x 0,45 = 3,91 €."}, {"id":"v4","input":true,"answer":12.61,"tolerance":0.05,"unit":"€","explanation":"8,70 x 1,45 = 12,61 €."} ] }
+      ],
+      "explanation": "Le bénéfice s'obtient en multipliant le prix de revient par 0,45. Le prix de vente s'obtient en le multipliant par 1,45."
+    },
+    {
+      "type": "table",
+      "statement": "Refaites le même tableau avec une marge de 55 %.",
+      "columns": ["Plat", "Prix de revient", "Bénéfice (55 %)", "Prix de vente"],
+      "rows": [
+        { "cells": [ {"value":"Pizza","input":false}, {"value":"4,80 €","input":false}, {"id":"n1","input":true,"answer":2.64,"tolerance":0.05,"unit":"€","explanation":"4,80 x 0,55 = 2,64 €."}, {"id":"w1","input":true,"answer":7.44,"tolerance":0.05,"unit":"€","explanation":"4,80 x 1,55 = 7,44 €."} ] },
+        { "cells": [ {"value":"Salade","input":false}, {"value":"3,20 €","input":false}, {"id":"n2","input":true,"answer":1.76,"tolerance":0.05,"unit":"€","explanation":"3,20 x 0,55 = 1,76 €."}, {"id":"w2","input":true,"answer":4.96,"tolerance":0.05,"unit":"€","explanation":"3,20 x 1,55 = 4,96 €."} ] },
+        { "cells": [ {"value":"Burger","input":false}, {"value":"6,50 €","input":false}, {"id":"n3","input":true,"answer":3.77,"tolerance":0.05,"unit":"€","explanation":"6,50 x 0,55 = 3,77 €."}, {"id":"w3","input":true,"answer":10.07,"tolerance":0.05,"unit":"€","explanation":"6,50 x 1,55 = 10,07 €."} ] },
+        { "cells": [ {"value":"Assiette mixte","input":false}, {"value":"8,70 €","input":false}, {"id":"n4","input":true,"answer":4.78,"tolerance":0.05,"unit":"€","explanation":"8,70 x 0,55 = 4,78 €."}, {"id":"w4","input":true,"answer":13.48,"tolerance":0.05,"unit":"€","explanation":"8,70 x 1,55 = 13,48 €."} ] }
+      ],
+      "explanation": "Le bénéfice s'obtient en multipliant le prix de revient par 0,55. Le prix de vente s'obtient en le multipliant par 1,55."
+    },
+    {
+      "type": "table",
+      "statement": "Complétez les intérêts annuels (arrondis à 2 décimales).",
+      "columns": ["Capital", "Taux", "Intérêt"],
+      "rows": [
+        { "cells": [ {"value":"2 500 €","input":false}, {"value":"4 %","input":false}, {"id":"pl1","input":true,"answer":100,"tolerance":1,"unit":"€","explanation":"2 500 x 4 % = 100 €."} ] },
+        { "cells": [ {"value":"8 000 €","input":false}, {"value":"6,5 %","input":false}, {"id":"pl2","input":true,"answer":520,"tolerance":2,"unit":"€","explanation":"8 000 x 6,5 % = 520 €."} ] },
+        { "cells": [ {"id":"pl3cap","input":true,"answer":4500,"tolerance":50,"unit":"€","explanation":"Capital = 225 / 5 % = 4 500 €."}, {"value":"5 %","input":false}, {"value":"225 €","input":false} ] },
+        { "cells": [ {"value":"12 000 €","input":false}, {"id":"pl4taux","input":true,"answer":6.5,"tolerance":0.2,"unit":"%","explanation":"Taux = (780 / 12 000) x 100 = 6,5 %."}, {"value":"780 €","input":false} ] },
+        { "cells": [ {"id":"pl5cap","input":true,"answer":15000,"tolerance":100,"unit":"€","explanation":"Capital = 1 080 / 7,2 % = 15 000 €."}, {"value":"7,2 %","input":false}, {"value":"1 080 €","input":false} ] }
+      ],
+      "explanation": "Intérêt = Capital x Taux. On retrouve le capital ou le taux manquant en divisant l'intérêt par la donnée connue."
+    },
+    {
+      "type": "numeric",
+      "statement": "Une moto coûte 8 500 €. Le concessionnaire augmente le prix de 3 %. Quel est le nouveau prix ?",
+      "answer": 8755,
+      "tolerance": 2,
+      "unit": "€",
+      "explanation": "8 500 x 1,03 = 8 755 €."
+    },
+    {
+      "type": "numeric",
+      "statement": "Une voiture coûte 19 200 € après une remise de 20 %. Quel était son prix initial ?",
+      "answer": 24000,
+      "tolerance": 20,
+      "unit": "€",
+      "explanation": "Prix initial = 19 200 / (1 - 0,20) = 19 200 / 0,80 = 24 000 €."
+    },
+    {
+      "type": "numeric",
+      "statement": "Un scooter est vendu 3 250 € après une augmentation de 6 %. Quel était l'ancien prix ?",
+      "answer": 3066.04,
+      "tolerance": 1,
+      "unit": "€",
+      "explanation": "Ancien prix = 3 250 / 1,06 = 3 066,04 €."
+    },
+    {
+      "type": "numeric",
+      "statement": "Un vélo électrique passe de 1 399 € à 1 259 €. Quel est le pourcentage de baisse (arrondi au dixième) ?",
+      "answer": 10,
+      "tolerance": 0.2,
+      "unit": "%",
+      "explanation": "(1 259 - 1 399) / 1 399 = -0,100, soit une baisse de 10,0 %."
+    },
+    {
+      "type": "numeric",
+      "statement": "Un produit HT coûte 450 €. Calculez le prix TTC avec une TVA de 20 %.",
+      "answer": 540,
+      "tolerance": 1,
+      "unit": "€",
+      "explanation": "450 x 1,20 = 540 €."
+    },
+    {
+      "type": "numeric",
+      "statement": "Une prestation HT coûte 1 280 €. Calculez le TTC avec une TVA de 5,5 %.",
+      "answer": 1350.40,
+      "tolerance": 1,
+      "unit": "€",
+      "explanation": "1 280 x 1,055 = 1 350,40 €."
+    },
+    {
+      "type": "numeric",
+      "statement": "Un article est vendu 720 € TTC (TVA 20 %). Quel est son prix HT ?",
+      "answer": 600,
+      "tolerance": 1,
+      "unit": "€",
+      "explanation": "720 / 1,20 = 600 €."
+    },
+    {
+      "type": "table",
+      "statement": "Une facture affiche un total TTC de 1 134 € avec une TVA de 10 %. Quel est le prix HT, puis le montant de la TVA ?",
+      "columns": ["Prix HT", "Montant de la TVA"],
+      "rows": [
+        { "cells": [ {"id":"ht4","input":true,"answer":1030.91,"tolerance":1,"unit":"€","explanation":"HT = 1 134 / 1,10 = 1 030,91 €."}, {"id":"tva4","input":true,"answer":103.09,"tolerance":1,"unit":"€","explanation":"TVA = 1 030,91 x 0,10 = 103,09 €."} ] }
+      ],
+      "explanation": "On calcule d'abord le HT en divisant le TTC par 1,10, puis la TVA en multipliant ce HT par 10 %."
+    },
+    {
+      "type": "table",
+      "statement": "Un objet coûte 990 € HT avec une TVA de 20 %. Calculez le montant de la TVA puis le prix TTC.",
+      "columns": ["Montant de la TVA", "Prix TTC"],
+      "rows": [
+        { "cells": [ {"id":"tva5","input":true,"answer":198,"tolerance":1,"unit":"€","explanation":"990 x 0,20 = 198 €."}, {"id":"ttc5","input":true,"answer":1188,"tolerance":1,"unit":"€","explanation":"990 + 198 = 1 188 €, soit 990 x 1,20."} ] }
+      ],
+      "explanation": "La TVA s'obtient en multipliant le HT par le taux, le TTC en additionnant HT et TVA."
+    },
+    {
+      "type": "numeric",
+      "statement": "Un service est facturé 3 250 € TTC (TVA 5,5 %). Quel est le montant HT ?",
+      "answer": 3080.57,
+      "tolerance": 1,
+      "unit": "€",
+      "explanation": "3 250 / 1,055 = 3 080,57 €."
+    },
+    {
+      "type": "numeric",
+      "statement": "Une facture HT est de 15 000 €. Appliquez un taux de TVA de 20 % et calculez le TTC.",
+      "answer": 18000,
+      "tolerance": 5,
+      "unit": "€",
+      "explanation": "15 000 x 1,20 = 18 000 €."
+    },
+    {
+      "type": "table",
+      "statement": "Une entreprise achète un produit 480 € TTC avec une TVA de 10 %. Quel est le montant HT et le montant de la TVA ?",
+      "columns": ["Prix HT", "Montant de la TVA"],
+      "rows": [
+        { "cells": [ {"id":"ht8","input":true,"answer":436.36,"tolerance":1,"unit":"€","explanation":"HT = 480 / 1,10 = 436,36 €."}, {"id":"tva8","input":true,"answer":43.64,"tolerance":1,"unit":"€","explanation":"TVA = 480 - 436,36 = 43,64 €."} ] }
+      ],
+      "explanation": "On calcule le HT en divisant le TTC par 1,10, puis la TVA par différence avec le TTC."
+    }
+  ]
+}

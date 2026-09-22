@@ -1,0 +1,61 @@
+{
+  "id": "app-01",
+  "title": "Application 1 - La règle de 3",
+  "intro": "Utilisez le produit en croix pour retrouver les valeurs manquantes de chaque tableau de proportionnalité.",
+  "questions": [
+    {
+      "type": "table",
+      "statement": "Un marchand accorde à ses clients des remises proportionnelles au montant de leurs achats. Complétez le tableau.",
+      "columns": ["", "Achat 1", "Achat 2", "Achat 3", "Achat 4"],
+      "rows": [
+        { "label": "Achats (€)", "cells": [ {"value": "30", "input": false}, {"value": "50", "input": false}, {"id": "y", "input": true, "answer": 90, "tolerance": 0.5, "unit": "€"}, {"value": "100", "input": false} ] },
+        { "label": "Remise (€)", "cells": [ {"value": "4,5", "input": false}, {"id": "x", "input": true, "answer": 7.5, "tolerance": 0.2, "unit": "€", "explanation": "Coefficient = 4,5 / 30 = 0,15. Puis x = 0,15 x 50 = 7,5."}, {"value": "13,5", "input": false}, {"id": "reponse100", "input": true, "answer": 15, "tolerance": 0.5, "unit": "€", "explanation": "Le coefficient de proportionnalité est 0,15 (soit 4,5 / 30). Pour 100 € d'achat, la remise est 0,15 x 100 = 15 €."} ] }
+      ],
+      "explanation": "Le coefficient de proportionnalité est 4,5 / 30 = 0,15. On multiplie chaque montant d'achat par 0,15 pour trouver la remise, ou on divise la remise par 0,15 pour retrouver le montant des achats (y = 13,5 / 0,15 = 90)."
+    },
+    {
+      "type": "numeric",
+      "statement": "Quel est le coefficient de proportionnalité qui exprime la remise en fonction du montant des achats (4,5 pour 30 € d'achats) ?",
+      "answer": 0.15,
+      "tolerance": 0.005,
+      "explanation": "Le coefficient s'obtient en divisant une remise connue par le montant d'achat correspondant : 4,5 / 30 = 0,15."
+    },
+    {
+      "type": "table",
+      "statement": "Calculez dans chaque cas la quatrième proportionnelle (produit en croix puis division par la troisième valeur connue).",
+      "columns": ["", "1re valeur", "2e valeur", "3e valeur", "4e proportionnelle"],
+      "rows": [
+        { "label": "a.", "cells": [ {"value": "5", "input": false}, {"value": "2", "input": false}, {"value": "60", "input": false}, {"id": "a", "input": true, "answer": 24, "tolerance": 0.1, "explanation": "(2 x 60) : 5 = 24."} ] },
+        { "label": "b.", "cells": [ {"value": "5", "input": false}, {"value": "60", "input": false}, {"value": "2", "input": false}, {"id": "b", "input": true, "answer": 0.17, "tolerance": 0.02, "explanation": "(5 x 2) : 60 = 0,17."} ] },
+        { "label": "c.", "cells": [ {"value": "5", "input": false}, {"value": "60", "input": false}, {"value": "2", "input": false}, {"id": "c", "input": true, "answer": 150, "tolerance": 1, "explanation": "(5 x 60) : 2 = 150."} ] },
+        { "label": "d.", "cells": [ {"value": "42", "input": false}, {"value": "7", "input": false}, {"value": "6", "input": false}, {"id": "d", "input": true, "answer": 36, "tolerance": 0.5, "explanation": "(42 x 6) : 7 = 36."} ] },
+        { "label": "e.", "cells": [ {"value": "28", "input": false}, {"value": "1,2", "input": false}, {"value": "3", "input": false}, {"id": "e", "input": true, "answer": 70, "tolerance": 1, "explanation": "(28 x 3) : 1,2 = 70."} ] },
+        { "label": "f.", "cells": [ {"value": "3,5", "input": false}, {"value": "11", "input": false}, {"value": "5,5", "input": false}, {"id": "f", "input": true, "answer": 7, "tolerance": 0.2, "explanation": "(3,5 x 11) : 5,5 = 7."} ] },
+        { "label": "g.", "cells": [ {"value": "0,6", "input": false}, {"value": "2,4", "input": false}, {"value": "1,35", "input": false}, {"id": "g", "input": true, "answer": 5.4, "tolerance": 0.2, "explanation": "(2,4 x 1,35) : 0,6 = 5,4."} ] },
+        { "label": "h.", "cells": [ {"value": "6,4", "input": false}, {"value": "4", "input": false}, {"value": "8", "input": false}, {"id": "h", "input": true, "answer": 5, "tolerance": 0.2, "explanation": "(4 x 8) : 6,4 = 5."} ] },
+        { "label": "i.", "cells": [ {"value": "11", "input": false}, {"value": "55", "input": false}, {"value": "62,5", "input": false}, {"id": "i", "input": true, "answer": 12.5, "tolerance": 0.3, "explanation": "(11 x 62,5) : 55 = 12,5."} ] }
+      ],
+      "explanation": "Dans chaque tableau, multipliez les deux valeurs connues situées en croix par rapport à l'inconnue, puis divisez par la troisième valeur connue."
+    },
+    {
+      "type": "table",
+      "statement": "Tableau de proportionnalité a. Complétez les valeurs manquantes de x et y (y est proportionnel à x).",
+      "columns": ["", "", "", "", "", ""],
+      "rows": [
+        { "label": "Valeur de x", "cells": [ {"value": "3", "input": false}, {"value": "6", "input": false}, {"value": "12", "input": false}, {"id": "x21", "input": true, "answer": 21, "tolerance": 0.3, "explanation": "Coefficient = 2/3. x = 14 / (2/3) = 21."}, {"value": "27", "input": false} ] },
+        { "label": "Valeur de y", "cells": [ {"value": "2", "input": false}, {"value": "4", "input": false}, {"id": "y8", "input": true, "answer": 8, "tolerance": 0.3, "explanation": "Coefficient = 2/3. y = 12 x (2/3) = 8."}, {"value": "14", "input": false}, {"id": "y18", "input": true, "answer": 18, "tolerance": 0.3, "explanation": "Coefficient = 2/3. y = 27 x (2/3) = 18."} ] }
+      ],
+      "explanation": "Le coefficient de proportionnalité entre y et x est 2/3 (car 2/3 = 4/6). On multiplie x par 2/3 pour obtenir y, ou on divise y par 2/3 pour obtenir x."
+    },
+    {
+      "type": "table",
+      "statement": "Tableau de proportionnalité b. Complétez les valeurs manquantes de x et y.",
+      "columns": ["", "", "", "", "", ""],
+      "rows": [
+        { "label": "Valeur de x", "cells": [ {"value": "3", "input": false}, {"id": "x45", "input": true, "answer": 4.5, "tolerance": 0.2, "explanation": "Coefficient y/x = 14 / 6 = 7/3. x = 10,5 / (7/3) = 4,5."}, {"value": "6", "input": false}, {"value": "7,5", "input": false}, {"id": "x126", "input": true, "answer": 12.6, "tolerance": 0.3, "explanation": "Coefficient y/x = 7/3. x = 29,4 / (7/3) = 12,6."} ] },
+        { "label": "Valeur de y", "cells": [ {"id": "y7", "input": true, "answer": 7, "tolerance": 0.3, "explanation": "Coefficient y/x = 7/3. y = 3 x (7/3) = 7."}, {"value": "10,5", "input": false}, {"value": "14", "input": false}, {"id": "y175", "input": true, "answer": 17.5, "tolerance": 0.3, "explanation": "Coefficient y/x = 7/3. y = 7,5 x (7/3) = 17,5."}, {"value": "29,4", "input": false} ] }
+      ],
+      "explanation": "Le coefficient de proportionnalité entre y et x est 7/3, soit environ 2,33 (car 14 / 6 = 7/3). On multiplie x par 7/3 pour obtenir y, ou on divise y par 7/3 pour obtenir x."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Révisions pourcentage - ADRAR Formation</title>
+<link rel="icon" href="assets/adrar-formation-logo.png">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar" id="app-sidebar">
+    <div class="sidebar-brand">
+      <img src="assets/adrar-formation-logo.png" alt="ADRAR Formation">
+      <span class="sidebar-brand__name">ADRAR Formation<br>Révisions pourcentage</span>
+    </div>
+    <nav class="sidebar-nav" aria-label="Sommaire du module">
+      <ul class="sidebar-nav__list" id="sidebar-nav-list"></ul>
+    </nav>
+  </aside>
+
+  <header class="app-header">
+    <button type="button" class="app-header__menu-toggle" id="menu-toggle" aria-label="Ouvrir le sommaire">
+      <span data-lucide="menu"></span>
+    </button>
+    <div>
+      <div class="app-header__title">Révisions pourcentage</div>
+      <div class="app-header__subtitle">Administration des ventes</div>
+    </div>
+    <div class="app-header__progress">
+      <span class="app-header__progress-label" id="header-progress-label">Progression : 0 %</span>
+      <div class="progressbar">
+        <div class="progressbar__fill" id="header-progress-fill"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main" id="app-content">
+    <div class="app-main-inner">
+      <div class="page">
+        <p>Chargement du module...</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/vendor/lucide.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/scorm/scorm-api.js"></script>
+<script src="js/exercises.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

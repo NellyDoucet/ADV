@@ -1,0 +1,64 @@
+{
+  "id": "app-05",
+  "title": "Application 5 - Les calculs commerciaux",
+  "intro": "Complétez le tableau ci-dessous à partir des données connues de chaque produit. Réutilisez les formules du cours (PV TTC, marge, taux de marge, taux de marque, coefficient multiplicateur, chiffre d'affaires).",
+  "questions": [
+    {
+      "type": "table",
+      "statement": "Produit 1 : complétez les cases manquantes.",
+      "columns": ["Indicateur", "Produit 1"],
+      "rows": [
+        { "label": "PA HT", "cells": [ {"value":"306,00 €","input":false} ] },
+        { "label": "PV HT", "cells": [ {"value":"360,00 €","input":false} ] },
+        { "label": "Taux de TVA", "cells": [ {"value":"20 %","input":false} ] },
+        { "label": "PV TTC", "cells": [ {"id":"p1_pvttc","input":true,"answer":432,"tolerance":1,"unit":"€","explanation":"PV TTC = PV HT x (1 + taux TVA) = 360 x 1,20 = 432,00 €."} ] },
+        { "label": "Marge commerciale", "cells": [ {"value":"54,00 €","input":false} ] },
+        { "label": "Taux de marge", "cells": [ {"id":"p1_tmarge","input":true,"answer":17.65,"tolerance":0.5,"unit":"%","explanation":"Taux de marge = (Marge / PA HT) x 100 = (54 / 306) x 100 = 17,65 %."} ] },
+        { "label": "Taux de marque", "cells": [ {"id":"p1_tmarque","input":true,"answer":15,"tolerance":0.3,"unit":"%","explanation":"Taux de marque = (Marge / PV HT) x 100 = (54 / 360) x 100 = 15,00 %."} ] },
+        { "label": "Coefficient multiplicateur", "cells": [ {"id":"p1_cm","input":true,"answer":1.41,"tolerance":0.03,"explanation":"CM = PV TTC / PA HT = 432 / 306 = 1,41."} ] },
+        { "label": "Quantités vendues", "cells": [ {"value":"15 000 produits","input":false} ] },
+        { "label": "CA HT", "cells": [ {"id":"p1_caht","input":true,"answer":5400000,"tolerance":5000,"unit":"€","explanation":"CA HT = Quantités x PV HT = 15 000 x 360 = 5 400 000 €."} ] },
+        { "label": "CA TTC", "cells": [ {"id":"p1_cattc","input":true,"answer":6480000,"tolerance":5000,"unit":"€","explanation":"CA TTC = Quantités x PV TTC = 15 000 x 432 = 6 480 000 €."} ] }
+      ],
+      "explanation": "Reprenez les formules du cours : PV TTC = PV HT x (1 + taux TVA), taux de marge = (marge / PA HT) x 100, taux de marque = (marge / PV HT) x 100, coefficient multiplicateur = PV TTC / PA HT, CA = quantités x prix."
+    },
+    {
+      "type": "table",
+      "statement": "Produit 2 : complétez les cases manquantes.",
+      "columns": ["Indicateur", "Produit 2"],
+      "rows": [
+        { "label": "PA HT", "cells": [ {"id":"p2_paht","input":true,"answer":50,"tolerance":1,"unit":"€","explanation":"PA HT = PV HT - Marge commerciale = 150 - 100 = 50,00 €."} ] },
+        { "label": "PV HT", "cells": [ {"value":"150,00 €","input":false} ] },
+        { "label": "Taux de TVA", "cells": [ {"value":"7 %","input":false} ] },
+        { "label": "PV TTC", "cells": [ {"id":"p2_pvttc","input":true,"answer":160.5,"tolerance":1,"unit":"€","explanation":"PV TTC = PV HT x (1 + taux TVA) = 150 x 1,07 = 160,50 €."} ] },
+        { "label": "Marge commerciale", "cells": [ {"value":"100,00 €","input":false} ] },
+        { "label": "Taux de marge", "cells": [ {"id":"p2_tmarge","input":true,"answer":200,"tolerance":3,"unit":"%","explanation":"Taux de marge = (100 / 50) x 100 = 200 %."} ] },
+        { "label": "Taux de marque", "cells": [ {"id":"p2_tmarque","input":true,"answer":66.67,"tolerance":0.5,"unit":"%","explanation":"Taux de marque = (100 / 150) x 100 = 66,67 %."} ] },
+        { "label": "Coefficient multiplicateur", "cells": [ {"id":"p2_cm","input":true,"answer":3.21,"tolerance":0.05,"explanation":"CM = PV TTC / PA HT = 160,5 / 50 = 3,21."} ] },
+        { "label": "Quantités vendues", "cells": [ {"id":"p2_qte","input":true,"answer":10000,"tolerance":50,"unit":"produits","explanation":"Quantités = CA TTC / PV TTC = 1 605 000 / 160,5 = 10 000 produits."} ] },
+        { "label": "CA HT", "cells": [ {"id":"p2_caht","input":true,"answer":1500000,"tolerance":5000,"unit":"€","explanation":"CA HT = Quantités x PV HT = 10 000 x 150 = 1 500 000 €."} ] },
+        { "label": "CA TTC", "cells": [ {"value":"1 605 000 €","input":false} ] }
+      ],
+      "explanation": "Le PA HT se déduit de la marge (PV HT - marge). La quantité vendue se retrouve à partir du CA TTC connu divisé par le PV TTC."
+    },
+    {
+      "type": "table",
+      "statement": "Produit 3 : complétez les cases manquantes.",
+      "columns": ["Indicateur", "Produit 3"],
+      "rows": [
+        { "label": "PA HT", "cells": [ {"value":"1 200,00 €","input":false} ] },
+        { "label": "PV HT", "cells": [ {"id":"p3_pvht","input":true,"answer":2454.55,"tolerance":5,"unit":"€","explanation":"PV HT = PV TTC / (1 + taux TVA) = 2 700 / 1,10 = 2 454,55 €."} ] },
+        { "label": "Taux de TVA", "cells": [ {"value":"10 %","input":false} ] },
+        { "label": "PV TTC", "cells": [ {"value":"2 700,00 €","input":false} ] },
+        { "label": "Marge commerciale", "cells": [ {"id":"p3_marge","input":true,"answer":1254.55,"tolerance":5,"unit":"€","explanation":"Marge = PV HT - PA HT = 2 454,55 - 1 200 = 1 254,55 €."} ] },
+        { "label": "Taux de marge", "cells": [ {"id":"p3_tmarge","input":true,"answer":104.55,"tolerance":1,"unit":"%","explanation":"Taux de marge = (1 254,55 / 1 200) x 100 = 104,55 %."} ] },
+        { "label": "Taux de marque", "cells": [ {"id":"p3_tmarque","input":true,"answer":51.11,"tolerance":1,"unit":"%","explanation":"Taux de marque = (1 254,55 / 2 454,55) x 100 = 51,11 %."} ] },
+        { "label": "Coefficient multiplicateur", "cells": [ {"id":"p3_cm","input":true,"answer":2.25,"tolerance":0.03,"explanation":"CM = PV TTC / PA HT = 2 700 / 1 200 = 2,25."} ] },
+        { "label": "Quantités vendues", "cells": [ {"id":"p3_qte","input":true,"answer":391,"tolerance":3,"unit":"produits","explanation":"Quantités = CA HT / PV HT = 960 000 / 2 454,55 = 391 produits."} ] },
+        { "label": "CA HT", "cells": [ {"value":"960 000 €","input":false} ] },
+        { "label": "CA TTC", "cells": [ {"id":"p3_cattc","input":true,"answer":1056000,"tolerance":5000,"unit":"€","explanation":"CA TTC = CA HT x (1 + taux TVA) = 960 000 x 1,10 = 1 056 000 €."} ] }
+      ],
+      "explanation": "Ici, le PV HT se calcule à partir du PV TTC connu, et la quantité vendue à partir du CA HT connu divisé par le PV HT."
+    }
+  ]
+}

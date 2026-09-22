@@ -1,0 +1,12 @@
+{
+  "titreModule": "Révisions pourcentage",
+  "chapitres": [
+    { "id": "accueil", "numero": null, "titre": "Accueil", "fichier": "pages/00-accueil.html", "icone": "house", "aExercice": false },
+    { "id": "regle-de-trois", "numero": "01", "titre": "La règle de 3", "fichier": "pages/01-regle-de-trois.html", "icone": "scale", "aExercice": true, "exerciceSrc": "db/exercices/01-regle-de-trois.json" },
+    { "id": "quest-ce-quun-pourcentage", "numero": "02", "titre": "Qu'est-ce qu'un pourcentage ?", "fichier": "pages/02-quest-ce-quun-pourcentage.html", "icone": "percent", "aExercice": true, "exerciceSrc": "db/exercices/02-pourcentage.json" },
+    { "id": "calcul-pourcentage", "numero": "03", "titre": "Le calcul d'un pourcentage", "fichier": "pages/03-calcul-pourcentage.html", "icone": "calculator", "aExercice": true, "exerciceSrc": "db/exercices/03-calcul-pourcentage.json" },
+    { "id": "pourcentages-successifs", "numero": "04", "titre": "Pourcentages successifs", "fichier": "pages/04-pourcentages-successifs.html", "icone": "layers", "aExercice": true, "exerciceSrc": "db/exercices/04-pourcentages-successifs.json" },
+    { "id": "calculs-commerciaux", "numero": "05", "titre": "Les calculs commerciaux", "fichier": "pages/05-calculs-commerciaux.html", "icone": "store", "aExercice": true, "exerciceSrc": "db/exercices/05-calculs-commerciaux.json" },
+    { "id": "conclusion", "numero": null, "titre": "Conclusion", "fichier": "pages/06-conclusion.html", "icone": "flag", "aExercice": false }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "id": "app-02",
+  "title": "Application 2 - Qu'est-ce qu'un pourcentage ?",
+  "intro": "Reprenez la méthode vue dans le cours : un pourcentage est une fraction sur 100.",
+  "questions": [
+    {
+      "type": "table",
+      "statement": "Donnez l'écriture fractionnaire des pourcentages suivants (exemple : 33 % = 33/100).",
+      "columns": ["75 %", "25 %", "44 %", "45 %", "3 %", "14,5 %", "5,6 %", "20,6 %"],
+      "rows": [
+        { "cells": [
+          {"id":"f75","input":true,"type":"text","answer":"75/100","answers":["75/100"],"explanation":"On reprend le nombre devant le signe % et on le place sur 100."},
+          {"id":"f25","input":true,"type":"text","answer":"25/100","answers":["25/100"],"explanation":"On reprend le nombre devant le signe % et on le place sur 100."},
+          {"id":"f44","input":true,"type":"text","answer":"44/100","answers":["44/100"],"explanation":"On reprend le nombre devant le signe % et on le place sur 100."},
+          {"id":"f45","input":true,"type":"text","answer":"45/100","answers":["45/100"],"explanation":"On reprend le nombre devant le signe % et on le place sur 100."},
+          {"id":"f3","input":true,"type":"text","answer":"3/100","answers":["3/100"],"explanation":"On reprend le nombre devant le signe % et on le place sur 100."},
+          {"id":"f145","input":true,"type":"text","answer":"14.5/100","answers":["14.5/100","14,5/100"],"explanation":"On reprend le nombre devant le signe % et on le place sur 100, même s'il a une virgule."},
+          {"id":"f56","input":true,"type":"text","answer":"5.6/100","answers":["5.6/100","5,6/100"],"explanation":"On reprend le nombre devant le signe % et on le place sur 100."},
+          {"id":"f206","input":true,"type":"text","answer":"20.6/100","answers":["20.6/100","20,6/100"],"explanation":"On reprend le nombre devant le signe % et on le place sur 100."}
+        ] }
+      ],
+      "explanation": "Un pourcentage s'écrit toujours comme une fraction dont le dénominateur est 100."
+    },
+    {
+      "type": "table",
+      "statement": "Donnez l'écriture en pourcentage des fractions suivantes : 40/100, 12/100, 8,5/100, 6/100, 120/100, 14/100, 0,54/100, 1,2/100.",
+      "columns": ["40/100", "12/100", "8,5/100", "6/100", "120/100", "14/100", "0,54/100", "1,2/100"],
+      "rows": [
+        { "cells": [
+          {"id":"p40","input":true,"answer":40,"tolerance":0.1,"unit":"%","explanation":"Une fraction sur 100 se lit directement en pourcentage : 40/100 = 40 %."},
+          {"id":"p12","input":true,"answer":12,"tolerance":0.1,"unit":"%","explanation":"12/100 = 12 %."},
+          {"id":"p85","input":true,"answer":8.5,"tolerance":0.1,"unit":"%","explanation":"8,5/100 = 8,5 %."},
+          {"id":"p6","input":true,"answer":6,"tolerance":0.1,"unit":"%","explanation":"6/100 = 6 %."},
+          {"id":"p120","input":true,"answer":120,"tolerance":0.1,"unit":"%","explanation":"120/100 = 120 %, un pourcentage peut dépasser 100 %."},
+          {"id":"p14","input":true,"answer":14,"tolerance":0.1,"unit":"%","explanation":"14/100 = 14 %."},
+          {"id":"p054","input":true,"answer":0.54,"tolerance":0.05,"unit":"%","explanation":"0,54/100 = 0,54 %."},
+          {"id":"p12b","input":true,"answer":1.2,"tolerance":0.05,"unit":"%","explanation":"1,2/100 = 1,2 %."}
+        ] }
+      ],
+      "explanation": "Une fraction sur 100 se lit directement comme un pourcentage."
+    },
+    {
+      "type": "table",
+      "statement": "Écrivez sous forme de fraction les pourcentages suivants puis calculez le résultat.",
+      "columns": ["Calcul", "Fraction x montant", "Résultat"],
+      "rows": [
+        { "label": "12 % de 200 €", "cells": [ {"value":"12/100","input":false}, {"id":"r1","input":true,"answer":24,"tolerance":0.5,"unit":"€","explanation":"(12 x 200) / 100 = 24 €."} ] },
+        { "label": "60 % de 400 €", "cells": [ {"value":"60/100","input":false}, {"id":"r2","input":true,"answer":240,"tolerance":1,"unit":"€","explanation":"(60 x 400) / 100 = 240 €."} ] },
+        { "label": "20,6 % de 1 000 €", "cells": [ {"value":"20,6/100","input":false}, {"id":"r3","input":true,"answer":206,"tolerance":1,"unit":"€","explanation":"(20,6 x 1 000) / 100 = 206 €."} ] },
+        { "label": "3 % de 442 €", "cells": [ {"value":"3/100","input":false}, {"id":"r4","input":true,"answer":13.26,"tolerance":0.2,"unit":"€","explanation":"(3 x 442) / 100 = 13,26 €."} ] },
+        { "label": "4,5 % de 20 500 €", "cells": [ {"value":"4,5/100","input":false}, {"id":"r5","input":true,"answer":922.5,"tolerance":1,"unit":"€","explanation":"(4,5 x 20 500) / 100 = 922,50 €."} ] }
+      ],
+      "explanation": "On multiplie le montant par le pourcentage puis on divise par 100."
+    },
+    {
+      "type": "table",
+      "statement": "En suivant le modèle (60 % d'hommes -> il manque 40 % de femmes), donnez le pourcentage complémentaire à 100 % de chaque situation.",
+      "columns": ["Situation", "Pourcentage complémentaire"],
+      "rows": [
+        { "label": "55 % de la population a moins de 25 ans. Quel pourcentage a plus de 25 ans ?", "cells": [ {"id":"c1","input":true,"answer":45,"tolerance":0.5,"unit":"%","explanation":"100 % - 55 % = 45 % de la population a plus de 25 ans."} ] },
+        { "label": "60 % des terres sont cultivées. Quel pourcentage n'est pas cultivé ?", "cells": [ {"id":"c2","input":true,"answer":40,"tolerance":0.5,"unit":"%","explanation":"100 % - 60 % = 40 % des terres ne sont pas cultivées."} ] },
+        { "label": "Il y a eu 78 % de votants. Quel est le pourcentage d'abstention ?", "cells": [ {"id":"c3","input":true,"answer":22,"tolerance":0.5,"unit":"%","explanation":"100 % - 78 % = 22 % d'abstention."} ] },
+        { "label": "Le loyer prend 40 % de mon salaire. Quel pourcentage n'est pas consacré au loyer ?", "cells": [ {"id":"c4","input":true,"answer":60,"tolerance":0.5,"unit":"%","explanation":"100 % - 40 % = 60 % du salaire n'est pas consacré au loyer."} ] },
+        { "label": "J'ai fait 76 % du trajet. Quel pourcentage du trajet reste-t-il à faire ?", "cells": [ {"id":"c5","input":true,"answer":24,"tolerance":0.5,"unit":"%","explanation":"100 % - 76 % = 24 % du trajet restant."} ] }
+      ],
+      "explanation": "Le pourcentage complémentaire s'obtient en soustrayant le pourcentage donné à 100 %."
+    },
+    {
+      "type": "numeric",
+      "statement": "4 Français sur 5 ont vu la dernière finale de la coupe du monde de foot. Quel pourcentage cela représente-t-il ?",
+      "answer": 80,
+      "tolerance": 0.5,
+      "unit": "%",
+      "explanation": "4/5 = 0,80 = 80 %."
+    },
+    {
+      "type": "numeric",
+      "statement": "Parmi 18 millions d'automobiles circulant en France, 35 % fonctionnent au gazole. Combien de millions de véhicules cela représente-t-il ?",
+      "answer": 6.3,
+      "tolerance": 0.1,
+      "unit": "millions",
+      "explanation": "35 % x 18 millions = 0,35 x 18 = 6,3 millions de véhicules."
+    },
+    {
+      "type": "numeric",
+      "statement": "355 des 765 élèves d'un collège sont des filles. Quel pourcentage cela représente-t-il (2 décimales) ?",
+      "answer": 46.4,
+      "tolerance": 0.1,
+      "unit": "%",
+      "explanation": "355 / 765 = 0,4640 = 46,40 %."
+    },
+    {
+      "type": "numeric",
+      "statement": "Il y a 850 000 habitants à Marseille, dont 5 000 ne s'intéressent pas du tout au foot. Quel pourcentage cela représente-t-il (2 décimales) ?",
+      "answer": 0.59,
+      "tolerance": 0.03,
+      "unit": "%",
+      "explanation": "5 000 / 850 000 = 0,00588 = 0,59 %."
+    },
+    {
+      "type": "numeric",
+      "statement": "Sur 21 000 000 électeurs, seulement 3 850 000 ont voté NON au référendum. Quel pourcentage cela représente-t-il (2 décimales) ?",
+      "answer": 18.33,
+      "tolerance": 0.1,
+      "unit": "%",
+      "explanation": "3 850 000 / 21 000 000 = 0,1833 = 18,33 %."
+    },
+    {
+      "type": "table",
+      "statement": "Un sondage a été réalisé auprès de 63 700 personnes sur les bonnes résolutions. Calculez le pourcentage de chaque bonne résolution.",
+      "columns": ["Bonne résolution", "Effectif", "Pourcentage"],
+      "rows": [
+        { "label": "Faire un régime", "cells": [ {"value":"19 110","input":false}, {"id":"br1","input":true,"answer":30,"tolerance":0.5,"unit":"%","explanation":"19 110 / 63 700 = 0,30 = 30 %."} ] },
+        { "label": "Faire du sport", "cells": [ {"value":"15 925","input":false}, {"id":"br2","input":true,"answer":25,"tolerance":0.5,"unit":"%","explanation":"15 925 / 63 700 = 0,25 = 25 %."} ] },
+        { "label": "Moins utiliser la voiture", "cells": [ {"value":"12 740","input":false}, {"id":"br3","input":true,"answer":20,"tolerance":0.5,"unit":"%","explanation":"12 740 / 63 700 = 0,20 = 20 %."} ] },
+        { "label": "Ne plus être en retard", "cells": [ {"value":"11 466","input":false}, {"id":"br4","input":true,"answer":18,"tolerance":0.5,"unit":"%","explanation":"11 466 / 63 700 = 0,18 = 18 %."} ] },
+        { "label": "Arrêter de fumer", "cells": [ {"value":"3 822","input":false}, {"id":"br5","input":true,"answer":6,"tolerance":0.5,"unit":"%","explanation":"3 822 / 63 700 = 0,06 = 6 %."} ] },
+        { "label": "Travailler davantage", "cells": [ {"value":"637","input":false}, {"id":"br6","input":true,"answer":1,"tolerance":0.3,"unit":"%","explanation":"637 / 63 700 = 0,01 = 1 %."} ] }
+      ],
+      "explanation": "On divise l'effectif de chaque résolution par le total de personnes interrogées (63 700), puis on multiplie par 100."
+    }
+  ]
+}
