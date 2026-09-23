@@ -1,0 +1,134 @@
+{
+  "id": "app-05",
+  "title": "Application 5 - Exercices sur les pourcentages",
+  "intro": "Cinq activités de révision : posez chaque calcul au brouillon avant de saisir votre réponse.",
+  "questions": [
+    {
+      "type": "numeric",
+      "statement": "1 560 augmenté de 18 % (résultat arrondi à l'unité).",
+      "answer": 1841,
+      "tolerance": 1,
+      "explanation": "1 560 x (1 + 0,18) = 1 560 x 1,18 = 1 840,8, arrondi à 1 841."
+    },
+    {
+      "type": "numeric",
+      "statement": "2 480 diminué de 22 % (résultat arrondi à l'unité).",
+      "answer": 1934,
+      "tolerance": 1,
+      "explanation": "2 480 x (1 - 0,22) = 2 480 x 0,78 = 1 934,4, arrondi à 1 934."
+    },
+    {
+      "type": "numeric",
+      "statement": "915 augmenté de 135 % (résultat arrondi à l'unité).",
+      "answer": 2150,
+      "tolerance": 1,
+      "explanation": "915 x (1 + 1,35) = 915 x 2,35 = 2 150,25, arrondi à 2 150."
+    },
+    {
+      "type": "numeric",
+      "statement": "6 400 diminué de 4,75 % (résultat arrondi à l'unité).",
+      "answer": 6096,
+      "tolerance": 1,
+      "explanation": "6 400 x (1 - 0,0475) = 6 096,4, arrondi à 6 096."
+    },
+    {
+      "type": "numeric",
+      "statement": "3 750 augmenté de 9,9 % (résultat arrondi à l'unité).",
+      "answer": 4121,
+      "tolerance": 1,
+      "explanation": "3 750 x (1 + 0,099) = 4 121,25, arrondi à 4 121."
+    },
+    {
+      "type": "table",
+      "statement": "Vente promotionnelle : complétez les étiquettes suivantes (arrondi à l'unité). Chaque produit a sa propre remise.",
+      "columns": ["Article", "Prix initial", "Remise", "Prix remisé"],
+      "rows": [
+        { "cells": [ {"value":"Casque audio","input":false}, {"value":"129 €","input":false}, {"value":"-20 %","input":false}, {"id":"pf1","input":true,"answer":103,"tolerance":1,"unit":"€","explanation":"129 x 0,80 = 103,20, arrondi à 103 €."} ] },
+        { "cells": [ {"value":"Montre connectée","input":false}, {"value":"179 €","input":false}, {"value":"-12,5 %","input":false}, {"id":"pf2","input":true,"answer":157,"tolerance":1,"unit":"€","explanation":"179 x 0,875 = 156,63, arrondi à 157 €."} ] },
+        { "cells": [ {"value":"Appareil photo","input":false}, {"value":"549 €","input":false}, {"value":"-30 %","input":false}, {"id":"pf3","input":true,"answer":384,"tolerance":1,"unit":"€","explanation":"549 x 0,70 = 384,30, arrondi à 384 €."} ] },
+        { "cells": [ {"value":"Barre de son","input":false}, {"value":"229 €","input":false}, {"value":"-18 %","input":false}, {"id":"pf4","input":true,"answer":188,"tolerance":1,"unit":"€","explanation":"229 x 0,82 = 187,78, arrondi à 188 €."} ] }
+      ],
+      "explanation": "On multiplie le prix initial par (1 - le taux de remise)."
+    },
+    {
+      "type": "table",
+      "statement": "Un commerçant applique une marge de 35 % sur le prix de revient. Complétez le tableau (arrondi au centime).",
+      "columns": ["Prix de revient", "Bénéfice (35 %)", "Prix de vente"],
+      "rows": [
+        { "cells": [ {"value":"6,20 €","input":false}, {"id":"b1","input":true,"answer":2.17,"tolerance":0.05,"unit":"€","explanation":"6,20 x 0,35 = 2,17 €."}, {"id":"pv1","input":true,"answer":8.37,"tolerance":0.05,"unit":"€","explanation":"6,20 x 1,35 = 8,37 €."} ] },
+        { "cells": [ {"value":"11,50 €","input":false}, {"id":"b2","input":true,"answer":4.02,"tolerance":0.05,"unit":"€","explanation":"11,50 x 0,35 = 4,02 €."}, {"id":"pv2","input":true,"answer":15.53,"tolerance":0.05,"unit":"€","explanation":"11,50 x 1,35 = 15,53 €."} ] },
+        { "cells": [ {"value":"4,90 €","input":false}, {"id":"b3","input":true,"answer":1.72,"tolerance":0.05,"unit":"€","explanation":"4,90 x 0,35 = 1,72 €."}, {"id":"pv3","input":true,"answer":6.62,"tolerance":0.05,"unit":"€","explanation":"4,90 x 1,35 = 6,62 €."} ] },
+        { "cells": [ {"value":"17,80 €","input":false}, {"id":"b4","input":true,"answer":6.23,"tolerance":0.05,"unit":"€","explanation":"17,80 x 0,35 = 6,23 €."}, {"id":"pv4","input":true,"answer":24.03,"tolerance":0.05,"unit":"€","explanation":"17,80 x 1,35 = 24,03 €."} ] },
+        { "cells": [ {"value":"25,40 €","input":false}, {"id":"b5","input":true,"answer":8.89,"tolerance":0.05,"unit":"€","explanation":"25,40 x 0,35 = 8,89 €."}, {"id":"pv5","input":true,"answer":34.29,"tolerance":0.05,"unit":"€","explanation":"25,40 x 1,35 = 34,29 €."} ] }
+      ],
+      "explanation": "Le bénéfice s'obtient en multipliant le prix de revient par 0,35. Le prix de vente s'obtient en le multipliant par 1,35."
+    },
+    {
+      "type": "table",
+      "statement": "Refaites le même tableau avec une marge de 22 %.",
+      "columns": ["Prix de revient", "Bénéfice (22 %)", "Prix de vente"],
+      "rows": [
+        { "cells": [ {"value":"6,20 €","input":false}, {"id":"c1","input":true,"answer":1.36,"tolerance":0.05,"unit":"€","explanation":"6,20 x 0,22 = 1,36 €."}, {"id":"pvc1","input":true,"answer":7.56,"tolerance":0.05,"unit":"€","explanation":"6,20 x 1,22 = 7,56 €."} ] },
+        { "cells": [ {"value":"11,50 €","input":false}, {"id":"c2","input":true,"answer":2.53,"tolerance":0.05,"unit":"€","explanation":"11,50 x 0,22 = 2,53 €."}, {"id":"pvc2","input":true,"answer":14.03,"tolerance":0.05,"unit":"€","explanation":"11,50 x 1,22 = 14,03 €."} ] },
+        { "cells": [ {"value":"4,90 €","input":false}, {"id":"c3","input":true,"answer":1.08,"tolerance":0.05,"unit":"€","explanation":"4,90 x 0,22 = 1,08 €."}, {"id":"pvc3","input":true,"answer":5.98,"tolerance":0.05,"unit":"€","explanation":"4,90 x 1,22 = 5,98 €."} ] },
+        { "cells": [ {"value":"17,80 €","input":false}, {"id":"c4","input":true,"answer":3.92,"tolerance":0.05,"unit":"€","explanation":"17,80 x 0,22 = 3,92 €."}, {"id":"pvc4","input":true,"answer":21.72,"tolerance":0.05,"unit":"€","explanation":"17,80 x 1,22 = 21,72 €."} ] },
+        { "cells": [ {"value":"25,40 €","input":false}, {"id":"c5","input":true,"answer":5.59,"tolerance":0.05,"unit":"€","explanation":"25,40 x 0,22 = 5,59 €."}, {"id":"pvc5","input":true,"answer":30.99,"tolerance":0.05,"unit":"€","explanation":"25,40 x 1,22 = 30,99 €."} ] }
+      ],
+      "explanation": "Le bénéfice s'obtient en multipliant le prix de revient par 0,22. Le prix de vente s'obtient en le multipliant par 1,22."
+    },
+    {
+      "type": "table",
+      "statement": "Complétez le tableau des intérêts annuels (arrondis à 2 décimales si nécessaire).",
+      "columns": ["Capital", "Taux", "Intérêt annuel"],
+      "rows": [
+        { "cells": [ {"value":"3 600 €","input":false}, {"value":"5 %","input":false}, {"id":"i1","input":true,"answer":180,"tolerance":1,"unit":"€","explanation":"3 600 x 5 % = 180 €."} ] },
+        { "cells": [ {"value":"9 200 €","input":false}, {"value":"7,25 %","input":false}, {"id":"i2","input":true,"answer":667,"tolerance":2,"unit":"€","explanation":"9 200 x 7,25 % = 667 €."} ] },
+        { "cells": [ {"id":"i3cap","input":true,"answer":11000,"tolerance":50,"unit":"€","explanation":"Capital = 715 / 6,5 % = 11 000 €."}, {"value":"6,5 %","input":false}, {"value":"715 €","input":false} ] },
+        { "cells": [ {"value":"14 000 €","input":false}, {"id":"i4taux","input":true,"answer":7.5,"tolerance":0.2,"unit":"%","explanation":"Taux = (1 050 / 14 000) x 100 = 7,50 %."}, {"value":"1 050 €","input":false} ] },
+        { "cells": [ {"id":"i5cap","input":true,"answer":27000,"tolerance":100,"unit":"€","explanation":"Capital = 2 430 / 9 % = 27 000 €."}, {"value":"9 %","input":false}, {"value":"2 430 €","input":false} ] },
+        { "cells": [ {"value":"21 750 €","input":false}, {"value":"10,5 %","input":false}, {"id":"i6","input":true,"answer":2283.75,"tolerance":2,"unit":"€","explanation":"21 750 x 10,5 % = 2 283,75 €."} ] }
+      ],
+      "explanation": "Intérêt = Capital x Taux. On retrouve le capital ou le taux manquant en divisant l'intérêt par la donnée connue."
+    },
+    {
+      "type": "numeric",
+      "statement": "Un ordinateur coûte 1 099 € après une remise de 12 %. Quel était son prix initial ?",
+      "answer": 1249,
+      "tolerance": 2,
+      "unit": "€",
+      "explanation": "Prix initial = 1 099 / (1 - 0,12) = 1 099 / 0,88 = 1 249 €."
+    },
+    {
+      "type": "numeric",
+      "statement": "Un scooter coûte 2 990 € ; son prix augmente de 6,5 %. Quel est le nouveau prix ?",
+      "answer": 3184,
+      "tolerance": 2,
+      "unit": "€",
+      "explanation": "2 990 x 1,065 = 3 184 €."
+    },
+    {
+      "type": "numeric",
+      "statement": "Une table est vendue 279 € après une remise de 15 %. Quel était le prix avant remise ?",
+      "answer": 328,
+      "tolerance": 2,
+      "unit": "€",
+      "explanation": "Prix initial = 279 / (1 - 0,15) = 279 / 0,85 = 328 €."
+    },
+    {
+      "type": "numeric",
+      "statement": "Un loyer de 730 € est revalorisé de 3,6 %. Quel est le nouveau loyer ?",
+      "answer": 756,
+      "tolerance": 2,
+      "unit": "€",
+      "explanation": "730 x 1,036 = 756 €."
+    },
+    {
+      "type": "numeric",
+      "statement": "Un appareil ménager passe de 349 € à 296 €. Quel est le pourcentage de baisse (au dixième de point) ?",
+      "answer": 15.2,
+      "tolerance": 0.2,
+      "unit": "%",
+      "explanation": "(349 - 296) / 349 x 100 = 15,2 %."
+    }
+  ]
+}

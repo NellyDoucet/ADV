@@ -1,0 +1,64 @@
+<?xml version="1.0" standalone="no" ?>
+<manifest identifier="COM.ADRARFORMATION.REVISIONS.POURCENTAGE.BAC" version="1"
+  xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
+                      http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+  </metadata>
+  <organizations default="ORG-REVISIONS-POURCENTAGE-BAC">
+    <organization identifier="ORG-REVISIONS-POURCENTAGE-BAC">
+      <title>Révisions pourcentage (Bac)</title>
+      <item identifier="ITEM-1" identifierref="RES-1" isvisible="true">
+        <title>Révisions pourcentage (Bac)</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="assets/adrar-formation-logo.png" />
+      <file href="css/base/base.css" />
+      <file href="css/base/reset.css" />
+      <file href="css/components/badge.css" />
+      <file href="css/components/buttons.css" />
+      <file href="css/components/cards.css" />
+      <file href="css/components/exercise.css" />
+      <file href="css/components/formula.css" />
+      <file href="css/components/gate.css" />
+      <file href="css/components/nav.css" />
+      <file href="css/components/progressbar.css" />
+      <file href="css/components/table.css" />
+      <file href="css/layout/header.css" />
+      <file href="css/layout/shell.css" />
+      <file href="css/layout/sidebar.css" />
+      <file href="css/main.css" />
+      <file href="css/tokens/colors.css" />
+      <file href="css/tokens/patterns.css" />
+      <file href="css/tokens/spacing.css" />
+      <file href="css/tokens/typography.css" />
+      <file href="css/typography/typography.css" />
+      <file href="db/chapitres.json" />
+      <file href="db/exercices/01-regle-de-trois.json" />
+      <file href="db/exercices/02-pourcentage.json" />
+      <file href="db/exercices/03-calcul-pourcentage.json" />
+      <file href="db/exercices/04-pourcentages-successifs.json" />
+      <file href="db/exercices/05-application-5.json" />
+      <file href="index.html" />
+      <file href="js/app.js" />
+      <file href="js/exercises.js" />
+      <file href="js/icons.js" />
+      <file href="js/scorm/scorm-api.js" />
+      <file href="js/vendor/lucide.js" />
+      <file href="pages/00-accueil.html" />
+      <file href="pages/01-regle-de-trois.html" />
+      <file href="pages/02-quest-ce-quun-pourcentage.html" />
+      <file href="pages/03-calcul-pourcentage.html" />
+      <file href="pages/04-pourcentages-successifs.html" />
+      <file href="pages/05-application-5.html" />
+      <file href="pages/06-conclusion.html" />
+    </resource>
+  </resources>
+</manifest>

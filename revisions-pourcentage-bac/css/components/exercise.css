@@ -1,0 +1,409 @@
+.exercise {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 2px dashed var(--surface-card-line);
+}
+
+.exercise-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.exercise-header__title {
+  font: var(--text-h2);
+  color: var(--accent-primary);
+}
+
+.exercise-score {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  font: var(--text-label);
+  color: var(--text-on-light-soft);
+  background: var(--surface-card-alt);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+}
+
+.exercise-score.is-visible {
+  display: inline-flex;
+}
+
+.exercise-intro {
+  font: var(--text-body);
+  color: var(--text-on-light-soft);
+  margin-bottom: var(--space-5);
+}
+
+.question {
+  background: var(--color-white);
+  border: 1px solid var(--surface-card-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.question.is-correct {
+  border-color: var(--state-success-border);
+  box-shadow: 0 0 0 2px var(--state-success-bg);
+}
+
+.question.is-incorrect {
+  border-color: var(--state-error-border);
+  box-shadow: 0 0 0 2px var(--state-error-bg);
+}
+
+.question-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.question-number {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-plum-100);
+  color: var(--color-plum-700);
+  font: var(--text-label);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-statement {
+  font: var(--text-body);
+  font-weight: 600;
+  color: var(--text-on-light);
+  padding-top: var(--space-1);
+}
+
+.question-body {
+  margin-left: calc(28px + var(--space-3));
+}
+
+/* Champ numérique / texte */
+.answer-field {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.answer-input {
+  width: 130px;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--surface-card-line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-card);
+  font: var(--text-body);
+  font-weight: 600;
+  color: var(--text-on-light);
+  text-align: center;
+  transition: border-color var(--transition-fast);
+}
+
+.answer-input:focus {
+  border-color: var(--accent-primary);
+}
+
+.question.is-correct .answer-input {
+  border-color: var(--state-success);
+  background: var(--state-success-bg);
+  color: var(--state-success);
+}
+
+.question.is-incorrect .answer-input {
+  border-color: var(--state-error);
+  background: var(--state-error-bg);
+  color: var(--state-error);
+}
+
+/* Cellules individuelles d'un tableau : priment sur l'état global de la question,
+   car un tableau peut avoir des cellules correctes mêlées à des cellules en erreur. */
+.question .answer-input.is-correct {
+  border-color: var(--state-success);
+  background: var(--state-success-bg);
+  color: var(--state-success);
+}
+
+.question .answer-input.is-incorrect {
+  border-color: var(--state-error);
+  background: var(--state-error-bg);
+  color: var(--state-error);
+}
+
+.answer-unit {
+  font: var(--text-body-sm);
+  color: var(--text-on-light-soft);
+}
+
+/* QCM */
+.choice-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--surface-card-line);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.choice:hover {
+  border-color: var(--accent-primary);
+}
+
+.choice input {
+  accent-color: var(--accent-primary);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.choice.is-selected {
+  border-color: var(--accent-primary);
+  background: var(--color-plum-100);
+}
+
+.question.is-correct .choice.is-selected {
+  border-color: var(--state-success);
+  background: var(--state-success-bg);
+}
+
+.question.is-incorrect .choice.is-selected {
+  border-color: var(--state-error);
+  background: var(--state-error-bg);
+}
+
+.question.is-incorrect .choice.is-correct-answer {
+  border-color: var(--state-success);
+  background: var(--state-success-bg);
+}
+
+/* Tableau à compléter */
+.fill-table {
+  width: 100%;
+  min-width: 480px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-top: var(--space-2);
+}
+
+.fill-table th,
+.fill-table td {
+  border: 1px solid var(--surface-card-line);
+  padding: var(--space-2) var(--space-3);
+  font: var(--text-body-sm);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.fill-table thead th {
+  background: var(--color-plum-100);
+  color: var(--color-plum-700);
+  font-weight: 700;
+}
+
+.fill-table .answer-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Cellule reponse + unite (€, %, kg...) : reste sur une seule ligne au lieu
+   de faire passer l'unite en dessous du champ. */
+.cell-answer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  width: 100%;
+}
+
+.fill-table .cell-answer .answer-input {
+  width: auto;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.cell-answer__unit {
+  font: var(--text-body-sm);
+  color: var(--text-on-light-soft);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Carres de la regle de 3 : produit en croix sur 3 chiffres connus.
+   Grille fixe a 3 colonnes pour un rendu regulier (3 rangees de 3 carres). */
+.squares-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  gap: var(--space-5);
+  margin: var(--space-2) 0 var(--space-5);
+}
+
+@media (max-width: 460px) {
+  .squares-wrap {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+.square-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.square-item__label {
+  font: var(--text-label);
+  color: var(--accent-primary-strong);
+}
+
+.square-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 60px);
+  grid-template-rows: repeat(2, 44px);
+  border: 2px solid var(--color-plum-300);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.square-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--surface-card-line);
+  background: var(--surface-card);
+  font: var(--text-body-sm);
+  font-weight: 700;
+  color: var(--text-on-light);
+}
+
+.square-cell.is-input {
+  padding: 0;
+  background: var(--color-white);
+}
+
+.square-cell.is-input .answer-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  padding: 0;
+  background: transparent;
+}
+
+.square-cell.is-input .answer-input.is-correct {
+  background: var(--state-success-bg);
+  color: var(--state-success);
+}
+
+.square-cell.is-input .answer-input.is-incorrect {
+  background: var(--state-error-bg);
+  color: var(--state-error);
+}
+
+/* Feedback */
+.feedback {
+  display: none;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  font: var(--text-body-sm);
+}
+
+.feedback.is-visible {
+  display: flex;
+}
+
+.feedback--success {
+  background: var(--state-success-bg);
+  color: var(--state-success);
+  border: 1px solid var(--state-success-border);
+}
+
+.feedback--error {
+  background: var(--state-error-bg);
+  color: #7a2323;
+  border: 1px solid var(--state-error-border);
+}
+
+.feedback__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.feedback--success .feedback__icon {
+  color: var(--state-success);
+}
+
+.feedback--error .feedback__icon {
+  color: var(--state-error);
+}
+
+.feedback__title {
+  font-weight: 700;
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.feedback__text {
+  color: var(--text-on-light);
+}
+
+.feedback__correction {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px dashed rgba(0, 0, 0, 0.12);
+  font-weight: 600;
+}
+
+.exercise-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.exercise-result {
+  display: none;
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  text-align: center;
+  background: var(--color-plum-100);
+}
+
+.exercise-result.is-visible {
+  display: block;
+}
+
+.exercise-result__score {
+  font: var(--text-display);
+  color: var(--accent-primary-strong);
+}
+
+.exercise-result__label {
+  font: var(--text-body);
+  color: var(--text-on-light-soft);
+  margin-top: var(--space-2);
+}

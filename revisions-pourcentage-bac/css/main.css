@@ -1,0 +1,31 @@
+/* Point d'entree unique. Importe tous les fichiers du design system
+   dans l'ordre : tokens, base, typographie, layout, composants. */
+
+/* Tokens */
+@import url('tokens/colors.css');
+@import url('tokens/typography.css');
+@import url('tokens/spacing.css');
+@import url('tokens/patterns.css');
+
+/* Base */
+@import url('base/reset.css');
+@import url('base/base.css');
+
+/* Typographie */
+@import url('typography/typography.css');
+
+/* Layout */
+@import url('layout/shell.css');
+@import url('layout/header.css');
+@import url('layout/sidebar.css');
+
+/* Composants */
+@import url('components/buttons.css');
+@import url('components/cards.css');
+@import url('components/badge.css');
+@import url('components/progressbar.css');
+@import url('components/nav.css');
+@import url('components/table.css');
+@import url('components/formula.css');
+@import url('components/exercise.css');
+@import url('components/gate.css');
