@@ -136,6 +136,15 @@
     return '<span data-lucide="' + name + '" class="' + (extraClass || '') + '"></span>';
   }
 
+  function isChapterCompleted(chapId) {
+    var prog = state.progression[chapId];
+    return !!(prog && prog.checked);
+  }
+
+  function isLockedByPrerequisite(chap) {
+    return !!(chap.requiresCompletion && !isChapterCompleted(chap.requiresCompletion));
+  }
+
   function renderSidebar() {
     if (!els.sidebarList) {
       return;
@@ -148,7 +157,7 @@
       a.className = 'sidebar-link' + (chap.id === state.currentId ? ' is-active' : '');
       var prog = state.progression[chap.id];
       var isDone = prog && (chap.aExercice ? prog.checked : prog.visited);
-      var isLocked = chap.code && !isUnlocked(chap.id);
+      var isLocked = (chap.code && !isUnlocked(chap.id)) || isLockedByPrerequisite(chap);
       var statusIcon = isLocked
         ? iconMarkup('lock', 'sidebar-link__status sidebar-link__lock')
         : iconMarkup('check-circle-2', 'sidebar-link__status' + (isDone ? '' : ' is-empty'));
@@ -282,6 +291,21 @@
     }
   }
 
+  function renderPrerequisiteLock(chap) {
+    var prereq = findChapter(chap.requiresCompletion);
+    var prereqLabel = prereq ? (prereq.numero ? prereq.numero + '. ' : '') + prereq.titre : 'la section précédente';
+    els.content.innerHTML =
+      '<div class="section-gate-wrap">' +
+      '<div class="gate-card">' +
+      '<div class="gate-card__icon">' + iconMarkup('lock') + '</div>' +
+      '<h2 class="gate-card__title">' + chap.titre + '</h2>' +
+      '<p class="gate-card__text">Cette page se débloque automatiquement une fois l’application de <strong>' + prereqLabel + '</strong> terminée.</p>' +
+      '</div></div>';
+    if (window.Icons) {
+      window.Icons.refresh();
+    }
+  }
+
   function loadChapter(chapId, options) {
     options = options || {};
     var chap = findChapter(chapId) || state.chapitres[0];
@@ -289,6 +313,12 @@
 
     if (chap.code && !isUnlocked(chap.id)) {
       renderSectionGate(chap);
+      renderSidebar();
+      return Promise.resolve();
+    }
+
+    if (isLockedByPrerequisite(chap)) {
+      renderPrerequisiteLock(chap);
       renderSidebar();
       return Promise.resolve();
     }

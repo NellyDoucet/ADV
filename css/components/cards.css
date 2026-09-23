@@ -2,15 +2,21 @@
   background: var(--color-white);
   border: 1px solid var(--surface-card-line);
   border-radius: var(--radius-md);
-  padding: var(--space-5);
+  padding: var(--space-6) var(--space-5);
   box-shadow: var(--shadow-soft);
 }
 
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-5);
   margin: var(--space-5) 0;
+}
+
+.card-grid .card {
+  flex: 1 1 280px;
+  max-width: 320px;
 }
 
 .tape {
@@ -30,16 +36,18 @@
 
 .summary-card {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-4);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
   text-decoration: none;
 }
 
 .summary-card__icon {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-lg);
   background: var(--color-plum-100);
   color: var(--accent-primary-strong);
   display: flex;
@@ -48,14 +56,13 @@
 }
 
 .summary-card__icon svg {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
 }
 
 .summary-card__title {
   font: var(--text-h4);
   color: var(--text-on-light);
-  margin-bottom: var(--space-1);
 }
 
 .summary-card__text {

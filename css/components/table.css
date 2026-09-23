@@ -16,7 +16,8 @@
 .data-table th,
 .data-table td {
   padding: var(--space-3) var(--space-4);
-  text-align: left;
+  text-align: center;
+  vertical-align: middle;
   border-bottom: 1px solid var(--surface-card-line);
 }
 
