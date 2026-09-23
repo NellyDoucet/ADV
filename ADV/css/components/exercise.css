@@ -194,6 +194,8 @@
 /* Tableau à compléter */
 .fill-table {
   width: 100%;
+  min-width: 480px;
+  table-layout: fixed;
   border-collapse: collapse;
   margin-top: var(--space-2);
 }
@@ -213,7 +215,73 @@
 }
 
 .fill-table .answer-input {
-  width: 100px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Carres de la regle de 3 : produit en croix sur 3 chiffres connus */
+.squares-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin: var(--space-2) 0 var(--space-5);
+}
+
+.square-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.square-item__label {
+  font: var(--text-label);
+  color: var(--accent-primary-strong);
+}
+
+.square-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 60px);
+  grid-template-rows: repeat(2, 44px);
+  border: 2px solid var(--color-plum-300);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.square-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--surface-card-line);
+  background: var(--surface-card);
+  font: var(--text-body-sm);
+  font-weight: 700;
+  color: var(--text-on-light);
+}
+
+.square-cell.is-input {
+  padding: 0;
+  background: var(--color-white);
+}
+
+.square-cell.is-input .answer-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  padding: 0;
+  background: transparent;
+}
+
+.square-cell.is-input .answer-input.is-correct {
+  background: var(--state-success-bg);
+  color: var(--state-success);
+}
+
+.square-cell.is-input .answer-input.is-incorrect {
+  background: var(--state-error-bg);
+  color: var(--state-error);
 }
 
 /* Feedback */

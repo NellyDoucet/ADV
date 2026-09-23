@@ -8,6 +8,19 @@
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<div class="gate-overlay" id="global-gate" hidden>
+  <div class="gate-card">
+    <img class="gate-card__logo" src="assets/adrar-formation-logo.png" alt="ADRAR Formation">
+    <h1 class="gate-card__title">Révisions pourcentage</h1>
+    <p class="gate-card__text">Entrez le code communiqué par votre formateur pour commencer le module.</p>
+    <form class="gate-card__form" id="global-gate-form">
+      <input type="text" inputmode="numeric" class="gate-input" id="global-gate-input" placeholder="Code" autocomplete="off" aria-label="Code d'ouverture du module">
+      <button type="submit" class="btn btn-primary">Valider</button>
+    </form>
+    <p class="gate-card__error" id="global-gate-error" hidden>Code incorrect, réessayez.</p>
+  </div>
+</div>
+
 <div class="app-shell">
   <aside class="app-sidebar" id="app-sidebar">
     <div class="sidebar-brand">

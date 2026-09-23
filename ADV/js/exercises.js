@@ -177,6 +177,53 @@
     return list;
   }
 
+  function renderSquares(question, index, state) {
+    var wrap = el('div', 'squares-wrap');
+    var cellRefs = [];
+    question.squares.forEach(function (square) {
+      var item = el('div', 'square-item');
+      if (square.label) {
+        item.appendChild(el('span', 'square-item__label', square.label));
+      }
+      var grid = el('div', 'square-grid');
+      square.cells.forEach(function (cell) {
+        var cellEl = el('div', 'square-cell' + (cell.input ? ' is-input' : ''));
+        if (cell.input) {
+          var input = el('input', 'answer-input');
+          input.type = 'text';
+          input.inputMode = 'decimal';
+          cellEl.appendChild(input);
+          cellRefs.push({ cell: cell, input: input });
+        } else {
+          cellEl.textContent = cell.value;
+        }
+        grid.appendChild(cellEl);
+      });
+      item.appendChild(grid);
+      wrap.appendChild(item);
+    });
+
+    state.cellRefs = cellRefs;
+    state.getValue = function () {
+      return cellRefs.map(function (ref) {
+        return ref.input.value;
+      });
+    };
+    state.setDisabled = function (disabled) {
+      cellRefs.forEach(function (ref) {
+        ref.input.disabled = disabled;
+      });
+    };
+    state.markState = function (allCorrect, results) {
+      cellRefs.forEach(function (ref, i) {
+        var ok = results ? results[i] : null;
+        ref.input.classList.toggle('is-correct', ok === true);
+        ref.input.classList.toggle('is-incorrect', ok === false);
+      });
+    };
+    return wrap;
+  }
+
   function renderTable(question, index, state) {
     var tableWrap = el('div', 'table-wrap');
     var table = el('table', 'fill-table');
@@ -305,6 +352,8 @@
         control = renderMcq(question, index, state);
       } else if (question.type === 'table') {
         control = renderTable(question, index, state);
+      } else if (question.type === 'squares') {
+        control = renderSquares(question, index, state);
       }
       body.appendChild(control);
 
@@ -353,7 +402,7 @@
         isCorrect = selected !== null && parseInt(selected, 10) === question.correctIndex;
         correctionText = 'Bonne réponse : ' + question.choices[question.correctIndex];
         state.markState(isCorrect);
-      } else if (question.type === 'table') {
+      } else if (question.type === 'table' || question.type === 'squares') {
         var tableResult = evaluateTable(question, state);
         isCorrect = tableResult.allCorrect;
         errorText = tableResult.errorMessages.join(' — ');

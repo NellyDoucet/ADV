@@ -21,21 +21,20 @@
       "explanation": "Le coefficient s'obtient en divisant une remise connue par le montant d'achat correspondant : 4,5 / 30 = 0,15."
     },
     {
-      "type": "table",
-      "statement": "Calculez dans chaque cas la quatrième proportionnelle (produit en croix puis division par la troisième valeur connue).",
-      "columns": ["", "1re valeur", "2e valeur", "3e valeur", "4e proportionnelle"],
-      "rows": [
+      "type": "squares",
+      "statement": "Calculez dans chaque carré la quatrième proportionnelle : multipliez les deux valeurs situées en croix par rapport à la case vide, puis divisez par la troisième valeur connue.",
+      "squares": [
         { "label": "a.", "cells": [ {"value": "5", "input": false}, {"value": "2", "input": false}, {"value": "60", "input": false}, {"id": "a", "input": true, "answer": 24, "tolerance": 0.1, "explanation": "(2 x 60) : 5 = 24."} ] },
-        { "label": "b.", "cells": [ {"value": "5", "input": false}, {"value": "60", "input": false}, {"value": "2", "input": false}, {"id": "b", "input": true, "answer": 0.17, "tolerance": 0.02, "explanation": "(5 x 2) : 60 = 0,17."} ] },
-        { "label": "c.", "cells": [ {"value": "5", "input": false}, {"value": "60", "input": false}, {"value": "2", "input": false}, {"id": "c", "input": true, "answer": 150, "tolerance": 1, "explanation": "(5 x 60) : 2 = 150."} ] },
-        { "label": "d.", "cells": [ {"value": "42", "input": false}, {"value": "7", "input": false}, {"value": "6", "input": false}, {"id": "d", "input": true, "answer": 36, "tolerance": 0.5, "explanation": "(42 x 6) : 7 = 36."} ] },
-        { "label": "e.", "cells": [ {"value": "28", "input": false}, {"value": "1,2", "input": false}, {"value": "3", "input": false}, {"id": "e", "input": true, "answer": 70, "tolerance": 1, "explanation": "(28 x 3) : 1,2 = 70."} ] },
-        { "label": "f.", "cells": [ {"value": "3,5", "input": false}, {"value": "11", "input": false}, {"value": "5,5", "input": false}, {"id": "f", "input": true, "answer": 7, "tolerance": 0.2, "explanation": "(3,5 x 11) : 5,5 = 7."} ] },
+        { "label": "b.", "cells": [ {"value": "5", "input": false}, {"value": "60", "input": false}, {"id": "b", "input": true, "answer": 0.17, "tolerance": 0.02, "explanation": "(5 x 2) : 60 = 0,17."}, {"value": "2", "input": false} ] },
+        { "label": "c.", "cells": [ {"id": "c", "input": true, "answer": 150, "tolerance": 1, "explanation": "(5 x 60) : 2 = 150."}, {"value": "5", "input": false}, {"value": "60", "input": false}, {"value": "2", "input": false} ] },
+        { "label": "d.", "cells": [ {"value": "42", "input": false}, {"id": "d", "input": true, "answer": 36, "tolerance": 0.5, "explanation": "(42 x 6) : 7 = 36."}, {"value": "7", "input": false}, {"value": "6", "input": false} ] },
+        { "label": "e.", "cells": [ {"value": "28", "input": false}, {"value": "1,2", "input": false}, {"id": "e", "input": true, "answer": 70, "tolerance": 1, "explanation": "(28 x 3) : 1,2 = 70."}, {"value": "3", "input": false} ] },
+        { "label": "f.", "cells": [ {"id": "f", "input": true, "answer": 7, "tolerance": 0.2, "explanation": "(3,5 x 11) : 5,5 = 7."}, {"value": "11", "input": false}, {"value": "3,5", "input": false}, {"value": "5,5", "input": false} ] },
         { "label": "g.", "cells": [ {"value": "0,6", "input": false}, {"value": "2,4", "input": false}, {"value": "1,35", "input": false}, {"id": "g", "input": true, "answer": 5.4, "tolerance": 0.2, "explanation": "(2,4 x 1,35) : 0,6 = 5,4."} ] },
         { "label": "h.", "cells": [ {"value": "6,4", "input": false}, {"value": "4", "input": false}, {"value": "8", "input": false}, {"id": "h", "input": true, "answer": 5, "tolerance": 0.2, "explanation": "(4 x 8) : 6,4 = 5."} ] },
-        { "label": "i.", "cells": [ {"value": "11", "input": false}, {"value": "55", "input": false}, {"value": "62,5", "input": false}, {"id": "i", "input": true, "answer": 12.5, "tolerance": 0.3, "explanation": "(11 x 62,5) : 55 = 12,5."} ] }
+        { "label": "i.", "cells": [ {"value": "11", "input": false}, {"value": "55", "input": false}, {"id": "i", "input": true, "answer": 12.5, "tolerance": 0.3, "explanation": "(11 x 62,5) : 55 = 12,5."}, {"value": "62,5", "input": false} ] }
       ],
-      "explanation": "Dans chaque tableau, multipliez les deux valeurs connues situées en croix par rapport à l'inconnue, puis divisez par la troisième valeur connue."
+      "explanation": "Dans chaque carré, multipliez les deux valeurs qui sont en diagonale (produit en croix), puis divisez par la troisième valeur connue pour trouver la case vide."
     },
     {
       "type": "table",

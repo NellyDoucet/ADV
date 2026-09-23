@@ -6,6 +6,9 @@
 }
 
 .data-table {
+  width: 100%;
+  min-width: 480px;
+  table-layout: fixed;
   background: var(--surface-card);
   font: var(--text-body-sm);
 }
