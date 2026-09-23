@@ -246,16 +246,16 @@
       row.cells.forEach(function (cell) {
         var td = el('td');
         if (cell.input) {
+          var cellWrap = el('span', 'cell-answer');
           var input = el('input', 'answer-input');
           input.type = 'text';
           input.inputMode = 'decimal';
+          input.placeholder = '...';
+          cellWrap.appendChild(input);
           if (cell.unit) {
-            input.placeholder = '...';
+            cellWrap.appendChild(el('span', 'cell-answer__unit', cell.unit));
           }
-          td.appendChild(input);
-          if (cell.unit) {
-            td.appendChild(document.createTextNode(' ' + cell.unit));
-          }
+          td.appendChild(cellWrap);
           cellRefs.push({ cell: cell, input: input, td: td });
         } else {
           td.textContent = cell.value;

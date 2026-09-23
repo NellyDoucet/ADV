@@ -219,12 +219,42 @@
   box-sizing: border-box;
 }
 
-/* Carres de la regle de 3 : produit en croix sur 3 chiffres connus */
-.squares-wrap {
+/* Cellule reponse + unite (€, %, kg...) : reste sur une seule ligne au lieu
+   de faire passer l'unite en dessous du champ. */
+.cell-answer {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  width: 100%;
+}
+
+.fill-table .cell-answer .answer-input {
+  width: auto;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.cell-answer__unit {
+  font: var(--text-body-sm);
+  color: var(--text-on-light-soft);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Carres de la regle de 3 : produit en croix sur 3 chiffres connus.
+   Grille fixe a 3 colonnes pour un rendu regulier (3 rangees de 3 carres). */
+.squares-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
   gap: var(--space-5);
   margin: var(--space-2) 0 var(--space-5);
+}
+
+@media (max-width: 460px) {
+  .squares-wrap {
+    grid-template-columns: repeat(2, auto);
+  }
 }
 
 .square-item {
