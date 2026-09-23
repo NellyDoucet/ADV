@@ -1,0 +1,13 @@
+{
+  "titreModule": "Administration des ventes",
+  "chapitres": [
+    { "id": "accueil", "numero": null, "titre": "Accueil", "fichier": "pages/00-accueil.html", "icone": "house" },
+    { "id": "devis", "numero": "01", "titre": "Le devis", "fichier": "pages/01-devis.html", "icone": "file-signature" },
+    { "id": "bon-de-commande", "numero": "02", "titre": "Le bon de commande", "fichier": "pages/02-bon-de-commande.html", "icone": "clipboard-check" },
+    { "id": "bon-de-livraison", "numero": "03", "titre": "Le bon de livraison", "fichier": "pages/03-bon-de-livraison.html", "icone": "truck" },
+    { "id": "facture", "numero": "04", "titre": "La facture", "fichier": "pages/04-facture.html", "icone": "receipt" },
+    { "id": "avoir", "numero": "05", "titre": "L'avoir", "fichier": "pages/05-avoir.html", "icone": "rotate-ccw" },
+    { "id": "cgv", "numero": "06", "titre": "Les CGV", "fichier": "pages/06-cgv.html", "icone": "file-text" },
+    { "id": "conclusion", "numero": null, "titre": "Conclusion", "fichier": "pages/07-conclusion.html", "icone": "flag" }
+  ]
+}

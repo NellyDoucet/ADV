@@ -1,0 +1,66 @@
+/* Palette du design system ADRAR Formation : fond prune des diapositives,
+   ruban décoratif corail, logo ADRAR (bleu, orange, rouge, vert). */
+:root {
+  /* Base */
+  --color-plum-900: #2f1729;
+  --color-plum-700: #4a1f43;
+  --color-plum: #5f2756;
+  --color-plum-300: #855679;
+  --color-plum-100: #e6d9e3;
+
+  --color-coral: #e14b56;
+  --color-coral-dark: #b83540;
+  --color-coral-light: #f6cdd0;
+
+  --color-sky: #5dc2ee;
+  --color-amber: #f7a60f;
+  --color-tomato: #e94c39;
+  --color-leaf: #8bc04c;
+
+  --color-paper: #fdfbf8;
+  --color-paper-line: #e7e2df;
+
+  --color-ink: #2a2430;
+  --color-ink-soft: #6b6270;
+  --color-white: #ffffff;
+
+  /* Semantique */
+  --surface-app: var(--color-plum);
+  --surface-app-deep: var(--color-plum-900);
+  --surface-card: var(--color-paper);
+  --surface-card-line: var(--color-paper-line);
+  --surface-card-alt: var(--color-plum-100);
+
+  --text-on-dark: var(--color-white);
+  --text-on-dark-soft: var(--color-plum-100);
+  --text-on-light: var(--color-ink);
+  --text-on-light-soft: var(--color-ink-soft);
+
+  --accent-primary: var(--color-coral);
+  --accent-primary-strong: var(--color-coral-dark);
+  --accent-blue: var(--color-sky);
+  --accent-amber: var(--color-amber);
+  --accent-red: var(--color-tomato);
+  --accent-green: var(--color-leaf);
+
+  --border-subtle: var(--color-plum-100);
+
+  /* États pédagogiques (exercices) */
+  --state-success: #3f8b3f;
+  --state-success-bg: #eaf5ea;
+  --state-success-border: #bfe0bf;
+
+  --state-error: #c23b3b;
+  --state-error-bg: #fbeaea;
+  --state-error-border: #f0c3c3;
+
+  --state-warning: var(--color-amber);
+  --state-warning-bg: #fef3e0;
+  --state-warning-border: #f9dca3;
+
+  --state-neutral: var(--color-ink-soft);
+  --state-neutral-bg: #f1eef0;
+  --state-neutral-border: var(--surface-card-line);
+
+  --focus-ring: 0 0 0 3px rgba(225, 75, 86, 0.35);
+}
