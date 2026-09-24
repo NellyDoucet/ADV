@@ -186,6 +186,9 @@
       if (window.Icons) {
         window.Icons.refresh();
       }
+      if (window.ExcelExercise) {
+        window.ExcelExercise.init();
+      }
       els.content.scrollTop = 0;
     }).catch(function (err) {
       els.content.innerHTML = '<div class="app-main-inner"><div class="page"><p>Contenu introuvable.</p></div></div>';

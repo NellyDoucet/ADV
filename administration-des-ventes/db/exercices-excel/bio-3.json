@@ -1,0 +1,21 @@
+{
+  "id": "bio-3",
+  "title": "BIO 3 - Trouver les formules a saisir",
+  "intro": "Telechargez le fichier. Pour chaque cellule indiquee, ecrivez dans la colonne prevue la formule Excel qui permettrait de calculer sa valeur, puis deposez le fichier complete.",
+  "sheet": "Feuil1",
+  "type": "formulas",
+  "formulas": [
+    { "ref": "L8", "target": "F9", "accepted": ["=D9*E9", "=E9*D9"] },
+    { "ref": "L10", "target": "G9", "accepted": ["=D9-F9"] },
+    { "ref": "L12", "target": "H9", "accepted": ["=G9*C9", "=C9*G9"] },
+    { "ref": "L14", "target": "H15", "accepted": ["=SOMME(H9:H14)"] },
+    { "ref": "L16", "target": "H18", "accepted": ["=H17*G18", "=G18*H17"] },
+    { "ref": "L18", "target": "H19", "accepted": ["=H17+H18", "=H18+H17"] },
+    { "ref": "M28", "target": "H28", "accepted": ["=F28*(1-G28)"] },
+    { "ref": "M30", "target": "I28", "accepted": ["=H28*E28", "=E28*H28"] },
+    { "ref": "M32", "target": "B40", "accepted": ["=I40"] },
+    { "ref": "M34", "target": "D40", "accepted": ["=B40*C40", "=C40*B40"] },
+    { "ref": "M36", "target": "I38", "accepted": ["=I36-I37"] },
+    { "ref": "M38", "target": "I41", "accepted": ["=D40+D41", "=D41+D40"] }
+  ]
+}
