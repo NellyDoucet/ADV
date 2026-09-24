@@ -35,6 +35,9 @@
       <file href="assets/documents-source/controle-1-bon-commande.png" />
       <file href="assets/documents-source/controle-1-bon-livraison.png" />
       <file href="assets/documents-source/controle-1-code-commerce.png" />
+      <file href="assets/documents-source/controle-2-bon-livraison.png" />
+      <file href="assets/documents-source/controle-2-code-commerce.png" />
+      <file href="assets/documents-source/controle-2-facture.png" />
       <file href="css/base/base.css" />
       <file href="css/base/reset.css" />
       <file href="css/components/badge.css" />
@@ -66,6 +69,7 @@
       <file href="db/exercices-forms/analyse-2.json" />
       <file href="db/exercices-forms/analyse-3.json" />
       <file href="db/exercices-forms/controle-1.json" />
+      <file href="db/exercices-forms/controle-2.json" />
       <file href="index.html" />
       <file href="js/app.js" />
       <file href="js/excel-exercise.js" />
@@ -91,6 +95,7 @@
       <file href="pages/11-bio-4.html" />
       <file href="pages/12-bio-5.html" />
       <file href="pages/13-controle-1.html" />
+      <file href="pages/14-controle-2.html" />
     </resource>
   </resources>
 </manifest>

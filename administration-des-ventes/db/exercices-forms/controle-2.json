@@ -1,0 +1,41 @@
+{
+  "id": "controle-2",
+  "title": "Controle des documents commerciaux 2",
+  "fields": [
+    { "key": "conf_01", "label": "01 - Produit non commande : conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Non conforme" },
+    { "key": "anomalie_01", "label": "Anomalie constatee (reference concernee)", "type": "keywords", "required": ["ct7"] },
+    { "key": "action_01", "label": "Action aupres du fournisseur", "type": "keywords", "required": ["rembourser"] },
+
+    { "key": "conf_02", "label": "02 - Quantite non conforme : conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Non conforme" },
+    { "key": "anomalie_02", "label": "Anomalie constatee (reference concernee)", "type": "keywords", "required": ["lt6"] },
+    { "key": "action_02", "label": "Action aupres du fournisseur", "type": "keywords", "required": ["rembourser"] },
+
+    { "key": "conf_03", "label": "03 - Unite differente : conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Non conforme" },
+    { "key": "anomalie_03", "label": "Anomalie constatee (reference concernee)", "type": "keywords", "required": ["tv4"] },
+    { "key": "action_03", "label": "Action aupres du fournisseur", "type": "keywords", "required": ["avoir"] },
+
+    { "key": "conf_04", "label": "04 - Tarif different : conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Non conforme" },
+    { "key": "anomalie_04", "label": "Anomalie constatee (reference concernee)", "type": "keywords", "required": ["tb9"] },
+    { "key": "action_04", "label": "Action aupres du fournisseur", "type": "keywords", "required": ["rembourser"] },
+
+    { "key": "conf_05", "label": "05 - Produit manquant : conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Non conforme" },
+    { "key": "anomalie_05", "label": "Anomalie constatee (reference concernee)", "type": "keywords", "required": ["ob8"] },
+    { "key": "action_05", "label": "Action aupres du fournisseur", "type": "keywords", "required": ["rembourser"] },
+
+    { "key": "conf_06", "label": "06 - Produit abime : conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Non conforme" },
+    { "key": "anomalie_06", "label": "Anomalie constatee (reference concernee)", "type": "keywords", "required": ["th4"] },
+    { "key": "action_06", "label": "Action aupres du fournisseur", "type": "keywords", "required": ["remplacer"] },
+
+    { "key": "conf_07", "label": "07 - Frais de livraison : conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Non conforme" },
+    { "key": "action_07", "label": "Action aupres du fournisseur (frais de livraison)", "type": "keywords", "required": ["rembourser"] },
+
+    { "key": "conf_08", "label": "08 - Delai de livraison : conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Non conforme" },
+    { "key": "action_08", "label": "Action aupres du fournisseur (delai de livraison)", "type": "keywords", "required": ["geste"] },
+
+    { "key": "conf_09", "label": "09 - Delai de reglement : conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Non conforme" },
+    { "key": "action_09", "label": "Action aupres du fournisseur (delai de reglement)", "type": "keywords", "required": ["delai"] },
+
+    { "key": "conf_10", "label": "10 - Reduction commerciale : conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Conforme" },
+    { "key": "conf_11", "label": "11 - Reduction financiere : conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Conforme" }
+  ]
+}

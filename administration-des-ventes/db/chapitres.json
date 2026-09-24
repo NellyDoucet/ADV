@@ -17,6 +17,7 @@
     { "id": "bio-4", "numero": "13", "titre": "BIO 4 - Factures (remise globale)", "fichier": "pages/11-bio-4.html", "icone": "file-spreadsheet", "hasExercise": true },
     { "id": "bio-5", "numero": "14", "titre": "BIO 5 - Factures (remises multiples)", "fichier": "pages/12-bio-5.html", "icone": "file-spreadsheet", "hasExercise": true },
     { "id": "controle-1", "numero": "15", "titre": "Controle documents commerciaux 1", "fichier": "pages/13-controle-1.html", "icone": "clipboard-list", "hasExercise": true },
+    { "id": "controle-2", "numero": "16", "titre": "Controle documents commerciaux 2", "fichier": "pages/14-controle-2.html", "icone": "clipboard-list", "hasExercise": true },
     { "id": "conclusion", "numero": null, "titre": "Conclusion", "fichier": "pages/07-conclusion.html", "icone": "flag" }
   ]
 }
