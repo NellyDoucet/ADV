@@ -56,30 +56,42 @@
 
   function updateScormCompletion() {
     var total = state.chapitres.length;
-    var visited = 0;
+    var done = 0;
     state.chapitres.forEach(function (c) {
-      if (state.progression[c.id] && state.progression[c.id].visited) {
-        visited++;
+      if (isChapterCompleted(c.id)) {
+        done++;
       }
     });
     if (window.SCORM && window.SCORM.isAvailable()) {
-      if (visited >= total && total > 0) {
+      if (done >= total && total > 0) {
         window.SCORM.setStatus('completed');
-      } else if (visited > 0) {
+      } else if (done > 0) {
         window.SCORM.setStatus('incomplete');
       }
     }
   }
 
+  function isChapterCompleted(chapId) {
+    var chap = findChapter(chapId);
+    var prog = state.progression[chapId];
+    if (!prog) {
+      return false;
+    }
+    if (chap && chap.hasExercise) {
+      return !!prog.checked;
+    }
+    return !!prog.visited;
+  }
+
   function computeGlobalProgress() {
     var total = state.chapitres.length;
-    var visited = 0;
+    var done = 0;
     state.chapitres.forEach(function (c) {
-      if (state.progression[c.id] && state.progression[c.id].visited) {
-        visited++;
+      if (isChapterCompleted(c.id)) {
+        done++;
       }
     });
-    return total ? Math.round((visited / total) * 100) : 0;
+    return total ? Math.round((done / total) * 100) : 0;
   }
 
   function updateProgressUI() {
@@ -102,6 +114,19 @@
     persistProgress();
   }
 
+  function markChecked(chapId, correct, total) {
+    if (!state.progression[chapId]) {
+      state.progression[chapId] = {};
+    }
+    state.progression[chapId].visited = true;
+    state.progression[chapId].checked = true;
+    state.progression[chapId].correct = correct;
+    state.progression[chapId].total = total;
+    updateProgressUI();
+    renderSidebar();
+    persistProgress();
+  }
+
   function iconMarkup(name, extraClass) {
     return '<span data-lucide="' + name + '" class="' + (extraClass || '') + '"></span>';
   }
@@ -116,8 +141,7 @@
       var a = document.createElement('a');
       a.href = '#' + chap.id;
       a.className = 'sidebar-link' + (chap.id === state.currentId ? ' is-active' : '');
-      var prog = state.progression[chap.id];
-      var isDone = prog && prog.visited;
+      var isDone = isChapterCompleted(chap.id);
       a.innerHTML =
         iconMarkup(chap.icone, 'sidebar-link__icon') +
         '<span>' + (chap.numero ? chap.numero + '. ' : '') + chap.titre + '</span>' +
@@ -253,6 +277,8 @@
       }
     });
   }
+
+  window.AppProgress = { markChecked: markChecked };
 
   document.addEventListener('DOMContentLoaded', init);
 })(window, document);

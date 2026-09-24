@@ -85,6 +85,7 @@
     if (window.Icons) {
       window.Icons.refresh();
     }
+    return { correct: correct, total: total };
   }
 
   function initBlock(block) {
@@ -111,7 +112,11 @@
           var sheetName = workbook.SheetNames.indexOf(answerKey.sheet) !== -1 ? answerKey.sheet : workbook.SheetNames[0];
           var sheet = workbook.Sheets[sheetName];
           var results = answerKey.type === 'formulas' ? gradeFormulas(sheet, answerKey) : gradeCells(sheet, answerKey);
-          renderResults(resultEl, results, answerKey);
+          var score = renderResults(resultEl, results, answerKey);
+          if (window.AppProgress) {
+            var chapId = window.location.hash.replace('#', '');
+            window.AppProgress.markChecked(chapId, score.correct, score.total);
+          }
         }).catch(function () {
           status.textContent = 'Le fichier n\'a pas pu etre lu. Verifiez que c\'est bien le fichier .xlsx complete, non renomme.';
           status.hidden = false;

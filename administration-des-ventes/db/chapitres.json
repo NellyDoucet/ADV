@@ -8,11 +8,11 @@
     { "id": "facture", "numero": "04", "titre": "La facture", "fichier": "pages/04-facture.html", "icone": "receipt" },
     { "id": "avoir", "numero": "05", "titre": "L'avoir", "fichier": "pages/05-avoir.html", "icone": "rotate-ccw" },
     { "id": "cgv", "numero": "06", "titre": "Les CGV", "fichier": "pages/06-cgv.html", "icone": "file-text" },
-    { "id": "bio-1", "numero": "07", "titre": "BIO 1 - Factures (remise, escompte)", "fichier": "pages/08-bio-1.html", "icone": "file-spreadsheet" },
-    { "id": "bio-2", "numero": "08", "titre": "BIO 2 - Corriger les erreurs", "fichier": "pages/09-bio-2.html", "icone": "file-spreadsheet" },
-    { "id": "bio-3", "numero": "09", "titre": "BIO 3 - Trouver les formules", "fichier": "pages/10-bio-3.html", "icone": "file-spreadsheet" },
-    { "id": "bio-4", "numero": "10", "titre": "BIO 4 - Factures (remise globale)", "fichier": "pages/11-bio-4.html", "icone": "file-spreadsheet" },
-    { "id": "bio-5", "numero": "11", "titre": "BIO 5 - Factures (remises multiples)", "fichier": "pages/12-bio-5.html", "icone": "file-spreadsheet" },
+    { "id": "bio-1", "numero": "07", "titre": "BIO 1 - Factures (remise, escompte)", "fichier": "pages/08-bio-1.html", "icone": "file-spreadsheet", "hasExercise": true },
+    { "id": "bio-2", "numero": "08", "titre": "BIO 2 - Corriger les erreurs", "fichier": "pages/09-bio-2.html", "icone": "file-spreadsheet", "hasExercise": true },
+    { "id": "bio-3", "numero": "09", "titre": "BIO 3 - Trouver les formules", "fichier": "pages/10-bio-3.html", "icone": "file-spreadsheet", "hasExercise": true },
+    { "id": "bio-4", "numero": "10", "titre": "BIO 4 - Factures (remise globale)", "fichier": "pages/11-bio-4.html", "icone": "file-spreadsheet", "hasExercise": true },
+    { "id": "bio-5", "numero": "11", "titre": "BIO 5 - Factures (remises multiples)", "fichier": "pages/12-bio-5.html", "icone": "file-spreadsheet", "hasExercise": true },
     { "id": "conclusion", "numero": null, "titre": "Conclusion", "fichier": "pages/07-conclusion.html", "icone": "flag" }
   ]
 }
