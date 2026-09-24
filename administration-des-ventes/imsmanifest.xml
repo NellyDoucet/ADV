@@ -62,6 +62,7 @@
       <file href="db/exercices-forms/analyse-1.json" />
       <file href="db/exercices-forms/analyse-2.json" />
       <file href="db/exercices-forms/analyse-3.json" />
+      <file href="db/exercices-forms/controle-1.json" />
       <file href="index.html" />
       <file href="js/app.js" />
       <file href="js/excel-exercise.js" />
@@ -86,6 +87,7 @@
       <file href="pages/10-bio-3.html" />
       <file href="pages/11-bio-4.html" />
       <file href="pages/12-bio-5.html" />
+      <file href="pages/13-controle-1.html" />
     </resource>
   </resources>
 </manifest>

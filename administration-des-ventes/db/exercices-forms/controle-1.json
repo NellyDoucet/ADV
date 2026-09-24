@@ -1,0 +1,22 @@
+{
+  "id": "controle-1",
+  "title": "Controle des documents commerciaux 1",
+  "fields": [
+    { "key": "code_delai", "label": "Code anomalie : delai de livraison (commande du 25/05, livre le 31/05, delai promis sous 48h)", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "8" },
+    { "key": "solution_delai", "label": "Action a mener aupres du fournisseur (delai)", "type": "keywords", "required": ["geste"] },
+    { "key": "code_port", "label": "Code anomalie : frais de transport (BC = franco de port, BL = forfait 15 euros)", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "7" },
+    { "key": "solution_port", "label": "Action a mener aupres du fournisseur (frais de port)", "type": "keywords", "required": ["port"] },
+    { "key": "code_l01", "label": "Code anomalie : reference L01 / L10 (Chocolat lait)", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "3" },
+    { "key": "solution_l01", "label": "Action a mener aupres du fournisseur (L01 / L10)", "type": "keywords", "required": ["echanger"] },
+    { "key": "code_n07", "label": "Code anomalie : reference N07 (Chocolat noir fleur de sel)", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "2" },
+    { "key": "solution_n07", "label": "Action a mener aupres du fournisseur (N07)", "type": "keywords", "required": ["reclamer"] },
+    { "key": "code_n11", "label": "Code anomalie : reference N11 (Chocolat noir patissier)", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "1" },
+    { "key": "solution_n11", "label": "Action a mener aupres du fournisseur (N11)", "type": "keywords", "required": ["retourner"] },
+    { "key": "code_n06", "label": "Code anomalie : reference N06 (Chocolat noir pepites cafe, PU 2,40 sur la commande)", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "4" },
+    { "key": "solution_n06", "label": "Action a mener aupres du fournisseur (N06 pepites cafe)", "type": "keywords", "required": ["alerter"] },
+    { "key": "code_n09", "label": "Code anomalie : reference N09 (Chocolat noir menthe)", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "5" },
+    { "key": "solution_n09", "label": "Action a mener aupres du fournisseur (N09)", "type": "keywords", "required": ["rupture"] },
+    { "key": "code_l03", "label": "Code anomalie : reference L03 (Chocolat lait praline noisettes)", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "6" },
+    { "key": "solution_l03", "label": "Action a mener aupres du fournisseur (L03)", "type": "keywords", "required": ["remplacer"] }
+  ]
+}
