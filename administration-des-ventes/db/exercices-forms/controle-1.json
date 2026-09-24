@@ -2,37 +2,43 @@
   "id": "controle-1",
   "title": "Controle des documents commerciaux 1",
   "groups": [
-    { "title": "Delai de livraison (commande du 25/05, livre le 31/05, delai promis sous 48h)", "fields": [
-      { "key": "code_delai", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "8" },
-      { "key": "solution_delai", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["geste"] }
+    { "title": "Anomalie n° 1", "fields": [
+      { "key": "ref_1", "label": "Reference concernee sur le bon de commande / bon de livraison", "type": "keywords", "required": ["l01"] },
+      { "key": "code_1", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "3" },
+      { "key": "solution_1", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["echanger"] }
     ]},
-    { "title": "Frais de transport (BC = franco de port, BL = forfait 15 euros)", "fields": [
-      { "key": "code_port", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "7" },
-      { "key": "solution_port", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["port"] }
+    { "title": "Anomalie n° 2", "fields": [
+      { "key": "ref_2", "label": "Reference concernee sur le bon de commande / bon de livraison", "type": "keywords", "required": ["n07"] },
+      { "key": "code_2", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "2" },
+      { "key": "solution_2", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["reclamer"] }
     ]},
-    { "title": "Reference L01 / L10 (Chocolat lait)", "fields": [
-      { "key": "code_l01", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "3" },
-      { "key": "solution_l01", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["echanger"] }
+    { "title": "Anomalie n° 3", "fields": [
+      { "key": "ref_3", "label": "Reference concernee sur le bon de commande / bon de livraison", "type": "keywords", "required": ["n11"] },
+      { "key": "code_3", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "1" },
+      { "key": "solution_3", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["retourner"] }
     ]},
-    { "title": "Reference N07 (Chocolat noir fleur de sel)", "fields": [
-      { "key": "code_n07", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "2" },
-      { "key": "solution_n07", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["reclamer"] }
+    { "title": "Anomalie n° 4", "fields": [
+      { "key": "ref_4", "label": "Reference concernee sur le bon de commande / bon de livraison", "type": "keywords", "required": ["n06"] },
+      { "key": "code_4", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "4" },
+      { "key": "solution_4", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["alerter"] }
     ]},
-    { "title": "Reference N11 (Chocolat noir patissier)", "fields": [
-      { "key": "code_n11", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "1" },
-      { "key": "solution_n11", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["retourner"] }
+    { "title": "Anomalie n° 5", "fields": [
+      { "key": "ref_5", "label": "Reference concernee sur le bon de commande / bon de livraison", "type": "keywords", "required": ["n09"] },
+      { "key": "code_5", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "5" },
+      { "key": "solution_5", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["rupture"] }
     ]},
-    { "title": "Reference N06 (Chocolat noir pepites cafe, PU 2,40 sur la commande)", "fields": [
-      { "key": "code_n06", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "4" },
-      { "key": "solution_n06", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["alerter"] }
+    { "title": "Anomalie n° 6", "fields": [
+      { "key": "ref_6", "label": "Reference concernee sur le bon de commande / bon de livraison", "type": "keywords", "required": ["l03"] },
+      { "key": "code_6", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "6" },
+      { "key": "solution_6", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["remplacer"] }
     ]},
-    { "title": "Reference N09 (Chocolat noir menthe)", "fields": [
-      { "key": "code_n09", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "5" },
-      { "key": "solution_n09", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["rupture"] }
+    { "title": "Anomalie n° 7", "fields": [
+      { "key": "code_7", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "7" },
+      { "key": "solution_7", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["port"] }
     ]},
-    { "title": "Reference L03 (Chocolat lait praline noisettes)", "fields": [
-      { "key": "code_l03", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "6" },
-      { "key": "solution_l03", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["remplacer"] }
+    { "title": "Anomalie n° 8", "fields": [
+      { "key": "code_8", "label": "Code de l'anomalie", "type": "select", "options": ["1","2","3","4","5","6","7","8","9","10","11","12"], "answer": "8" },
+      { "key": "solution_8", "label": "Action a mener aupres du fournisseur", "type": "keywords", "required": ["geste"] }
     ]}
   ]
 }
