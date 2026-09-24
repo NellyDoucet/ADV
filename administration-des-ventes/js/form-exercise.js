@@ -81,6 +81,38 @@
     return wrap;
   }
 
+  function allFields(answerKey) {
+    if (answerKey.groups) {
+      var out = [];
+      answerKey.groups.forEach(function (g) {
+        g.fields.forEach(function (f) { out.push(f); });
+      });
+      return out;
+    }
+    return answerKey.fields;
+  }
+
+  function renderFields(answerKey, fieldsContainer) {
+    if (answerKey.groups) {
+      fieldsContainer.classList.add('form-exercise__fields--grouped');
+      answerKey.groups.forEach(function (g) {
+        var group = document.createElement('fieldset');
+        group.className = 'form-exercise__group';
+        var legend = document.createElement('legend');
+        legend.textContent = g.title;
+        group.appendChild(legend);
+        g.fields.forEach(function (field) {
+          group.appendChild(renderField(field));
+        });
+        fieldsContainer.appendChild(group);
+      });
+    } else {
+      answerKey.fields.forEach(function (field) {
+        fieldsContainer.appendChild(renderField(field));
+      });
+    }
+  }
+
   function initBlock(block) {
     var exerciseUrl = block.getAttribute('data-exercise');
     var fieldsContainer = block.querySelector('.form-exercise__fields');
@@ -90,14 +122,13 @@
     fetch(exerciseUrl, { cache: 'no-store' }).then(function (res) {
       return res.json();
     }).then(function (answerKey) {
-      answerKey.fields.forEach(function (field) {
-        fieldsContainer.appendChild(renderField(field));
-      });
+      renderFields(answerKey, fieldsContainer);
       correctBtn.disabled = false;
       correctBtn.addEventListener('click', function () {
         var correct = 0;
-        var total = answerKey.fields.length;
-        answerKey.fields.forEach(function (field) {
+        var fields = allFields(answerKey);
+        var total = fields.length;
+        fields.forEach(function (field) {
           var fieldEl = fieldsContainer.querySelector('[data-key="' + field.key + '"]');
           var input = fieldEl.querySelector('input, select');
           var result = gradeField(field, input.value);
