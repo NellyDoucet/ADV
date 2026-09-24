@@ -74,3 +74,9 @@
   border-radius: var(--radius-sm);
   padding: 0 var(--space-1);
 }
+
+.excel-result__explanation {
+  color: var(--color-plum-700);
+  font: var(--text-label);
+  margin-top: var(--space-1);
+}

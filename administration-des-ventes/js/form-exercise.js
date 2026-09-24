@@ -113,46 +113,76 @@
     }
   }
 
+  function runCorrection(answerKey, fieldsContainer, summary, chapId) {
+    var correct = 0;
+    var fields = allFields(answerKey);
+    var gradedFields = fields.filter(function (f) { return !f.ungraded; });
+    var total = gradedFields.length;
+    var values = {};
+    fields.forEach(function (field) {
+      var fieldEl = fieldsContainer.querySelector('[data-key="' + field.key + '"]');
+      var input = fieldEl.querySelector('input, select');
+      values[field.key] = input.value;
+      fieldEl.classList.remove('is-correct', 'is-incorrect');
+      var feedback = fieldEl.querySelector('.form-exercise__feedback');
+      if (field.ungraded) {
+        feedback.textContent = '';
+        return;
+      }
+      var result = gradeField(field, input.value);
+      fieldEl.classList.add(result.ok ? 'is-correct' : 'is-incorrect');
+      feedback.textContent = result.ok ? '' : 'Attendu : ' + result.expected;
+      if (result.ok) {
+        correct++;
+      }
+    });
+    var pct = total ? Math.round((correct / total) * 100) : 0;
+    summary.innerHTML = '<div class="excel-result__score' + (pct === 100 ? ' is-perfect' : '') + '">' +
+      correct + ' / ' + total + ' champs corrects (' + pct + ' %)</div>';
+    summary.hidden = false;
+    if (window.AppProgress) {
+      window.AppProgress.markChecked(chapId, correct, total);
+    }
+    if (window.StudentIdentity) {
+      window.StudentIdentity.saveProgress(chapId, { values: values, correct: correct, total: total });
+    }
+  }
+
+  function restoreSaved(answerKey, fieldsContainer, chapId, block) {
+    if (!window.StudentIdentity) {
+      return;
+    }
+    var saved = window.StudentIdentity.loadProgress(chapId);
+    if (!saved || !saved.values) {
+      return;
+    }
+    Object.keys(saved.values).forEach(function (key) {
+      var input = document.getElementById('fe-' + key);
+      if (input) {
+        input.value = saved.values[key];
+      }
+    });
+    var notice = document.createElement('div');
+    notice.className = 'form-exercise__restored';
+    notice.textContent = 'Votre saisie precedente a ete restauree (derniere correction : ' + saved.correct + ' / ' + saved.total + ').';
+    block.insertBefore(notice, block.firstChild);
+  }
+
   function initBlock(block) {
     var exerciseUrl = block.getAttribute('data-exercise');
     var fieldsContainer = block.querySelector('.form-exercise__fields');
     var correctBtn = block.querySelector('.form-exercise__correct-btn');
     var summary = block.querySelector('.form-exercise__summary');
+    var chapId = window.location.hash.replace('#', '');
 
     fetch(exerciseUrl, { cache: 'no-store' }).then(function (res) {
       return res.json();
     }).then(function (answerKey) {
       renderFields(answerKey, fieldsContainer);
+      restoreSaved(answerKey, fieldsContainer, chapId, block);
       correctBtn.disabled = false;
       correctBtn.addEventListener('click', function () {
-        var correct = 0;
-        var fields = allFields(answerKey);
-        var gradedFields = fields.filter(function (f) { return !f.ungraded; });
-        var total = gradedFields.length;
-        fields.forEach(function (field) {
-          var fieldEl = fieldsContainer.querySelector('[data-key="' + field.key + '"]');
-          var input = fieldEl.querySelector('input, select');
-          fieldEl.classList.remove('is-correct', 'is-incorrect');
-          var feedback = fieldEl.querySelector('.form-exercise__feedback');
-          if (field.ungraded) {
-            feedback.textContent = '';
-            return;
-          }
-          var result = gradeField(field, input.value);
-          fieldEl.classList.add(result.ok ? 'is-correct' : 'is-incorrect');
-          feedback.textContent = result.ok ? '' : 'Attendu : ' + result.expected;
-          if (result.ok) {
-            correct++;
-          }
-        });
-        var pct = total ? Math.round((correct / total) * 100) : 0;
-        summary.innerHTML = '<div class="excel-result__score' + (pct === 100 ? ' is-perfect' : '') + '">' +
-          correct + ' / ' + total + ' champs corrects (' + pct + ' %)</div>';
-        summary.hidden = false;
-        if (window.AppProgress) {
-          var chapId = window.location.hash.replace('#', '');
-          window.AppProgress.markChecked(chapId, correct, total);
-        }
+        runCorrection(answerKey, fieldsContainer, summary, chapId);
       });
     });
   }

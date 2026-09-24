@@ -52,6 +52,9 @@
       window.SCORM.setLocation(state.currentId || '');
       updateScormCompletion();
     }
+    if (window.StudentIdentity) {
+      window.StudentIdentity.saveProgress('_sommaire', state.progression);
+    }
   }
 
   function updateScormCompletion() {
@@ -247,6 +250,13 @@
       var saved = window.SCORM.getSuspendData();
       if (saved) {
         state.progression = saved;
+        return;
+      }
+    }
+    if (window.StudentIdentity) {
+      var localSaved = window.StudentIdentity.loadProgress('_sommaire');
+      if (localSaved) {
+        state.progression = localSaved;
       }
     }
   }
@@ -255,6 +265,9 @@
     cacheEls();
     if (window.SCORM) {
       window.SCORM.initialize();
+    }
+    if (window.StudentIdentity) {
+      window.StudentIdentity.init();
     }
     restoreProgress();
     fetchJSON('db/chapitres.json').then(function (data) {

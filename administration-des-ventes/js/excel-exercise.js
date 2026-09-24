@@ -34,7 +34,7 @@
       var value = cell && typeof cell.v === 'number' ? cell.v : (cell && !isNaN(parseFloat(cell.v)) ? parseFloat(cell.v) : null);
       var tol = relTolerance(item.answer);
       var ok = value !== null && Math.abs(value - item.answer) <= tol;
-      results.push({ ref: item.ref, expected: item.answer, got: value, ok: ok });
+      results.push({ ref: item.ref, expected: item.answer, got: value, ok: ok, explanation: item.explanation });
     });
     return results;
   }
@@ -75,7 +75,9 @@
         } else {
           html += '<li><strong>' + r.ref + '</strong> : ' +
             (r.got === null ? 'case vide' : 'vous avez ' + r.got) +
-            ' — attendu : ' + r.expected + '</li>';
+            ' — attendu : ' + r.expected +
+            (r.explanation ? '<div class="excel-result__explanation">' + r.explanation + '</div>' : '') +
+            '</li>';
         }
       });
       html += '</ul>';
@@ -95,6 +97,17 @@
     var fileInput = block.querySelector('.excel-exercise__input');
     var correctBtn = block.querySelector('.excel-exercise__correct-btn');
     var status = block.querySelector('.excel-exercise__status');
+    var chapId = window.location.hash.replace('#', '');
+
+    if (window.StudentIdentity) {
+      var saved = window.StudentIdentity.loadProgress(chapId);
+      if (saved) {
+        var notice = document.createElement('div');
+        notice.className = 'excel-exercise__restored';
+        notice.textContent = 'Derniere correction enregistree sur cet ordinateur : ' + saved.correct + ' / ' + saved.total + '.';
+        block.insertBefore(notice, block.firstChild);
+      }
+    }
 
     fetch(exerciseUrl, { cache: 'no-store' }).then(function (res) {
       return res.json();
@@ -114,8 +127,10 @@
           var results = answerKey.type === 'formulas' ? gradeFormulas(sheet, answerKey) : gradeCells(sheet, answerKey);
           var score = renderResults(resultEl, results, answerKey);
           if (window.AppProgress) {
-            var chapId = window.location.hash.replace('#', '');
             window.AppProgress.markChecked(chapId, score.correct, score.total);
+          }
+          if (window.StudentIdentity) {
+            window.StudentIdentity.saveProgress(chapId, { correct: score.correct, total: score.total });
           }
         }).catch(function () {
           status.textContent = 'Le fichier n\'a pas pu etre lu. Verifiez que c\'est bien le fichier .xlsx complete, non renomme.';

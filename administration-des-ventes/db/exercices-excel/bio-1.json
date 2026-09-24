@@ -1,99 +1,459 @@
 ﻿{
-  "id": "bio-1",
-  "title": "BIO 1 - Factures avec remise et escompte",
-  "intro": "Telechargez le fichier, completez les cellules en jaune (remise, PU net, montant, TVA, net financier, total TTC), puis deposez le fichier complete pour une correction automatique.",
-  "sheet": "Feuil1",
-  "type": "cells",
-  "cells": [
-{"ref":"D9","answer":0.08},
-{"ref":"E9","answer":0.368},
-{"ref":"F9","answer":4.232},
-{"ref":"G9","answer":42.32},
-{"ref":"M9","answer":0},
-{"ref":"N9","answer":4.6},
-{"ref":"O9","answer":69},
-{"ref":"D10","answer":0.08},
-{"ref":"E10","answer":0.7248},
-{"ref":"F10","answer":8.3352},
-{"ref":"G10","answer":1000.224},
-{"ref":"M10","answer":0},
-{"ref":"N10","answer":9.06},
-{"ref":"O10","answer":181.2},
-{"ref":"E11","answer":0},
-{"ref":"F11","answer":3.56},
-{"ref":"G11","answer":178},
-{"ref":"L11","answer":0.1},
-{"ref":"M11","answer":0.356},
-{"ref":"N11","answer":3.204},
-{"ref":"O11","answer":144.18},
-{"ref":"D12","answer":0.1},
-{"ref":"E12","answer":0.439},
-{"ref":"F12","answer":3.951},
-{"ref":"G12","answer":260.766},
-{"ref":"L12","answer":0.08},
-{"ref":"M12","answer":0.3512},
-{"ref":"N12","answer":4.0388},
-{"ref":"O12","answer":133.2804},
-{"ref":"D13","answer":0.1},
-{"ref":"E13","answer":0.861},
-{"ref":"F13","answer":7.749},
-{"ref":"G13","answer":348.705},
-{"ref":"L13","answer":0.05},
-{"ref":"M13","answer":0.4305},
-{"ref":"N13","answer":8.1795},
-{"ref":"O13","answer":196.308},
-{"ref":"E14","answer":0},
-{"ref":"F14","answer":3.48},
-{"ref":"G14","answer":226.2},
-{"ref":"L14","answer":0.1},
-{"ref":"M14","answer":0.348},
-{"ref":"N14","answer":3.132},
-{"ref":"O14","answer":203.58},
-{"ref":"G15","answer":2056.215},
-{"ref":"O15","answer":927.5484},
-{"ref":"F16","answer":0.02},
-{"ref":"G16","answer":41.1243},
-{"ref":"N16","answer":0.1},
-{"ref":"O16","answer":92.75484},
-{"ref":"G17","answer":2015.0907},
-{"ref":"O17","answer":1020.30324},
-{"ref":"F18","answer":0.055},
-{"ref":"G18","answer":110.8299885},
-{"ref":"N18","answer":0.055},
-{"ref":"O18","answer":56.1166782},
-{"ref":"G19","answer":2125.9206885},
-{"ref":"O19","answer":1076.4199182},
-{"ref":"E28","answer":0.134},
-{"ref":"F28","answer":3.216},
-{"ref":"G28","answer":57.888},
-{"ref":"M28","answer":0.3204},
-{"ref":"N28","answer":2.3496},
-{"ref":"O28","answer":117.48},
-{"ref":"E29","answer":0.3328},
-{"ref":"F29","answer":3.8272},
-{"ref":"G29","answer":76.544},
-{"ref":"M29","answer":0},
-{"ref":"N29","answer":2.46},
-{"ref":"O29","answer":34.44},
-{"ref":"G30","answer":134.432},
-{"ref":"O30","answer":151.92},
-{"ref":"F31","answer":0.03},
-{"ref":"G31","answer":4.03296},
-{"ref":"N31","answer":0.01},
-{"ref":"O31","answer":1.5192},
-{"ref":"G32","answer":130.39904},
-{"ref":"O32","answer":150.4008},
-{"ref":"F33","answer":0.02},
-{"ref":"G33","answer":2.6079808},
-{"ref":"N33","answer":0.05},
-{"ref":"O33","answer":7.52004},
-{"ref":"G34","answer":127.7910592},
-{"ref":"O34","answer":157.92084},
-{"ref":"F35","answer":0.055},
-{"ref":"G35","answer":7.028508256},
-{"ref":"N35","answer":0.055},
-{"ref":"O35","answer":8.6856462},
-{"ref":"G36","answer":134.819567456},
-{"ref":"O36","answer":166.6064862}
-]
+    "id":  "bio-1",
+    "title":  "BIO 1 - Factures avec remise et escompte",
+    "intro":  "Telechargez le fichier, completez les cellules en jaune (remise, PU net, montant, TVA, net financier, total TTC), puis deposez le fichier complete pour une correction automatique.",
+    "sheet":  "Feuil1",
+    "type":  "cells",
+    "cells":  [
+                  {
+                      "ref":  "D9",
+                      "answer":  0.08,
+                      "explanation":  "Ce taux de remise est indique dans les conditions de vente de la facture."
+                  },
+                  {
+                      "ref":  "E9",
+                      "answer":  0.368,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "F9",
+                      "answer":  4.232,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "G9",
+                      "answer":  42.32,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "M9",
+                      "answer":  0,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "N9",
+                      "answer":  4.6,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "O9",
+                      "answer":  69,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "D10",
+                      "answer":  0.08,
+                      "explanation":  "Ce taux de remise est indique dans les conditions de vente de la facture."
+                  },
+                  {
+                      "ref":  "E10",
+                      "answer":  0.7248,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "F10",
+                      "answer":  8.3352,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "G10",
+                      "answer":  1000.224,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "M10",
+                      "answer":  0,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "N10",
+                      "answer":  9.06,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "O10",
+                      "answer":  181.2,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "E11",
+                      "answer":  0,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "F11",
+                      "answer":  3.56,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "G11",
+                      "answer":  178,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "L11",
+                      "answer":  0.1,
+                      "explanation":  "Ce taux de remise est indique dans les conditions de vente de la facture."
+                  },
+                  {
+                      "ref":  "M11",
+                      "answer":  0.356,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "N11",
+                      "answer":  3.204,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "O11",
+                      "answer":  144.18,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "D12",
+                      "answer":  0.1,
+                      "explanation":  "Ce taux de remise est indique dans les conditions de vente de la facture."
+                  },
+                  {
+                      "ref":  "E12",
+                      "answer":  0.439,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "F12",
+                      "answer":  3.951,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "G12",
+                      "answer":  260.766,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "L12",
+                      "answer":  0.08,
+                      "explanation":  "Ce taux de remise est indique dans les conditions de vente de la facture."
+                  },
+                  {
+                      "ref":  "M12",
+                      "answer":  0.3512,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "N12",
+                      "answer":  4.0388,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "O12",
+                      "answer":  133.2804,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "D13",
+                      "answer":  0.1,
+                      "explanation":  "Ce taux de remise est indique dans les conditions de vente de la facture."
+                  },
+                  {
+                      "ref":  "E13",
+                      "answer":  0.861,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "F13",
+                      "answer":  7.749,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "G13",
+                      "answer":  348.705,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "L13",
+                      "answer":  0.05,
+                      "explanation":  "Ce taux de remise est indique dans les conditions de vente de la facture."
+                  },
+                  {
+                      "ref":  "M13",
+                      "answer":  0.4305,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "N13",
+                      "answer":  8.1795,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "O13",
+                      "answer":  196.308,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "E14",
+                      "answer":  0,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "F14",
+                      "answer":  3.48,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "G14",
+                      "answer":  226.2,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "L14",
+                      "answer":  0.1,
+                      "explanation":  "Ce taux de remise est indique dans les conditions de vente de la facture."
+                  },
+                  {
+                      "ref":  "M14",
+                      "answer":  0.348,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "N14",
+                      "answer":  3.132,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "O14",
+                      "answer":  203.58,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "G15",
+                      "answer":  2056.215,
+                      "explanation":  "Net commercial = somme des montants HT de toutes les lignes."
+                  },
+                  {
+                      "ref":  "O15",
+                      "answer":  927.5484,
+                      "explanation":  "Net commercial = somme des montants HT de toutes les lignes."
+                  },
+                  {
+                      "ref":  "F16",
+                      "answer":  0.02,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "G16",
+                      "answer":  41.1243,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "N16",
+                      "answer":  0.1,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "O16",
+                      "answer":  92.75484,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "G17",
+                      "answer":  2015.0907,
+                      "explanation":  "Net financier = net commercial - montant de l\u0027escompte."
+                  },
+                  {
+                      "ref":  "O17",
+                      "answer":  1020.30324,
+                      "explanation":  "Net financier = net commercial - montant de l\u0027escompte."
+                  },
+                  {
+                      "ref":  "F18",
+                      "answer":  0.055,
+                      "explanation":  "Montant de la TVA = net financier x taux de TVA / 100."
+                  },
+                  {
+                      "ref":  "G18",
+                      "answer":  110.8299885,
+                      "explanation":  "Montant de la TVA = net financier x taux de TVA / 100."
+                  },
+                  {
+                      "ref":  "N18",
+                      "answer":  0.055,
+                      "explanation":  "Montant de la TVA = net financier x taux de TVA / 100."
+                  },
+                  {
+                      "ref":  "O18",
+                      "answer":  56.1166782,
+                      "explanation":  "Montant de la TVA = net financier x taux de TVA / 100."
+                  },
+                  {
+                      "ref":  "G19",
+                      "answer":  2125.9206885,
+                      "explanation":  "Total TTC = net financier (ou net HT) + montant de la TVA."
+                  },
+                  {
+                      "ref":  "O19",
+                      "answer":  1076.4199182,
+                      "explanation":  "Total TTC = net financier (ou net HT) + montant de la TVA."
+                  },
+                  {
+                      "ref":  "E28",
+                      "answer":  0.134,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "F28",
+                      "answer":  3.216,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "G28",
+                      "answer":  57.888,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "M28",
+                      "answer":  0.3204,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "N28",
+                      "answer":  2.3496,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "O28",
+                      "answer":  117.48,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "E29",
+                      "answer":  0.3328,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "F29",
+                      "answer":  3.8272,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "G29",
+                      "answer":  76.544,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "M29",
+                      "answer":  0,
+                      "explanation":  "Montant de la remise = PU brut x taux de remise / 100."
+                  },
+                  {
+                      "ref":  "N29",
+                      "answer":  2.46,
+                      "explanation":  "PU net = PU brut x (1 - taux de remise / 100)."
+                  },
+                  {
+                      "ref":  "O29",
+                      "answer":  34.44,
+                      "explanation":  "Montant HT = PU net x quantite."
+                  },
+                  {
+                      "ref":  "G30",
+                      "answer":  134.432,
+                      "explanation":  "Net commercial = somme des montants HT de toutes les lignes."
+                  },
+                  {
+                      "ref":  "O30",
+                      "answer":  151.92,
+                      "explanation":  "Net commercial = somme des montants HT de toutes les lignes."
+                  },
+                  {
+                      "ref":  "F31",
+                      "answer":  0.03,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "G31",
+                      "answer":  4.03296,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "N31",
+                      "answer":  0.01,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "O31",
+                      "answer":  1.5192,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "G32",
+                      "answer":  130.39904,
+                      "explanation":  "2eme net commercial = Net commercial - montant de la remise globale."
+                  },
+                  {
+                      "ref":  "O32",
+                      "answer":  150.4008,
+                      "explanation":  "2eme net commercial = Net commercial - montant de la remise globale."
+                  },
+                  {
+                      "ref":  "F33",
+                      "answer":  0.02,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "G33",
+                      "answer":  2.6079808,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "N33",
+                      "answer":  0.05,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "O33",
+                      "answer":  7.52004,
+                      "explanation":  "Montant de l\u0027escompte = net commercial x taux d\u0027escompte / 100."
+                  },
+                  {
+                      "ref":  "G34",
+                      "answer":  127.7910592,
+                      "explanation":  "Net financier = net commercial - montant de l\u0027escompte."
+                  },
+                  {
+                      "ref":  "O34",
+                      "answer":  157.92084,
+                      "explanation":  "Net financier = net commercial - montant de l\u0027escompte."
+                  },
+                  {
+                      "ref":  "F35",
+                      "answer":  0.055,
+                      "explanation":  "Montant de la TVA = net financier x taux de TVA / 100."
+                  },
+                  {
+                      "ref":  "G35",
+                      "answer":  7.028508256,
+                      "explanation":  "Montant de la TVA = net financier x taux de TVA / 100."
+                  },
+                  {
+                      "ref":  "N35",
+                      "answer":  0.055,
+                      "explanation":  "Montant de la TVA = net financier x taux de TVA / 100."
+                  },
+                  {
+                      "ref":  "O35",
+                      "answer":  8.6856462,
+                      "explanation":  "Montant de la TVA = net financier x taux de TVA / 100."
+                  },
+                  {
+                      "ref":  "G36",
+                      "answer":  134.819567456,
+                      "explanation":  "Total TTC = net financier (ou net HT) + montant de la TVA."
+                  },
+                  {
+                      "ref":  "O36",
+                      "answer":  166.6064862,
+                      "explanation":  "Total TTC = net financier (ou net HT) + montant de la TVA."
+                  }
+              ]
 }
