@@ -29,6 +29,9 @@
       <file href="assets/exercices-excel/bio-3.xlsx" />
       <file href="assets/exercices-excel/bio-4.xlsx" />
       <file href="assets/exercices-excel/bio-5.xlsx" />
+      <file href="assets/documents-source/document-1.pdf" />
+      <file href="assets/documents-source/document-2.pdf" />
+      <file href="assets/documents-source/document-3.pdf" />
       <file href="css/base/base.css" />
       <file href="css/base/reset.css" />
       <file href="css/components/badge.css" />
@@ -36,6 +39,7 @@
       <file href="css/components/cards.css" />
       <file href="css/components/example-doc.css" />
       <file href="css/components/excel-exercise.css" />
+      <file href="css/components/form-exercise.css" />
       <file href="css/components/formula.css" />
       <file href="css/components/nav.css" />
       <file href="css/components/progressbar.css" />
@@ -55,9 +59,13 @@
       <file href="db/exercices-excel/bio-3.json" />
       <file href="db/exercices-excel/bio-4.json" />
       <file href="db/exercices-excel/bio-5.json" />
+      <file href="db/exercices-forms/analyse-1.json" />
+      <file href="db/exercices-forms/analyse-2.json" />
+      <file href="db/exercices-forms/analyse-3.json" />
       <file href="index.html" />
       <file href="js/app.js" />
       <file href="js/excel-exercise.js" />
+      <file href="js/form-exercise.js" />
       <file href="js/icons.js" />
       <file href="js/scorm/scorm-api.js" />
       <file href="js/vendor/lucide.js" />
@@ -69,6 +77,9 @@
       <file href="pages/04-facture.html" />
       <file href="pages/05-avoir.html" />
       <file href="pages/06-cgv.html" />
+      <file href="pages/07-analyse-1.html" />
+      <file href="pages/07b-analyse-2.html" />
+      <file href="pages/07c-analyse-3.html" />
       <file href="pages/07-conclusion.html" />
       <file href="pages/08-bio-1.html" />
       <file href="pages/09-bio-2.html" />

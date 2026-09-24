@@ -1,0 +1,29 @@
+{
+  "id": "analyse-1",
+  "title": "Analyse document 1",
+  "sourceDoc": "assets/documents-source/document-1.pdf",
+  "fields": [
+    { "key": "client", "label": "Nom du client", "type": "text", "answer": "NATURALIS BIO", "accepted": ["NATURALIS BIO", "NATURALIS"] },
+    { "key": "tva_client", "label": "N° TVA intracomm. client", "type": "text", "answer": "FR43441908019" },
+    { "key": "num_client", "label": "N° Client", "type": "text", "answer": "9941500" },
+    { "key": "fournisseur", "label": "Nom du fournisseur", "type": "text", "answer": "BOULANGER" },
+    { "key": "siret_fournisseur", "label": "N° SIRET fournisseur", "type": "text", "answer": "34738457000797" },
+    { "key": "tva_fournisseur", "label": "N° TVA intracomm. fournisseur", "type": "text", "answer": "FR78347384570" },
+    { "key": "relation", "label": "Avec quel type de partenaire Naturalis est en relation ?", "type": "select", "options": ["Client", "Fournisseur"], "answer": "Client" },
+    { "key": "operation", "label": "Qu'avons-nous fait ?", "type": "select", "options": ["Achat", "Vente"], "answer": "Achat" },
+    { "key": "bien_service", "label": "Bien ou service ?", "type": "select", "options": ["Bien", "Service"], "answer": "Bien" },
+    { "key": "nature_document", "label": "Nature du document", "type": "select", "options": ["Bon de commande", "Bon de livraison", "Devis", "Facture de doit", "Facture d'avoir"], "answer": "Facture de doit" },
+    { "key": "numero", "label": "Numéro du document", "type": "text", "answer": "F203 1625203-1/001", "accepted": ["F203 1625203-1/001", "F2031625203-1/001"] },
+    { "key": "date", "label": "Date du document", "type": "text", "answer": "02.11.20N", "accepted": ["02.11.20N", "2.11.20N"] },
+    { "key": "produits", "label": "Produits figurant sur le document", "type": "keywords", "required": ["smartphone", "etui"] },
+    { "key": "taux_tva", "label": "Taux de TVA appliqué (%)", "type": "numeric", "answer": 20, "tolerance": 0 },
+    { "key": "delai_reglement", "label": "Délai de règlement", "type": "text", "answer": "Au comptant", "accepted": ["Au comptant", "Comptant", "Immediat"] },
+    { "key": "moyen_reglement", "label": "Moyen de règlement", "type": "text", "answer": "Carte bancaire", "accepted": ["Carte bancaire", "CB"] },
+    { "key": "date_reglement", "label": "Date de règlement (échéance)", "type": "text", "answer": "02.11.20N", "accepted": ["02.11.20N", "2.11.20N"] },
+    { "key": "reduction", "label": "Réduction commerciale ?", "type": "select", "options": ["Oui", "Non"], "answer": "Oui" },
+    { "key": "reduction_montant", "label": "Montant de la réduction (€)", "type": "numeric", "answer": 10, "tolerance": 0.5 },
+    { "key": "total_ht", "label": "Total HT (€)", "type": "numeric", "answer": 174.16, "tolerance": 0.5 },
+    { "key": "total_ttc", "label": "Total TTC (€)", "type": "numeric", "answer": 208.99, "tolerance": 0.5 },
+    { "key": "montant_tva", "label": "Montant de la TVA (€)", "type": "numeric", "answer": 34.83, "tolerance": 0.5 }
+  ]
+}
