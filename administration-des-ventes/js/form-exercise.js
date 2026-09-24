@@ -127,14 +127,19 @@
       correctBtn.addEventListener('click', function () {
         var correct = 0;
         var fields = allFields(answerKey);
-        var total = fields.length;
+        var gradedFields = fields.filter(function (f) { return !f.ungraded; });
+        var total = gradedFields.length;
         fields.forEach(function (field) {
           var fieldEl = fieldsContainer.querySelector('[data-key="' + field.key + '"]');
           var input = fieldEl.querySelector('input, select');
-          var result = gradeField(field, input.value);
           fieldEl.classList.remove('is-correct', 'is-incorrect');
-          fieldEl.classList.add(result.ok ? 'is-correct' : 'is-incorrect');
           var feedback = fieldEl.querySelector('.form-exercise__feedback');
+          if (field.ungraded) {
+            feedback.textContent = '';
+            return;
+          }
+          var result = gradeField(field, input.value);
+          fieldEl.classList.add(result.ok ? 'is-correct' : 'is-incorrect');
           feedback.textContent = result.ok ? '' : 'Attendu : ' + result.expected;
           if (result.ok) {
             correct++;

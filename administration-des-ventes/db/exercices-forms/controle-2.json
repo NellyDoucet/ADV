@@ -45,10 +45,14 @@
       { "key": "action_09", "label": "Action aupres du fournisseur", "type": "keywords", "required": ["delai"] }
     ]},
     { "title": "10 - Reduction commerciale", "fields": [
-      { "key": "conf_10", "label": "Conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Conforme" }
+      { "key": "conf_10", "label": "Conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Conforme" },
+      { "key": "anomalie_10", "label": "Anomalie constatee (si non conforme)", "type": "text", "ungraded": true },
+      { "key": "action_10", "label": "Action aupres du fournisseur (si non conforme)", "type": "text", "ungraded": true }
     ]},
     { "title": "11 - Reduction financiere", "fields": [
-      { "key": "conf_11", "label": "Conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Conforme" }
+      { "key": "conf_11", "label": "Conforme ou non ?", "type": "select", "options": ["Conforme","Non conforme"], "answer": "Conforme" },
+      { "key": "anomalie_11", "label": "Anomalie constatee (si non conforme)", "type": "text", "ungraded": true },
+      { "key": "action_11", "label": "Action aupres du fournisseur (si non conforme)", "type": "text", "ungraded": true }
     ]}
   ]
 }
