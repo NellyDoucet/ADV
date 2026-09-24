@@ -9,11 +9,30 @@
 
   var state = {
     chapitres: [],
+    codeGlobal: null,
     currentId: null,
     progression: {}
   };
 
   var els = {};
+
+  function isUnlocked(key) {
+    try {
+      return window.sessionStorage.getItem('code-' + key) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markUnlocked(key) {
+    try {
+      window.sessionStorage.setItem('code-' + key, '1');
+    } catch (e) { /* sessionStorage indisponible : le code sera redemande a chaque page. */ }
+  }
+
+  function normalizeCode(raw) {
+    return String(raw || '').trim();
+  }
 
   function qs(selector) {
     return document.querySelector(selector);
@@ -145,10 +164,14 @@
       a.href = '#' + chap.id;
       a.className = 'sidebar-link' + (chap.id === state.currentId ? ' is-active' : '');
       var isDone = isChapterCompleted(chap.id);
+      var isLocked = chap.code && !isUnlocked(chap.id);
+      var statusIcon = isLocked
+        ? iconMarkup('lock', 'sidebar-link__status sidebar-link__lock')
+        : iconMarkup('check-circle-2', 'sidebar-link__status' + (isDone ? '' : ' is-empty'));
       a.innerHTML =
         iconMarkup(chap.icone, 'sidebar-link__icon') +
         '<span>' + (chap.numero ? chap.numero + '. ' : '') + chap.titre + '</span>' +
-        iconMarkup('check-circle-2', 'sidebar-link__status' + (isDone ? '' : ' is-empty'));
+        statusIcon;
       li.appendChild(a);
       els.sidebarList.appendChild(li);
     });
@@ -198,9 +221,55 @@
     return nav;
   }
 
+  function renderSectionGate(chap) {
+    els.content.innerHTML =
+      '<div class="section-gate-wrap">' +
+      '<div class="gate-card">' +
+      '<div class="gate-card__icon">' + iconMarkup('lock') + '</div>' +
+      '<h2 class="gate-card__title">' + (chap.numero ? chap.numero + '. ' : '') + chap.titre + '</h2>' +
+      '<p class="gate-card__text">Cette section est verrouillée. Demandez le code à votre formateur pour l’ouvrir.</p>' +
+      '<form class="gate-card__form" id="section-gate-form">' +
+      '<input type="text" inputmode="numeric" class="gate-input" id="section-gate-input" placeholder="Code" autocomplete="off" aria-label="Code de la section">' +
+      '<button type="submit" class="btn btn-primary">Déverrouiller</button>' +
+      '</form>' +
+      '<p class="gate-card__error" id="section-gate-error" hidden>Code incorrect, réessayez.</p>' +
+      '</div></div>';
+
+    if (window.Icons) {
+      window.Icons.refresh();
+    }
+
+    var form = qs('#section-gate-form');
+    var input = qs('#section-gate-input');
+    var error = qs('#section-gate-error');
+    if (input) {
+      input.focus();
+    }
+    if (form) {
+      form.addEventListener('submit', function (evt) {
+        evt.preventDefault();
+        if (normalizeCode(input.value) === normalizeCode(chap.code)) {
+          markUnlocked(chap.id);
+          renderSidebar();
+          loadChapter(chap.id);
+        } else {
+          error.hidden = false;
+          input.value = '';
+          input.focus();
+        }
+      });
+    }
+  }
+
   function loadChapter(chapId) {
     var chap = findChapter(chapId) || state.chapitres[0];
     state.currentId = chap.id;
+
+    if (chap.code && !isUnlocked(chap.id)) {
+      renderSectionGate(chap);
+      renderSidebar();
+      return Promise.resolve();
+    }
 
     return fetchHTML(chap.fichier).then(function (html) {
       els.content.innerHTML = '<div class="app-main-inner"><div class="page">' + html + '</div></div>';
@@ -261,6 +330,51 @@
     }
   }
 
+  function startApp() {
+    renderSidebar();
+    bindGlobalEvents();
+    updateProgressUI();
+    var startId = window.location.hash.replace('#', '');
+    if (!startId && window.SCORM) {
+      startId = window.SCORM.getLocation();
+    }
+    if (!startId) {
+      startId = state.chapitres[0].id;
+    }
+    if (window.location.hash.replace('#', '') === startId) {
+      loadChapter(startId);
+    } else {
+      window.location.hash = startId;
+    }
+  }
+
+  function showGlobalGate() {
+    var overlay = qs('#global-gate');
+    var form = qs('#global-gate-form');
+    var input = qs('#global-gate-input');
+    var error = qs('#global-gate-error');
+    if (!overlay) {
+      startApp();
+      return;
+    }
+    overlay.hidden = false;
+    if (input) {
+      input.focus();
+    }
+    form.addEventListener('submit', function (evt) {
+      evt.preventDefault();
+      if (normalizeCode(input.value) === normalizeCode(state.codeGlobal)) {
+        markUnlocked('global');
+        overlay.hidden = true;
+        startApp();
+      } else {
+        error.hidden = false;
+        input.value = '';
+        input.focus();
+      }
+    });
+  }
+
   function init() {
     cacheEls();
     if (window.SCORM) {
@@ -272,20 +386,11 @@
     restoreProgress();
     fetchJSON('db/chapitres.json').then(function (data) {
       state.chapitres = data.chapitres;
-      renderSidebar();
-      bindGlobalEvents();
-      updateProgressUI();
-      var startId = window.location.hash.replace('#', '');
-      if (!startId && window.SCORM) {
-        startId = window.SCORM.getLocation();
-      }
-      if (!startId) {
-        startId = state.chapitres[0].id;
-      }
-      if (window.location.hash.replace('#', '') === startId) {
-        loadChapter(startId);
+      state.codeGlobal = data.codeGlobal;
+      if (state.codeGlobal && !isUnlocked('global')) {
+        showGlobalGate();
       } else {
-        window.location.hash = startId;
+        startApp();
       }
     }).catch(function (err) {
       if (window.console) {

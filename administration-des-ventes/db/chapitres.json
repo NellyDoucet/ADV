@@ -1,5 +1,6 @@
 {
   "titreModule": "Administration des ventes",
+  "codeGlobal": "134",
   "chapitres": [
     { "id": "accueil", "numero": null, "titre": "Accueil", "fichier": "pages/00-accueil.html", "icone": "house" },
     { "id": "devis", "numero": "01", "titre": "Le devis", "fichier": "pages/01-devis.html", "icone": "file-signature" },
@@ -8,16 +9,16 @@
     { "id": "facture", "numero": "04", "titre": "La facture", "fichier": "pages/04-facture.html", "icone": "receipt" },
     { "id": "avoir", "numero": "05", "titre": "L'avoir", "fichier": "pages/05-avoir.html", "icone": "rotate-ccw" },
     { "id": "cgv", "numero": "06", "titre": "Les CGV", "fichier": "pages/06-cgv.html", "icone": "file-text" },
-    { "id": "analyse-1", "numero": "07", "titre": "Analyse document 1", "fichier": "pages/07-analyse-1.html", "icone": "search", "hasExercise": true },
-    { "id": "analyse-2", "numero": "08", "titre": "Analyse document 2", "fichier": "pages/07b-analyse-2.html", "icone": "search", "hasExercise": true },
-    { "id": "analyse-3", "numero": "09", "titre": "Analyse document 3", "fichier": "pages/07c-analyse-3.html", "icone": "search", "hasExercise": true },
-    { "id": "bio-1", "numero": "10", "titre": "BIO 1 - Factures (remise, escompte)", "fichier": "pages/08-bio-1.html", "icone": "file-spreadsheet", "hasExercise": true },
-    { "id": "bio-2", "numero": "11", "titre": "BIO 2 - Corriger les erreurs", "fichier": "pages/09-bio-2.html", "icone": "file-spreadsheet", "hasExercise": true },
-    { "id": "bio-3", "numero": "12", "titre": "BIO 3 - Trouver les formules", "fichier": "pages/10-bio-3.html", "icone": "file-spreadsheet", "hasExercise": true },
-    { "id": "bio-4", "numero": "13", "titre": "BIO 4 - Factures (remise globale)", "fichier": "pages/11-bio-4.html", "icone": "file-spreadsheet", "hasExercise": true },
-    { "id": "bio-5", "numero": "14", "titre": "BIO 5 - Factures (remises multiples)", "fichier": "pages/12-bio-5.html", "icone": "file-spreadsheet", "hasExercise": true },
-    { "id": "controle-1", "numero": "15", "titre": "Controle documents commerciaux 1", "fichier": "pages/13-controle-1.html", "icone": "clipboard-list", "hasExercise": true },
-    { "id": "controle-2", "numero": "16", "titre": "Controle documents commerciaux 2", "fichier": "pages/14-controle-2.html", "icone": "clipboard-list", "hasExercise": true },
+    { "id": "analyse-1", "numero": "07", "titre": "Analyse document 1", "fichier": "pages/07-analyse-1.html", "icone": "search", "hasExercise": true, "code": "431" },
+    { "id": "analyse-2", "numero": "08", "titre": "Analyse document 2", "fichier": "pages/07b-analyse-2.html", "icone": "search", "hasExercise": true, "code": "344" },
+    { "id": "analyse-3", "numero": "09", "titre": "Analyse document 3", "fichier": "pages/07c-analyse-3.html", "icone": "search", "hasExercise": true, "code": "443" },
+    { "id": "bio-1", "numero": "10", "titre": "BIO 1 - Factures (remise, escompte)", "fichier": "pages/08-bio-1.html", "icone": "file-spreadsheet", "hasExercise": true, "code": "510" },
+    { "id": "bio-2", "numero": "11", "titre": "BIO 2 - Corriger les erreurs", "fichier": "pages/09-bio-2.html", "icone": "file-spreadsheet", "hasExercise": true, "code": "918" },
+    { "id": "bio-3", "numero": "12", "titre": "BIO 3 - Trouver les formules", "fichier": "pages/10-bio-3.html", "icone": "file-spreadsheet", "hasExercise": true, "code": "239" },
+    { "id": "bio-4", "numero": "13", "titre": "BIO 4 - Factures (remise globale)", "fichier": "pages/11-bio-4.html", "icone": "file-spreadsheet", "hasExercise": true, "code": "703" },
+    { "id": "bio-5", "numero": "14", "titre": "BIO 5 - Factures (remises multiples)", "fichier": "pages/12-bio-5.html", "icone": "file-spreadsheet", "hasExercise": true, "code": "202" },
+    { "id": "controle-1", "numero": "15", "titre": "Controle documents commerciaux 1", "fichier": "pages/13-controle-1.html", "icone": "clipboard-list", "hasExercise": true, "code": "310" },
+    { "id": "controle-2", "numero": "16", "titre": "Controle documents commerciaux 2", "fichier": "pages/14-controle-2.html", "icone": "clipboard-list", "hasExercise": true, "code": "111" },
     { "id": "conclusion", "numero": null, "titre": "Conclusion", "fichier": "pages/07-conclusion.html", "icone": "flag" }
   ]
 }
