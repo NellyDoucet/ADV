@@ -16,9 +16,11 @@
 
   var els = {};
 
+  var MODULE_NS = 'pourcentage-bac-';
+
   function isUnlocked(key) {
     try {
-      return window.sessionStorage.getItem('code-' + key) === '1';
+      return window.sessionStorage.getItem(MODULE_NS + 'code-' + key) === '1';
     } catch (e) {
       return false;
     }
@@ -26,7 +28,7 @@
 
   function markUnlocked(key) {
     try {
-      window.sessionStorage.setItem('code-' + key, '1');
+      window.sessionStorage.setItem(MODULE_NS + 'code-' + key, '1');
     } catch (e) {
       /* sessionStorage indisponible : le code sera redemande a chaque page. */
     }
@@ -72,6 +74,9 @@
       window.SCORM.setSuspendData(state.progression);
       window.SCORM.setLocation(state.currentId || '');
       updateScormCompletion();
+    }
+    if (window.StudentIdentity) {
+      window.StudentIdentity.saveProgress('_sommaire', state.progression);
     }
   }
 
@@ -368,6 +373,13 @@
       var saved = window.SCORM.getSuspendData();
       if (saved) {
         state.progression = saved;
+        return;
+      }
+    }
+    if (window.StudentIdentity) {
+      var localSaved = window.StudentIdentity.loadProgress('_sommaire');
+      if (localSaved) {
+        state.progression = localSaved;
       }
     }
   }
@@ -421,6 +433,9 @@
     cacheEls();
     if (window.SCORM) {
       window.SCORM.initialize();
+    }
+    if (window.StudentIdentity) {
+      window.StudentIdentity.init();
     }
     restoreProgress();
     fetchJSON('db/chapitres.json').then(function (data) {

@@ -22,7 +22,7 @@
     },
     {
       "type": "squares",
-      "statement": "Calculez dans chaque carré la quatrième proportionnelle : multipliez les deux valeurs situées en croix par rapport à la case vide, puis divisez par la troisième valeur connue.",
+      "statement": "Calculez dans chaque carré la quatrième proportionnelle : multipliez les deux valeurs situées en croix par rapport à la case vide, puis divisez par la troisième valeur connue (arrondi à 2 chiffres après la virgule).",
       "squares": [
         { "label": "a.", "cells": [ {"value": "5", "input": false}, {"value": "2", "input": false}, {"value": "60", "input": false}, {"id": "a", "input": true, "answer": 24, "tolerance": 0.1, "explanation": "(2 x 60) : 5 = 24."} ] },
         { "label": "b.", "cells": [ {"value": "5", "input": false}, {"value": "60", "input": false}, {"id": "b", "input": true, "answer": 0.17, "tolerance": 0.02, "explanation": "(5 x 2) : 60 = 0,17."}, {"value": "2", "input": false} ] },

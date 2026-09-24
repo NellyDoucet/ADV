@@ -29,6 +29,7 @@
       <file href="css/components/formula.css" />
       <file href="css/components/gate.css" />
       <file href="css/components/nav.css" />
+      <file href="css/components/student-identity.css" />
       <file href="css/components/progressbar.css" />
       <file href="css/components/table.css" />
       <file href="css/layout/header.css" />
@@ -51,6 +52,7 @@
       <file href="js/exercises.js" />
       <file href="js/icons.js" />
       <file href="js/scorm/scorm-api.js" />
+      <file href="js/student-identity.js" />
       <file href="js/vendor/lucide.js" />
       <file href="pages/00-accueil.html" />
       <file href="pages/01-regle-de-trois.html" />

@@ -52,7 +52,7 @@
     },
     {
       "type": "table",
-      "statement": "Un restaurateur applique une marge de 40 % sur ses plats (coefficient 1 + 0,40 = 1,40). Complétez le tableau (arrondi au centime).",
+      "statement": "Un restaurateur applique une marge de 40 % sur ses plats. Complétez le tableau (arrondi au centime).",
       "columns": ["Prix de revient", "Bénéfice (40 %)", "Prix de vente"],
       "rows": [
         { "cells": [ {"value":"5,80 €","input":false}, {"id":"b1","input":true,"answer":2.32,"tolerance":0.05,"unit":"€","explanation":"5,80 x 0,40 = 2,32 €."}, {"id":"pv1","input":true,"answer":8.12,"tolerance":0.05,"unit":"€","explanation":"5,80 x 1,40 = 8,12 €."} ] },
@@ -65,7 +65,7 @@
     },
     {
       "type": "table",
-      "statement": "Refaites le même calcul avec une marge de 30 % (coefficient 1 + 0,30 = 1,30).",
+      "statement": "Refaites le même calcul avec une marge de 30 %.",
       "columns": ["Prix de revient", "Bénéfice (30 %)", "Prix de vente"],
       "rows": [
         { "cells": [ {"value":"5,80 €","input":false}, {"id":"c1","input":true,"answer":1.74,"tolerance":0.05,"unit":"€","explanation":"5,80 x 0,30 = 1,74 €."}, {"id":"pvc1","input":true,"answer":7.54,"tolerance":0.05,"unit":"€","explanation":"5,80 x 1,30 = 7,54 €."} ] },

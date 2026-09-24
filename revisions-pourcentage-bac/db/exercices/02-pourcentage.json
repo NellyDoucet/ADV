@@ -41,16 +41,36 @@
     },
     {
       "type": "table",
-      "statement": "Écrivez sous forme de fraction les pourcentages suivants puis calculez le résultat.",
-      "columns": ["Calcul", "Fraction x montant", "Résultat"],
+      "statement": "Écrivez sous forme de fraction les pourcentages suivants, posez le produit puis calculez le résultat.",
+      "columns": ["Calcul", "Fraction", "Produit", "Résultat"],
       "rows": [
-        { "label": "12 % de 200 €", "cells": [ {"value":"12/100","input":false}, {"id":"r1","input":true,"answer":24,"tolerance":0.5,"unit":"€","explanation":"(12 x 200) / 100 = 24 €."} ] },
-        { "label": "60 % de 400 €", "cells": [ {"value":"60/100","input":false}, {"id":"r2","input":true,"answer":240,"tolerance":1,"unit":"€","explanation":"(60 x 400) / 100 = 240 €."} ] },
-        { "label": "20,6 % de 1 000 €", "cells": [ {"value":"20,6/100","input":false}, {"id":"r3","input":true,"answer":206,"tolerance":1,"unit":"€","explanation":"(20,6 x 1 000) / 100 = 206 €."} ] },
-        { "label": "3 % de 442 €", "cells": [ {"value":"3/100","input":false}, {"id":"r4","input":true,"answer":13.26,"tolerance":0.2,"unit":"€","explanation":"(3 x 442) / 100 = 13,26 €."} ] },
-        { "label": "4,5 % de 20 500 €", "cells": [ {"value":"4,5/100","input":false}, {"id":"r5","input":true,"answer":922.5,"tolerance":1,"unit":"€","explanation":"(4,5 x 20 500) / 100 = 922,50 €."} ] }
+        { "label": "12 % de 200 €", "cells": [
+          {"id":"f1","input":true,"type":"text","answer":"12/100","answers":["12/100"],"explanation":"12 % s'écrit 12/100."},
+          {"id":"p1","input":true,"type":"text","answer":"12/100 x 200","answers":["12/100x200","12/100×200","12/100*200","200x12/100","200×12/100"],"explanation":"On pose le produit de la fraction par le montant : 12/100 x 200."},
+          {"id":"r1","input":true,"answer":24,"tolerance":0.5,"unit":"€","explanation":"(12 x 200) / 100 = 24 €."}
+        ] },
+        { "label": "60 % de 400 €", "cells": [
+          {"id":"f2","input":true,"type":"text","answer":"60/100","answers":["60/100"],"explanation":"60 % s'écrit 60/100."},
+          {"id":"p2","input":true,"type":"text","answer":"60/100 x 400","answers":["60/100x400","60/100×400","60/100*400","400x60/100","400×60/100"],"explanation":"On pose le produit de la fraction par le montant : 60/100 x 400."},
+          {"id":"r2","input":true,"answer":240,"tolerance":1,"unit":"€","explanation":"(60 x 400) / 100 = 240 €."}
+        ] },
+        { "label": "20,6 % de 1 000 €", "cells": [
+          {"id":"f3","input":true,"type":"text","answer":"20.6/100","answers":["20.6/100","20,6/100"],"explanation":"20,6 % s'écrit 20,6/100."},
+          {"id":"p3","input":true,"type":"text","answer":"20,6/100 x 1000","answers":["20,6/100x1000","20.6/100x1000","20,6/100×1000","20.6/100×1000","1000x20,6/100","1000x20.6/100"],"explanation":"On pose le produit de la fraction par le montant : 20,6/100 x 1 000."},
+          {"id":"r3","input":true,"answer":206,"tolerance":1,"unit":"€","explanation":"(20,6 x 1 000) / 100 = 206 €."}
+        ] },
+        { "label": "3 % de 442 €", "cells": [
+          {"id":"f4","input":true,"type":"text","answer":"3/100","answers":["3/100"],"explanation":"3 % s'écrit 3/100."},
+          {"id":"p4","input":true,"type":"text","answer":"3/100 x 442","answers":["3/100x442","3/100×442","3/100*442","442x3/100","442×3/100"],"explanation":"On pose le produit de la fraction par le montant : 3/100 x 442."},
+          {"id":"r4","input":true,"answer":13.26,"tolerance":0.2,"unit":"€","explanation":"(3 x 442) / 100 = 13,26 €."}
+        ] },
+        { "label": "4,5 % de 20 500 €", "cells": [
+          {"id":"f5","input":true,"type":"text","answer":"4.5/100","answers":["4.5/100","4,5/100"],"explanation":"4,5 % s'écrit 4,5/100."},
+          {"id":"p5","input":true,"type":"text","answer":"4,5/100 x 20500","answers":["4,5/100x20500","4.5/100x20500","4,5/100×20500","4.5/100×20500","20500x4,5/100","20500x4.5/100"],"explanation":"On pose le produit de la fraction par le montant : 4,5/100 x 20 500."},
+          {"id":"r5","input":true,"answer":922.5,"tolerance":1,"unit":"€","explanation":"(4,5 x 20 500) / 100 = 922,50 €."}
+        ] }
       ],
-      "explanation": "On multiplie le montant par le pourcentage puis on divise par 100."
+      "explanation": "On écrit le pourcentage sous forme de fraction, on pose le produit avec le montant, puis on divise par 100 pour obtenir le résultat."
     },
     {
       "type": "table",

@@ -22,7 +22,7 @@
       "rows": [
         { "cells": [ {"value":"Pizza","input":false}, {"value":"4,80 €","input":false}, {"id":"m1","input":true,"answer":2.16,"tolerance":0.05,"unit":"€","explanation":"4,80 x 0,45 = 2,16 €."}, {"id":"v1","input":true,"answer":6.96,"tolerance":0.05,"unit":"€","explanation":"4,80 x 1,45 = 6,96 €."} ] },
         { "cells": [ {"value":"Salade","input":false}, {"value":"3,20 €","input":false}, {"id":"m2","input":true,"answer":1.44,"tolerance":0.05,"unit":"€","explanation":"3,20 x 0,45 = 1,44 €."}, {"id":"v2","input":true,"answer":4.64,"tolerance":0.05,"unit":"€","explanation":"3,20 x 1,45 = 4,64 €."} ] },
-        { "cells": [ {"value":"Burger","input":false}, {"value":"6,50 €","input":false}, {"id":"m3","input":true,"answer":2.92,"tolerance":0.05,"unit":"€","explanation":"6,50 x 0,45 = 2,92 €."}, {"id":"v3","input":true,"answer":9.42,"tolerance":0.05,"unit":"€","explanation":"6,50 x 1,45 = 9,42 €."} ] },
+        { "cells": [ {"value":"Burger","input":false}, {"value":"6,50 €","input":false}, {"id":"m3","input":true,"answer":2.93,"tolerance":0.05,"unit":"€","explanation":"6,50 x 0,45 = 2,925, arrondi à 2,93 €."}, {"id":"v3","input":true,"answer":9.43,"tolerance":0.05,"unit":"€","explanation":"6,50 x 1,45 = 9,425, arrondi à 9,43 €."} ] },
         { "cells": [ {"value":"Assiette mixte","input":false}, {"value":"8,70 €","input":false}, {"id":"m4","input":true,"answer":3.91,"tolerance":0.05,"unit":"€","explanation":"8,70 x 0,45 = 3,91 €."}, {"id":"v4","input":true,"answer":12.61,"tolerance":0.05,"unit":"€","explanation":"8,70 x 1,45 = 12,61 €."} ] }
       ],
       "explanation": "Le bénéfice s'obtient en multipliant le prix de revient par 0,45. Le prix de vente s'obtient en le multipliant par 1,45."
@@ -34,7 +34,7 @@
       "rows": [
         { "cells": [ {"value":"Pizza","input":false}, {"value":"4,80 €","input":false}, {"id":"n1","input":true,"answer":2.64,"tolerance":0.05,"unit":"€","explanation":"4,80 x 0,55 = 2,64 €."}, {"id":"w1","input":true,"answer":7.44,"tolerance":0.05,"unit":"€","explanation":"4,80 x 1,55 = 7,44 €."} ] },
         { "cells": [ {"value":"Salade","input":false}, {"value":"3,20 €","input":false}, {"id":"n2","input":true,"answer":1.76,"tolerance":0.05,"unit":"€","explanation":"3,20 x 0,55 = 1,76 €."}, {"id":"w2","input":true,"answer":4.96,"tolerance":0.05,"unit":"€","explanation":"3,20 x 1,55 = 4,96 €."} ] },
-        { "cells": [ {"value":"Burger","input":false}, {"value":"6,50 €","input":false}, {"id":"n3","input":true,"answer":3.77,"tolerance":0.05,"unit":"€","explanation":"6,50 x 0,55 = 3,77 €."}, {"id":"w3","input":true,"answer":10.07,"tolerance":0.05,"unit":"€","explanation":"6,50 x 1,55 = 10,07 €."} ] },
+        { "cells": [ {"value":"Burger","input":false}, {"value":"6,50 €","input":false}, {"id":"n3","input":true,"answer":3.58,"tolerance":0.05,"unit":"€","explanation":"6,50 x 0,55 = 3,575, arrondi à 3,58 €."}, {"id":"w3","input":true,"answer":10.08,"tolerance":0.05,"unit":"€","explanation":"6,50 x 1,55 = 10,075, arrondi à 10,08 €."} ] },
         { "cells": [ {"value":"Assiette mixte","input":false}, {"value":"8,70 €","input":false}, {"id":"n4","input":true,"answer":4.78,"tolerance":0.05,"unit":"€","explanation":"8,70 x 0,55 = 4,78 €."}, {"id":"w4","input":true,"answer":13.48,"tolerance":0.05,"unit":"€","explanation":"8,70 x 1,55 = 13,48 €."} ] }
       ],
       "explanation": "Le bénéfice s'obtient en multipliant le prix de revient par 0,55. Le prix de vente s'obtient en le multipliant par 1,55."

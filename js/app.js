@@ -15,10 +15,11 @@
   };
 
   var els = {};
+  var MODULE_NS = 'pourcentage-bac2-';
 
   function isUnlocked(key) {
     try {
-      return window.sessionStorage.getItem('code-' + key) === '1';
+      return window.sessionStorage.getItem(MODULE_NS + 'code-' + key) === '1';
     } catch (e) {
       return false;
     }
@@ -26,7 +27,7 @@
 
   function markUnlocked(key) {
     try {
-      window.sessionStorage.setItem('code-' + key, '1');
+      window.sessionStorage.setItem(MODULE_NS + 'code-' + key, '1');
     } catch (e) {
       /* sessionStorage indisponible : le code sera redemande a chaque page. */
     }
