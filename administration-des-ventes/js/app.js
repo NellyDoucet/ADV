@@ -9,7 +9,7 @@
 
   var state = {
     chapitres: [],
-    codeGlobal: null,
+    codeGlobalHash: null,
     currentId: null,
     progression: {}
   };
@@ -34,6 +34,14 @@
 
   function normalizeCode(raw) {
     return String(raw || '').trim();
+  }
+
+  function sha256Hex(text) {
+    var data = new TextEncoder().encode(text);
+    return window.crypto.subtle.digest('SHA-256', data).then(function (buffer) {
+      var bytes = Array.prototype.slice.call(new Uint8Array(buffer));
+      return bytes.map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+    });
   }
 
   function qs(selector) {
@@ -166,7 +174,7 @@
       a.href = '#' + chap.id;
       a.className = 'sidebar-link' + (chap.id === state.currentId ? ' is-active' : '');
       var isDone = isChapterCompleted(chap.id);
-      var isLocked = chap.code && !isUnlocked(chap.id);
+      var isLocked = chap.codeHash && !isUnlocked(chap.id);
       var statusIcon = isLocked
         ? iconMarkup('lock', 'sidebar-link__status sidebar-link__lock')
         : iconMarkup('check-circle-2', 'sidebar-link__status' + (isDone ? '' : ' is-empty'));
@@ -250,15 +258,17 @@
     if (form) {
       form.addEventListener('submit', function (evt) {
         evt.preventDefault();
-        if (normalizeCode(input.value) === normalizeCode(chap.code)) {
-          markUnlocked(chap.id);
-          renderSidebar();
-          loadChapter(chap.id);
-        } else {
-          error.hidden = false;
-          input.value = '';
-          input.focus();
-        }
+        sha256Hex(normalizeCode(input.value)).then(function (hash) {
+          if (hash === chap.codeHash) {
+            markUnlocked(chap.id);
+            renderSidebar();
+            loadChapter(chap.id);
+          } else {
+            error.hidden = false;
+            input.value = '';
+            input.focus();
+          }
+        });
       });
     }
   }
@@ -267,7 +277,7 @@
     var chap = findChapter(chapId) || state.chapitres[0];
     state.currentId = chap.id;
 
-    if (chap.code && !isUnlocked(chap.id)) {
+    if (chap.codeHash && !isUnlocked(chap.id)) {
       renderSectionGate(chap);
       renderSidebar();
       return Promise.resolve();
@@ -365,15 +375,17 @@
     }
     form.addEventListener('submit', function (evt) {
       evt.preventDefault();
-      if (normalizeCode(input.value) === normalizeCode(state.codeGlobal)) {
-        markUnlocked('global');
-        overlay.hidden = true;
-        startApp();
-      } else {
-        error.hidden = false;
-        input.value = '';
-        input.focus();
-      }
+      sha256Hex(normalizeCode(input.value)).then(function (hash) {
+        if (hash === state.codeGlobalHash) {
+          markUnlocked('global');
+          overlay.hidden = true;
+          startApp();
+        } else {
+          error.hidden = false;
+          input.value = '';
+          input.focus();
+        }
+      });
     });
   }
 
@@ -388,8 +400,8 @@
     restoreProgress();
     fetchJSON('db/chapitres.json').then(function (data) {
       state.chapitres = data.chapitres;
-      state.codeGlobal = data.codeGlobal;
-      if (state.codeGlobal && !isUnlocked('global')) {
+      state.codeGlobalHash = data.codeGlobalHash;
+      if (state.codeGlobalHash && !isUnlocked('global')) {
         showGlobalGate();
       } else {
         startApp();
