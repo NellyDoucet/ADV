@@ -16,10 +16,32 @@
       .replace(/[^a-z0-9]/g, '');
   }
 
+  function normalizeNumberString(raw) {
+    var s = String(raw || '').trim();
+    if (!s) {
+      return NaN;
+    }
+    s = s.replace(/[€$£]/g, '').replace(/eur/gi, '').replace(/%/g, '');
+    s = s.replace(/[\s    ]/g, '');
+    s = s.trim();
+    if (!s) {
+      return NaN;
+    }
+    var lastComma = s.lastIndexOf(',');
+    var lastDot = s.lastIndexOf('.');
+    var decimalPos = Math.max(lastComma, lastDot);
+    if (decimalPos === -1) {
+      return parseFloat(s);
+    }
+    var intPart = s.slice(0, decimalPos).replace(/[,.]/g, '');
+    var decPart = s.slice(decimalPos + 1).replace(/[,.]/g, '');
+    return parseFloat(intPart + (decPart ? '.' + decPart : ''));
+  }
+
   function gradeField(field, rawValue) {
     var value = (rawValue || '').trim();
     if (field.type === 'numeric') {
-      var num = parseFloat(value.replace(',', '.'));
+      var num = normalizeNumberString(value);
       var tol = field.tolerance != null ? field.tolerance : Math.max(0.05, Math.abs(field.answer) * 0.01);
       var ok = !isNaN(num) && Math.abs(num - field.answer) <= tol;
       return { ok: ok, got: value === '' ? null : value, expected: field.answer, explanation: field.explanation };
