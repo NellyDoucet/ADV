@@ -1,0 +1,10 @@
+{
+  "titreModule": "GED - Applications Jour 1",
+  "codeGlobalHash": null,
+  "chapitres": [
+    { "id": "accueil", "numero": null, "titre": "Accueil", "fichier": "pages/00-accueil.html", "icone": "house" },
+    { "id": "audit-du-bazar", "numero": "01", "titre": "L'audit du bazar", "fichier": "pages/01-audit-du-bazar.html", "icone": "search-x" },
+    { "id": "ranger-renommer", "numero": "02", "titre": "Ranger et renommer", "fichier": "pages/02-ranger-renommer.html", "icone": "folder-input" },
+    { "id": "retrouver-document", "numero": "03", "titre": "Retrouver un document", "fichier": "pages/03-retrouver-document.html", "icone": "file-search" }
+  ]
+}

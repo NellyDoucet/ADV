@@ -3,6 +3,11 @@
   "codeGlobalHash": null,
   "chapitres": [
     { "id": "accueil", "numero": null, "titre": "Accueil", "fichier": "pages/00-accueil.html", "icone": "house" },
-    { "id": "fondamentaux", "numero": "01", "titre": "Les fondamentaux de la GED", "fichier": "pages/01-fondamentaux.html", "icone": "folder-open" }
+    { "id": "definition-enjeux", "numero": "01", "titre": "Définition et enjeux", "fichier": "pages/01-definition-enjeux.html", "icone": "info" },
+    { "id": "cycle-de-vie", "numero": "02", "titre": "Le cycle de vie", "fichier": "pages/02-cycle-de-vie.html", "icone": "refresh-cw" },
+    { "id": "plan-de-classement", "numero": "03", "titre": "Le plan de classement", "fichier": "pages/03-plan-de-classement.html", "icone": "folder-tree" },
+    { "id": "charte-de-nommage", "numero": "04", "titre": "La charte de nommage", "fichier": "pages/04-charte-de-nommage.html", "icone": "tag" },
+    { "id": "indexation-metadonnees", "numero": "05", "titre": "Indexation et métadonnées", "fichier": "pages/05-indexation-metadonnees.html", "icone": "search" },
+    { "id": "numerisation-formats", "numero": "06", "titre": "Numérisation et formats", "fichier": "pages/06-numerisation-formats.html", "icone": "scan" }
   ]
 }

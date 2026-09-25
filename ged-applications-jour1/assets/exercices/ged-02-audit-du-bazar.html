@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<title>L'audit du bazar</title>
+<style>
+  :root{--bg:#f6f5f2;--surface:#ffffff;--surface-2:#efeee9;--ink:#1d211f;--ink-soft:#54615b;--line:#d9d7cf;--accent:#1f5fae;--accent-soft:#e4edf8;--ok:#13715a;--ok-bg:#e2efe9;--ko:#b4362b;--ko-bg:#f6e2df;--warn:#8a6d1f;--radius:14px;--maxw:720px;}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14181a;--surface:#1c2124;--surface-2:#232a2d;--ink:#eef1ef;--ink-soft:#a6b1ac;--line:#333c40;--accent:#7ab3f0;--accent-soft:#16283f;--ok:#5fc9a6;--ok-bg:#1e2f2a;--ko:#e88b80;--ko-bg:#33211f;--warn:#d9b757;}}
+  :root[data-theme="dark"]{--bg:#14181a;--surface:#1c2124;--surface-2:#232a2d;--ink:#eef1ef;--ink-soft:#a6b1ac;--line:#333c40;--accent:#7ab3f0;--accent-soft:#16283f;--ok:#5fc9a6;--ok-bg:#1e2f2a;--ko:#e88b80;--ko-bg:#33211f;--warn:#d9b757;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Calibri,Carlito,Candara,"Segoe UI",system-ui,sans-serif;line-height:1.55;font-size:16px;-webkit-text-size-adjust:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 18px 80px}
+  header.top{padding:8px 0 22px;border-bottom:2px solid var(--ink);margin-bottom:26px}
+  header.top .kicker{color:var(--accent);font-weight:700;font-size:.82rem}
+  header.top h1{font-size:1.72rem;line-height:1.18;margin:.35em 0 .3em;font-weight:800}
+  header.top p{color:var(--ink-soft);margin:.2em 0 0;font-size:.98rem}
+  h2{font-size:1.24rem;margin:2em 0 .5em;font-weight:800;line-height:1.25}
+  h2 .n{color:var(--accent)}
+  section.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:14px 0}
+  p{margin:.6em 0}.lead{color:var(--ink-soft)}
+  .explorer{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:.8em 0}
+  .explorer .bar{background:var(--ink);color:var(--bg);padding:8px 12px;font-size:.85rem;font-weight:700}
+  .frow{display:flex;gap:10px;align-items:baseline;padding:9px 12px;border-top:1px solid var(--line)}
+  .frow .ico{flex:none}
+  .frow .fname{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86rem;word-break:break-all}
+  .frow .meta{margin-left:auto;color:var(--ink-soft);font-size:.78rem;white-space:nowrap;padding-left:8px}
+  .opts{display:flex;flex-direction:column;gap:8px;margin-top:.4em}
+  label.opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;background:var(--surface);font-size:.95rem}
+  label.opt:hover{border-color:var(--accent)}
+  label.opt input{margin-top:3px;flex:none;accent-color:var(--accent)}
+  label.opt.chosen.ok{border-color:var(--ok);background:var(--ok-bg)}
+  label.opt.chosen.ko{border-color:var(--ko);background:var(--ko-bg)}
+  label.opt.missed{border-color:var(--warn);border-style:dashed}
+  .matchrow{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding:12px 0}
+  .matchrow:first-child{border-top:none}
+  .matchrow .fname{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86rem;word-break:break-all}
+  select{width:100%;font-size:.95rem;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+  .matchrow.correct select{border-color:var(--ok);background:var(--ok-bg)}
+  .matchrow.wrong select{border-color:var(--ko);background:var(--ko-bg)}
+  .mark{font-weight:700;font-size:.88rem;margin-top:4px}.mark.ok{color:var(--ok)}.mark.ko{color:var(--ko)}
+  button.check{margin-top:16px;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:12px 20px;font-size:.98rem;font-weight:700;cursor:pointer;width:100%}
+  button.check:active{transform:translateY(1px)}
+  .result{margin-top:14px;padding:12px 14px;border-radius:10px;font-weight:600;display:none}
+  .result.show{display:block}.result.good{background:var(--ok-bg);color:var(--ok)}.result.mid{background:var(--surface-2);color:var(--ink)}
+  .corrige{display:none;margin-top:12px;background:var(--surface-2);border-radius:10px;padding:12px 14px;font-size:.93rem}
+  .corrige.show{display:block}.corrige h4{margin:.2em 0 .4em;font-size:.95rem}
+  ul.tidy{margin:.4em 0;padding-left:1.15em}ul.tidy li{margin:.3em 0}
+  .themebtn{position:fixed;top:12px;right:12px;background:var(--surface);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:7px 12px;font-size:.82rem;cursor:pointer}
+  footer{margin-top:40px;color:var(--ink-soft);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body>
+<button class="themebtn" id="themebtn">Thème</button>
+<div class="wrap">
+<header class="top">
+  <div class="kicker">GED, application</div>
+  <h1>L'audit du bazar</h1>
+  <p>Voici le dossier partagé d'Occitania Confort, la PME où vous venez d'arriver. Il est en pagaille. Votre mission, diagnostiquer ce qui cloche avant de proposer une organisation.</p>
+</header>
+
+<section class="card">
+  <div class="explorer">
+    <div class="bar">Serveur \ Occitania Confort \ Documents</div>
+    <div class="frow"><span class="ico">📄</span><span class="fname">Facture_final_V2_vraiment_final.pdf</span><span class="meta">03/09/2026</span></div>
+    <div class="frow"><span class="ico">📄</span><span class="fname">scan0001.pdf</span><span class="meta">28/08/2026</span></div>
+    <div class="frow"><span class="ico">📄</span><span class="fname">devis clim Mme Roux.docx</span><span class="meta">02/09/2026</span></div>
+    <div class="frow"><span class="ico">📄</span><span class="fname">DEVIS ROUX 2.docx</span><span class="meta">02/09/2026</span></div>
+    <div class="frow"><span class="ico">🖼️</span><span class="fname">IMG_20260903.jpg</span><span class="meta">03/09/2026</span></div>
+    <div class="frow"><span class="ico">📊</span><span class="fname">compta 2025 - Copie.xlsx</span><span class="meta">14/01/2026</span></div>
+    <div class="frow"><span class="ico">📄</span><span class="fname">contrat.pdf</span><span class="meta">11/07/2026</span></div>
+    <div class="frow"><span class="ico">📁</span><span class="fname">Nouveau dossier</span><span class="meta">dossier</span></div>
+    <div class="frow"><span class="ico">📁</span><span class="fname">trucs divers</span><span class="meta">dossier</span></div>
+  </div>
+</section>
+
+<h2><span class="n">1.</span> Repérez les problèmes</h2>
+<section class="card">
+  <p class="lead">Cochez tous les problèmes présents dans ce dossier. Attention aux fausses pistes.</p>
+  <div class="opts" id="ex1"></div>
+  <button class="check" onclick="checkEx1()">Vérifier</button>
+  <div class="result" id="res1"></div>
+</section>
+
+<h2><span class="n">2.</span> Un défaut par fichier</h2>
+<section class="card">
+  <p class="lead">Pour chaque fichier, indiquez son défaut principal.</p>
+  <div id="ex2"></div>
+  <button class="check" onclick="checkEx2()">Vérifier</button>
+  <div class="result" id="res2"></div>
+  <div class="corrige" id="cor2">
+    <h4>Les bonnes pratiques qui corrigent tout ça</h4>
+    <ul class="tidy">
+      <li>Une <b>charte de nommage</b>, AAAAMMJJ_TYPE_Tiers_Numéro. Fini scan0001 et vraiment_final.</li>
+      <li>Une <b>seule version de référence</b>, on ne garde pas final, V2 et vraiment_final côte à côte.</li>
+      <li>Un <b>plan de classement</b> clair, pas de dossier fourre-tout comme trucs divers ou Nouveau dossier.</li>
+      <li>Une <b>numérisation propre</b>, un PDF avec OCR, pas une photo prise au téléphone.</li>
+      <li>Pas de <b>doublons</b>, on supprime les Copie.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>Accroche du module GED. Diagnostic, puis on construira l'organisation ensemble.</footer>
+</div>
+
+<script>
+document.getElementById('themebtn').addEventListener('click',function(){var r=document.documentElement;var dark=getComputedStyle(document.body).backgroundColor.replace(/\s/g,'')==='rgb(20,24,26)';r.setAttribute('data-theme',dark?'light':'dark');});
+
+var PROBLEMS=[
+ {t:"Des noms de fichiers non explicites, on ne sait pas ce que contient scan0001 ou IMG_20260903",ok:true},
+ {t:"Plusieurs versions d'un même document sans règle claire, final, V2, vraiment_final",ok:true},
+ {t:"Des doublons, compta 2025 - Copie",ok:true},
+ {t:"Aucune arborescence, des dossiers fourre-tout comme trucs divers et Nouveau dossier",ok:true},
+ {t:"Un document photographié au lieu d'être numérisé correctement",ok:true},
+ {t:"Les fichiers sont trop volumineux pour le serveur",ok:false},
+ {t:"Le dossier contient forcément un virus",ok:false},
+ {t:"Il manque un logiciel de comptabilité",ok:false}
+];
+
+var DEFECTS=["Nom non explicite","Versions non gérées","Doublon","Rangement absent, dossier fourre-tout","Document mal numérisé, photo"];
+var EX2=[
+ {name:"scan0001.pdf",ok:0},
+ {name:"Facture_final_V2_vraiment_final.pdf",ok:1},
+ {name:"compta 2025 - Copie.xlsx",ok:2},
+ {name:"trucs divers (dossier)",ok:3},
+ {name:"IMG_20260903.jpg",ok:4}
+];
+
+(function(){
+ var h="";PROBLEMS.forEach(function(p,i){h+='<label class="opt" id="o1-'+i+'"><input type="checkbox" value="'+i+'"><span>'+p.t+'</span></label>';});
+ document.getElementById('ex1').innerHTML=h;
+ var h2="";EX2.forEach(function(f,i){var o=DEFECTS.map(function(d,k){return '<option value="'+k+'">'+d+'</option>';}).join("");h2+='<div class="matchrow" id="m2-'+i+'"><div class="fname">'+f.name+'</div><select id="s2-'+i+'"><option value="">Choisir le défaut...</option>'+o+'</select><div class="mark" id="k2-'+i+'"></div></div>';});
+ document.getElementById('ex2').innerHTML=h2;
+})();
+
+function showResult(id,s,t){var el=document.getElementById(id);el.className='result show '+(s===t?'good':'mid');el.textContent='Score, '+s+' / '+t+(s===t?', diagnostic complet.':', regardez ce qui est signalé.');}
+
+function checkEx1(){
+ var good=0,total=0;
+ PROBLEMS.forEach(function(p,i){
+   if(p.ok)total++;
+   var lab=document.getElementById('o1-'+i);var cb=lab.querySelector('input');
+   lab.classList.remove('chosen','ok','ko','missed');
+   if(cb.checked){lab.classList.add('chosen');lab.classList.add(p.ok?'ok':'ko');if(p.ok)good++;else good--;}
+   else if(p.ok){lab.classList.add('missed');}
+ });
+ if(good<0)good=0;
+ showResult('res1',good,total);
+}
+function checkEx2(){
+ var s=0;
+ EX2.forEach(function(f,i){
+   var sel=document.getElementById('s2-'+i);var row=document.getElementById('m2-'+i);var mk=document.getElementById('k2-'+i);
+   row.classList.remove('correct','wrong');
+   if(sel.value===String(f.ok)){row.classList.add('correct');mk.className='mark ok';mk.textContent='Exact.';s++;}
+   else{row.classList.add('wrong');mk.className='mark ko';mk.textContent='Plutôt, '+DEFECTS[f.ok]+'.';}
+ });
+ showResult('res2',s,EX2.length);
+ document.getElementById('cor2').classList.add('show');
+}
+</script>
+</body>
+</html>

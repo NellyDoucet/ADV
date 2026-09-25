@@ -1,0 +1,49 @@
+.example-doc {
+  margin: var(--space-5) 0;
+}
+
+.example-doc__label {
+  font: var(--text-label);
+  color: var(--accent-primary-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.example-doc__frame {
+  border: 1px solid var(--surface-card-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.example-doc__frame img {
+  width: 100%;
+  display: block;
+}
+
+ul.key-points {
+  margin: var(--space-4) 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.key-points li {
+  position: relative;
+  padding-left: var(--space-5);
+  margin-bottom: var(--space-3);
+  font: var(--text-body);
+}
+
+.key-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<title>Retrouver un document</title>
+<style>
+  :root{--bg:#f6f5f2;--surface:#ffffff;--surface-2:#efeee9;--ink:#1d211f;--ink-soft:#54615b;--line:#d9d7cf;--accent:#1f5fae;--accent-soft:#e4edf8;--ok:#13715a;--ok-bg:#e2efe9;--ko:#b4362b;--ko-bg:#f6e2df;--warn:#8a6d1f;--radius:14px;--maxw:720px;}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14181a;--surface:#1c2124;--surface-2:#232a2d;--ink:#eef1ef;--ink-soft:#a6b1ac;--line:#333c40;--accent:#7ab3f0;--accent-soft:#16283f;--ok:#5fc9a6;--ok-bg:#1e2f2a;--ko:#e88b80;--ko-bg:#33211f;--warn:#d9b757;}}
+  :root[data-theme="dark"]{--bg:#14181a;--surface:#1c2124;--surface-2:#232a2d;--ink:#eef1ef;--ink-soft:#a6b1ac;--line:#333c40;--accent:#7ab3f0;--accent-soft:#16283f;--ok:#5fc9a6;--ok-bg:#1e2f2a;--ko:#e88b80;--ko-bg:#33211f;--warn:#d9b757;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Calibri,Carlito,Candara,"Segoe UI",system-ui,sans-serif;line-height:1.55;font-size:16px;-webkit-text-size-adjust:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 18px 80px}
+  header.top{padding:8px 0 22px;border-bottom:2px solid var(--ink);margin-bottom:26px}
+  header.top .kicker{color:var(--accent);font-weight:700;font-size:.82rem}
+  header.top h1{font-size:1.66rem;line-height:1.18;margin:.35em 0 .3em;font-weight:800}
+  header.top p{color:var(--ink-soft);margin:.2em 0 0;font-size:.98rem}
+  h2{font-size:1.24rem;margin:2em 0 .5em;font-weight:800;line-height:1.25}
+  h2 .n{color:var(--accent)}
+  section.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:14px 0}
+  p{margin:.6em 0}.lead{color:var(--ink-soft)}
+  .opts{display:flex;flex-direction:column;gap:8px;margin-top:.4em}
+  label.opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;background:var(--surface);font-size:.94rem}
+  label.opt:hover{border-color:var(--accent)}
+  label.opt input{margin-top:3px;flex:none;accent-color:var(--accent)}
+  label.opt.chosen.ok{border-color:var(--ok);background:var(--ok-bg)}
+  label.opt.chosen.ko{border-color:var(--ko);background:var(--ko-bg)}
+  label.opt.missed{border-color:var(--warn);border-style:dashed}
+  .q{border-top:1px solid var(--line);padding:14px 0 4px}.q:first-of-type{border-top:none}
+  .q .stem{font-weight:600;margin-bottom:.55em}
+  .q.correct label.opt.chosen{border-color:var(--ok);background:var(--ok-bg)}
+  .q.wrong label.opt.chosen{border-color:var(--ko);background:var(--ko-bg)}
+  .mark{font-weight:700;font-size:.88rem;margin-top:4px}.mark.ok{color:var(--ok)}.mark.ko{color:var(--ko)}
+  table.idx{width:100%;border-collapse:collapse;margin:.6em 0;font-size:.84rem}
+  table.idx th,table.idx td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+  table.idx th{background:var(--surface-2);font-weight:700}
+  .scroll{overflow-x:auto}
+  button.check{margin-top:16px;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:12px 20px;font-size:.98rem;font-weight:700;cursor:pointer;width:100%}
+  button.check:active{transform:translateY(1px)}
+  .result{margin-top:14px;padding:12px 14px;border-radius:10px;font-weight:600;display:none}
+  .result.show{display:block}.result.good{background:var(--ok-bg);color:var(--ok)}.result.mid{background:var(--surface-2);color:var(--ink)}
+  .themebtn{position:fixed;top:12px;right:12px;background:var(--surface);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:7px 12px;font-size:.82rem;cursor:pointer}
+  footer{margin-top:40px;color:var(--ink-soft);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body>
+<button class="themebtn" id="themebtn">Thème</button>
+<div class="wrap">
+<header class="top">
+  <div class="kicker">GED, application</div>
+  <h1>Retrouver un document</h1>
+  <p>Un document bien indexé se retrouve en quelques secondes. Choisissez d'abord les bonnes métadonnées, puis servez-vous-en pour trouver le bon fichier.</p>
+</header>
+
+<h2><span class="n">1.</span> Les bonnes métadonnées</h2>
+<section class="card">
+  <p class="lead">Occitania Confort veut indexer ses factures fournisseurs. Cochez les métadonnées vraiment utiles pour les retrouver plus tard.</p>
+  <div class="opts" id="ex1"></div>
+  <button class="check" onclick="checkEx1()">Vérifier</button>
+  <div class="result" id="res1"></div>
+</section>
+
+<h2><span class="n">2.</span> La recherche</h2>
+<section class="card">
+  <p class="lead">Voici les documents indexés dans la GED. Utilisez les critères pour répondre.</p>
+  <div class="scroll">
+    <table class="idx">
+      <tr><th>#</th><th>Type</th><th>Date</th><th>Tiers</th><th>Montant</th><th>Statut</th></tr>
+      <tr><td>1</td><td>FACT</td><td>03/09/2026</td><td>Thermogroupe</td><td>42.780,00€</td><td>À payer</td></tr>
+      <tr><td>2</td><td>FACT</td><td>15/07/2026</td><td>Thermogroupe</td><td>8.900,00€</td><td>Payée</td></tr>
+      <tr><td>3</td><td>DEV</td><td>02/09/2026</td><td>Roux</td><td>3.400,00€</td><td>En attente</td></tr>
+      <tr><td>4</td><td>FACT</td><td>20/08/2026</td><td>ClimPro</td><td>41.200,00€</td><td>Payée</td></tr>
+      <tr><td>5</td><td>FACT</td><td>03/09/2026</td><td>Thermogroupe</td><td>1.250,00€</td><td>Payée</td></tr>
+    </table>
+  </div>
+  <div id="ex2"></div>
+  <button class="check" onclick="checkEx2()">Vérifier</button>
+  <div class="result" id="res2"></div>
+</section>
+
+<footer>Application du jour 1. Bien indexer, c'est déjà retrouver.</footer>
+</div>
+
+<script>
+document.getElementById('themebtn').addEventListener('click',function(){var r=document.documentElement;var dark=getComputedStyle(document.body).backgroundColor.replace(/\s/g,'')==='rgb(20,24,26)';r.setAttribute('data-theme',dark?'light':'dark');});
+
+var META=[
+ {t:"Type de document",ok:true},
+ {t:"Date",ok:true},
+ {t:"Fournisseur, le tiers",ok:true},
+ {t:"Numéro de facture",ok:true},
+ {t:"Montant",ok:true},
+ {t:"Statut, payée ou à payer",ok:true},
+ {t:"Couleur du logo du fournisseur",ok:false},
+ {t:"Nom de l'ordinateur qui a scanné",ok:false},
+ {t:"Police d'écriture de la facture",ok:false}
+];
+
+var Q2=[
+ {stem:"La facture de Thermogroupe de septembre 2026 dont le montant dépasse 40.000€.",opts:["Document 1","Document 2","Document 5"],ok:0},
+ {stem:"Le devis encore en attente.",opts:["Document 1","Document 3","Document 4"],ok:1},
+ {stem:"La facture payée du fournisseur ClimPro.",opts:["Document 2","Document 4","Document 5"],ok:1}
+];
+
+(function(){
+ var h="";META.forEach(function(m,i){h+='<label class="opt" id="o1-'+i+'"><input type="checkbox" value="'+i+'"><span>'+m.t+'</span></label>';});
+ document.getElementById('ex1').innerHTML=h;
+ var h2="";Q2.forEach(function(q,i){var o=q.opts.map(function(t,k){return '<label class="opt" id="o2-'+i+'-'+k+'"><input type="radio" name="o2-'+i+'" value="'+k+'"><span>'+t+'</span></label>';}).join("");
+  h2+='<div class="q" id="q2-'+i+'"><div class="stem">'+q.stem+'</div><div class="opts">'+o+'</div><div class="mark" id="m2-'+i+'"></div></div>';});
+ document.getElementById('ex2').innerHTML=h2;
+})();
+
+function showResult(id,s,t){var el=document.getElementById(id);el.className='result show '+(s===t?'good':'mid');el.textContent='Score, '+s+' / '+t+(s===t?', parfait.':', vérifiez les réponses signalées.');}
+
+function checkEx1(){
+ var good=0,total=0;
+ META.forEach(function(m,i){
+   if(m.ok)total++;
+   var lab=document.getElementById('o1-'+i);var cb=lab.querySelector('input');
+   lab.classList.remove('chosen','ok','ko','missed');
+   if(cb.checked){lab.classList.add('chosen');lab.classList.add(m.ok?'ok':'ko');good+=m.ok?1:-1;}
+   else if(m.ok){lab.classList.add('missed');}
+ });
+ if(good<0)good=0;
+ showResult('res1',good,total);
+}
+function checkEx2(){
+ var s=0;
+ Q2.forEach(function(q,i){
+   var chosen=document.querySelector('input[name="o2-'+i+'"]:checked');
+   var box=document.getElementById('q2-'+i);var mk=document.getElementById('m2-'+i);
+   box.classList.remove('correct','wrong');q.opts.forEach(function(_,k){document.getElementById('o2-'+i+'-'+k).classList.remove('chosen');});
+   if(chosen)document.getElementById('o2-'+i+'-'+chosen.value).classList.add('chosen');
+   if(chosen&&Number(chosen.value)===q.ok){box.classList.add('correct');mk.className='mark ok';mk.textContent='Trouvé.';s++;}
+   else{box.classList.add('wrong');mk.className='mark ko';mk.textContent='C'+"'"+'était '+q.opts[q.ok]+'.';}
+ });
+ showResult('res2',s,Q2.length);
+}
+</script>
+</body>
+</html>

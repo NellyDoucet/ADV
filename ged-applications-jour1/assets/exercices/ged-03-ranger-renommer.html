@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<title>Ranger et renommer</title>
+<style>
+  :root{--bg:#f6f5f2;--surface:#ffffff;--surface-2:#efeee9;--ink:#1d211f;--ink-soft:#54615b;--line:#d9d7cf;--accent:#1f5fae;--accent-soft:#e4edf8;--ok:#13715a;--ok-bg:#e2efe9;--ko:#b4362b;--ko-bg:#f6e2df;--radius:14px;--maxw:720px;}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14181a;--surface:#1c2124;--surface-2:#232a2d;--ink:#eef1ef;--ink-soft:#a6b1ac;--line:#333c40;--accent:#7ab3f0;--accent-soft:#16283f;--ok:#5fc9a6;--ok-bg:#1e2f2a;--ko:#e88b80;--ko-bg:#33211f;}}
+  :root[data-theme="dark"]{--bg:#14181a;--surface:#1c2124;--surface-2:#232a2d;--ink:#eef1ef;--ink-soft:#a6b1ac;--line:#333c40;--accent:#7ab3f0;--accent-soft:#16283f;--ok:#5fc9a6;--ok-bg:#1e2f2a;--ko:#e88b80;--ko-bg:#33211f;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Calibri,Carlito,Candara,"Segoe UI",system-ui,sans-serif;line-height:1.55;font-size:16px;-webkit-text-size-adjust:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:24px 18px 80px}
+  header.top{padding:8px 0 22px;border-bottom:2px solid var(--ink);margin-bottom:26px}
+  header.top .kicker{color:var(--accent);font-weight:700;font-size:.82rem}
+  header.top h1{font-size:1.66rem;line-height:1.18;margin:.35em 0 .3em;font-weight:800}
+  header.top p{color:var(--ink-soft);margin:.2em 0 0;font-size:.98rem}
+  h2{font-size:1.24rem;margin:2em 0 .5em;font-weight:800;line-height:1.25}
+  h2 .n{color:var(--accent)}
+  section.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:14px 0}
+  p{margin:.6em 0}.lead{color:var(--ink-soft)}
+  .charte{background:var(--accent-soft);color:var(--accent);border-radius:10px;padding:10px 14px;font-size:.92rem;font-weight:600;margin:.4em 0}
+  .charte .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .q{border-top:1px solid var(--line);padding:14px 0 4px}.q:first-of-type{border-top:none}
+  .q .stem{font-weight:600;margin-bottom:.15em}
+  .q .ctx{color:var(--ink-soft);font-size:.9rem;margin-bottom:.55em}
+  .opts{display:flex;flex-direction:column;gap:8px}
+  label.opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;background:var(--surface);font-size:.93rem}
+  label.opt .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86rem;word-break:break-all}
+  label.opt:hover{border-color:var(--accent)}
+  label.opt input{margin-top:3px;flex:none;accent-color:var(--accent)}
+  .q.correct label.opt.chosen{border-color:var(--ok);background:var(--ok-bg)}
+  .q.wrong label.opt.chosen{border-color:var(--ko);background:var(--ko-bg)}
+  .matchrow{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding:12px 0}
+  .matchrow:first-child{border-top:none}
+  .matchrow .fname{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86rem;word-break:break-all}
+  select{width:100%;font-size:.95rem;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+  .matchrow.correct select{border-color:var(--ok);background:var(--ok-bg)}
+  .matchrow.wrong select{border-color:var(--ko);background:var(--ko-bg)}
+  .mark{font-weight:700;font-size:.88rem;margin-top:4px}.mark.ok{color:var(--ok)}.mark.ko{color:var(--ko)}
+  button.check{margin-top:16px;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:12px 20px;font-size:.98rem;font-weight:700;cursor:pointer;width:100%}
+  button.check:active{transform:translateY(1px)}
+  .result{margin-top:14px;padding:12px 14px;border-radius:10px;font-weight:600;display:none}
+  .result.show{display:block}.result.good{background:var(--ok-bg);color:var(--ok)}.result.mid{background:var(--surface-2);color:var(--ink)}
+  .themebtn{position:fixed;top:12px;right:12px;background:var(--surface);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:7px 12px;font-size:.82rem;cursor:pointer}
+  footer{margin-top:40px;color:var(--ink-soft);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body>
+<button class="themebtn" id="themebtn">Thème</button>
+<div class="wrap">
+<header class="top">
+  <div class="kicker">GED, application</div>
+  <h1>Ranger et renommer</h1>
+  <p>Vous mettez de l'ordre dans les documents d'Occitania Confort. D'abord les bons noms, ensuite le bon dossier.</p>
+</header>
+
+<section class="card">
+  <div class="charte">Charte de nommage, <span class="mono">AAAAMMJJ_TYPE_Tiers_Numéro</span>. Types, FACT facture, DEV devis, BC bon de commande, BL bon de livraison, CTR contrat, CR compte-rendu. Pas d'espaces ni d'accents.</div>
+</section>
+
+<h2><span class="n">1.</span> Le nom conforme</h2>
+<section class="card">
+  <p class="lead">Pour chaque document, choisissez le nom qui respecte la charte.</p>
+  <div id="ex1"></div>
+  <button class="check" onclick="checkEx1()">Vérifier</button>
+  <div class="result" id="res1"></div>
+</section>
+
+<h2><span class="n">2.</span> Le bon dossier</h2>
+<section class="card">
+  <p class="lead">Rangez maintenant chaque fichier dans le bon dossier du plan de classement.</p>
+  <div id="ex2"></div>
+  <button class="check" onclick="checkEx2()">Vérifier</button>
+  <div class="result" id="res2"></div>
+</section>
+
+<footer>Application du jour 1. Les noms d'abord, le classement ensuite, comme dans un vrai système.</footer>
+</div>
+
+<script>
+document.getElementById('themebtn').addEventListener('click',function(){var r=document.documentElement;var dark=getComputedStyle(document.body).backgroundColor.replace(/\s/g,'')==='rgb(20,24,26)';r.setAttribute('data-theme',dark?'light':'dark');});
+
+var EX1=[
+ {ctx:"Facture reçue de Thermogroupe le 03/09/2026, numéro 2026-114.",
+  opts:["20260903_FACT_Thermogroupe_2026-114.pdf","facture thermogroupe.pdf","FACT_Thermogroupe_03-09-2026.pdf"],ok:0,
+  why:"La date complète en tête au format AAAAMMJJ, puis le type, le tiers, le numéro."},
+ {ctx:"Devis envoyé à Mme Roux le 02/09/2026, numéro D-058.",
+  opts:["devis Roux final.docx","20260902_DEV_Roux_D-058.pdf","2026_devis_Mme Roux.pdf"],ok:1,
+  why:"Pas de « final », pas d'espaces ni d'accents, une date complète."},
+ {ctx:"Contrat de maintenance signé avec le syndic Le Capitole le 11/07/2026.",
+  opts:["contrat.pdf","Contrat Capitole 11 juillet 2026.pdf","20260711_CTR_LeCapitole_maintenance.pdf"],ok:2,
+  why:"Un nom explicite et daté, sans espaces, contre un « contrat.pdf » illisible."},
+ {ctx:"Compte-rendu de la réunion d'équipe du 12/09/2026.",
+  opts:["20260912_CR_reunion-equipe.pdf","CR réunion.docx","12-09 CR equipe.pdf"],ok:0,
+  why:"La date en AAAAMMJJ classe seule, le tiret relie les mots sans espace."}
+];
+
+var FOLDERS=["Ventes / Clients","Achats / Fournisseurs","Direction / Administratif"];
+var EX2=[
+ {name:"20260903_FACT_Thermogroupe_2026-114.pdf",ok:1},
+ {name:"20260902_DEV_Roux_D-058.pdf",ok:0},
+ {name:"20260711_CTR_LeCapitole_maintenance.pdf",ok:2},
+ {name:"20260912_CR_reunion-equipe.pdf",ok:2}
+];
+
+(function(){
+ var h="";EX1.forEach(function(q,i){var o=q.opts.map(function(t,k){return '<label class="opt" id="o1-'+i+'-'+k+'"><input type="radio" name="o1-'+i+'" value="'+k+'"><span class="mono">'+t+'</span></label>';}).join("");
+  h+='<div class="q" id="q1-'+i+'"><div class="ctx">'+q.ctx+'</div><div class="opts">'+o+'</div><div class="mark" id="m1-'+i+'"></div></div>';});
+ document.getElementById('ex1').innerHTML=h;
+ var h2="";EX2.forEach(function(f,i){var o=FOLDERS.map(function(fo,k){return '<option value="'+k+'">'+fo+'</option>';}).join("");
+  h2+='<div class="matchrow" id="r2-'+i+'"><div class="fname">'+f.name+'</div><select id="s2-'+i+'"><option value="">Choisir un dossier...</option>'+o+'</select><div class="mark" id="m2-'+i+'"></div></div>';});
+ document.getElementById('ex2').innerHTML=h2;
+})();
+
+function showResult(id,s,t){var el=document.getElementById(id);el.className='result show '+(s===t?'good':'mid');el.textContent='Score, '+s+' / '+t+(s===t?', parfait.':', regardez les réponses en rouge.');}
+
+function checkEx1(){
+ var s=0;
+ EX1.forEach(function(q,i){
+   var chosen=document.querySelector('input[name="o1-'+i+'"]:checked');
+   var box=document.getElementById('q1-'+i);var mk=document.getElementById('m1-'+i);
+   box.classList.remove('correct','wrong');q.opts.forEach(function(_,k){document.getElementById('o1-'+i+'-'+k).classList.remove('chosen');});
+   if(chosen)document.getElementById('o1-'+i+'-'+chosen.value).classList.add('chosen');
+   if(chosen&&Number(chosen.value)===q.ok){box.classList.add('correct');mk.className='mark ok';mk.textContent='Conforme. '+q.why;s++;}
+   else{box.classList.add('wrong');mk.className='mark ko';mk.textContent='Le bon nom, '+q.opts[q.ok]+'. '+q.why;}
+ });
+ showResult('res1',s,EX1.length);
+}
+function checkEx2(){
+ var s=0;
+ EX2.forEach(function(f,i){
+   var sel=document.getElementById('s2-'+i);var row=document.getElementById('r2-'+i);var mk=document.getElementById('m2-'+i);
+   row.classList.remove('correct','wrong');
+   if(sel.value===String(f.ok)){row.classList.add('correct');mk.className='mark ok';mk.textContent='Bien rangé.';s++;}
+   else{row.classList.add('wrong');mk.className='mark ko';mk.textContent='Plutôt dans « '+FOLDERS[f.ok]+' ».';}
+ });
+ showResult('res2',s,EX2.length);
+}
+</script>
+</body>
+</html>

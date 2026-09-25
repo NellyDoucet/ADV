@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no" ?>
-<manifest identifier="COM.ADRARFORMATION.GED" version="1"
+<manifest identifier="COM.ADRARFORMATION.GED.APPLICATIONS.JOUR1" version="1"
   xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
   xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -9,17 +9,20 @@
     <schema>ADL SCORM</schema>
     <schemaversion>1.2</schemaversion>
   </metadata>
-  <organizations default="ORG-GED">
-    <organization identifier="ORG-GED">
-      <title>GED</title>
+  <organizations default="ORG-GED-APPLICATIONS-JOUR1">
+    <organization identifier="ORG-GED-APPLICATIONS-JOUR1">
+      <title>GED - Applications Jour 1</title>
       <item identifier="ITEM-1" identifierref="RES-1" isvisible="true">
-        <title>GED</title>
+        <title>GED - Applications Jour 1</title>
       </item>
     </organization>
   </organizations>
   <resources>
     <resource identifier="RES-1" type="webcontent" adlcp:scormtype="sco" href="index.html">
       <file href="assets/adrar-formation-logo.png" />
+      <file href="assets/exercices/ged-02-audit-du-bazar.html" />
+      <file href="assets/exercices/ged-03-ranger-renommer.html" />
+      <file href="assets/exercices/ged-04-retrouver-document.html" />
       <file href="css/base/base.css" />
       <file href="css/base/reset.css" />
       <file href="css/components/badge.css" />
@@ -27,6 +30,7 @@
       <file href="css/components/cards.css" />
       <file href="css/components/example-doc.css" />
       <file href="css/components/excel-exercise.css" />
+      <file href="css/components/exercise-frame.css" />
       <file href="css/components/form-exercise.css" />
       <file href="css/components/formula.css" />
       <file href="css/components/gate.css" />
@@ -47,6 +51,7 @@
       <file href="index.html" />
       <file href="js/app.js" />
       <file href="js/excel-exercise.js" />
+      <file href="js/exercise-frame.js" />
       <file href="js/form-exercise.js" />
       <file href="js/icons.js" />
       <file href="js/scorm/scorm-api.js" />
@@ -54,12 +59,9 @@
       <file href="js/vendor/lucide.js" />
       <file href="js/vendor/xlsx.full.min.js" />
       <file href="pages/00-accueil.html" />
-      <file href="pages/01-definition-enjeux.html" />
-      <file href="pages/02-cycle-de-vie.html" />
-      <file href="pages/03-plan-de-classement.html" />
-      <file href="pages/04-charte-de-nommage.html" />
-      <file href="pages/05-indexation-metadonnees.html" />
-      <file href="pages/06-numerisation-formats.html" />
+      <file href="pages/01-audit-du-bazar.html" />
+      <file href="pages/02-ranger-renommer.html" />
+      <file href="pages/03-retrouver-document.html" />
     </resource>
   </resources>
 </manifest>
