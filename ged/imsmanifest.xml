@@ -1,0 +1,60 @@
+<?xml version="1.0" standalone="no" ?>
+<manifest identifier="COM.ADRARFORMATION.GED" version="1"
+  xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
+                      http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+  </metadata>
+  <organizations default="ORG-GED">
+    <organization identifier="ORG-GED">
+      <title>GED</title>
+      <item identifier="ITEM-1" identifierref="RES-1" isvisible="true">
+        <title>GED</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="assets/adrar-formation-logo.png" />
+      <file href="css/base/base.css" />
+      <file href="css/base/reset.css" />
+      <file href="css/components/badge.css" />
+      <file href="css/components/buttons.css" />
+      <file href="css/components/cards.css" />
+      <file href="css/components/example-doc.css" />
+      <file href="css/components/excel-exercise.css" />
+      <file href="css/components/form-exercise.css" />
+      <file href="css/components/formula.css" />
+      <file href="css/components/gate.css" />
+      <file href="css/components/student-identity.css" />
+      <file href="css/components/nav.css" />
+      <file href="css/components/progressbar.css" />
+      <file href="css/components/table.css" />
+      <file href="css/layout/header.css" />
+      <file href="css/layout/shell.css" />
+      <file href="css/layout/sidebar.css" />
+      <file href="css/main.css" />
+      <file href="css/tokens/colors.css" />
+      <file href="css/tokens/patterns.css" />
+      <file href="css/tokens/spacing.css" />
+      <file href="css/tokens/typography.css" />
+      <file href="css/typography/typography.css" />
+      <file href="db/chapitres.json" />
+      <file href="index.html" />
+      <file href="js/app.js" />
+      <file href="js/excel-exercise.js" />
+      <file href="js/form-exercise.js" />
+      <file href="js/icons.js" />
+      <file href="js/scorm/scorm-api.js" />
+      <file href="js/student-identity.js" />
+      <file href="js/vendor/lucide.js" />
+      <file href="js/vendor/xlsx.full.min.js" />
+      <file href="pages/00-accueil.html" />
+      <file href="pages/01-fondamentaux.html" />
+    </resource>
+  </resources>
+</manifest>

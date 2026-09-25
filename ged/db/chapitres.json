@@ -1,0 +1,8 @@
+{
+  "titreModule": "GED - Les fondamentaux",
+  "codeGlobalHash": null,
+  "chapitres": [
+    { "id": "accueil", "numero": null, "titre": "Accueil", "fichier": "pages/00-accueil.html", "icone": "house" },
+    { "id": "fondamentaux", "numero": "01", "titre": "Les fondamentaux de la GED", "fichier": "pages/01-fondamentaux.html", "icone": "folder-open" }
+  ]
+}
