@@ -300,6 +300,9 @@
       if (window.FormExercise) {
         window.FormExercise.init();
       }
+      if (window.ExerciseFrame) {
+        window.ExerciseFrame.init();
+      }
       els.content.scrollTop = 0;
     }).catch(function (err) {
       els.content.innerHTML = '<div class="app-main-inner"><div class="page"><p>Contenu introuvable.</p></div></div>';

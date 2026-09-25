@@ -8,6 +8,9 @@
     { "id": "plan-de-classement", "numero": "03", "titre": "Le plan de classement", "fichier": "pages/03-plan-de-classement.html", "icone": "folder-tree" },
     { "id": "charte-de-nommage", "numero": "04", "titre": "La charte de nommage", "fichier": "pages/04-charte-de-nommage.html", "icone": "tag" },
     { "id": "indexation-metadonnees", "numero": "05", "titre": "Indexation et métadonnées", "fichier": "pages/05-indexation-metadonnees.html", "icone": "search" },
-    { "id": "numerisation-formats", "numero": "06", "titre": "Numérisation et formats", "fichier": "pages/06-numerisation-formats.html", "icone": "scan" }
+    { "id": "numerisation-formats", "numero": "06", "titre": "Numérisation et formats", "fichier": "pages/06-numerisation-formats.html", "icone": "scan" },
+    { "id": "audit-du-bazar", "numero": "07", "titre": "Application : l'audit du bazar", "fichier": "pages/07-audit-du-bazar.html", "icone": "search-x" },
+    { "id": "ranger-renommer", "numero": "08", "titre": "Application : ranger et renommer", "fichier": "pages/08-ranger-renommer.html", "icone": "folder-input" },
+    { "id": "retrouver-document", "numero": "09", "titre": "Application : retrouver un document", "fichier": "pages/09-retrouver-document.html", "icone": "file-search" }
   ]
 }

@@ -20,6 +20,9 @@
   <resources>
     <resource identifier="RES-1" type="webcontent" adlcp:scormtype="sco" href="index.html">
       <file href="assets/adrar-formation-logo.png" />
+      <file href="assets/exercices/ged-02-audit-du-bazar.html" />
+      <file href="assets/exercices/ged-03-ranger-renommer.html" />
+      <file href="assets/exercices/ged-04-retrouver-document.html" />
       <file href="css/base/base.css" />
       <file href="css/base/reset.css" />
       <file href="css/components/badge.css" />
@@ -27,6 +30,7 @@
       <file href="css/components/cards.css" />
       <file href="css/components/example-doc.css" />
       <file href="css/components/excel-exercise.css" />
+      <file href="css/components/exercise-frame.css" />
       <file href="css/components/form-exercise.css" />
       <file href="css/components/formula.css" />
       <file href="css/components/gate.css" />
@@ -47,6 +51,7 @@
       <file href="index.html" />
       <file href="js/app.js" />
       <file href="js/excel-exercise.js" />
+      <file href="js/exercise-frame.js" />
       <file href="js/form-exercise.js" />
       <file href="js/icons.js" />
       <file href="js/scorm/scorm-api.js" />
@@ -60,6 +65,9 @@
       <file href="pages/04-charte-de-nommage.html" />
       <file href="pages/05-indexation-metadonnees.html" />
       <file href="pages/06-numerisation-formats.html" />
+      <file href="pages/07-audit-du-bazar.html" />
+      <file href="pages/08-ranger-renommer.html" />
+      <file href="pages/09-retrouver-document.html" />
     </resource>
   </resources>
 </manifest>
