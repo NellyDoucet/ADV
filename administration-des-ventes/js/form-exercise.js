@@ -57,6 +57,13 @@
       });
       return { ok: allFound, got: value === '' ? null : value, expected: field.required.join(', '), explanation: field.explanation };
     }
+    if (field.type === 'keywords-any') {
+      var normValAny = normalizeText(value);
+      var anyFound = field.required.some(function (kw) {
+        return normValAny.indexOf(normalizeText(kw)) !== -1;
+      });
+      return { ok: anyFound, got: value === '' ? null : value, expected: field.required.join(' ou '), explanation: field.explanation };
+    }
     // text
     var normInput = normalizeText(value);
     var accepted = field.accepted || [field.answer];

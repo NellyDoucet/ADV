@@ -19,7 +19,7 @@
     { "key": "taux_tva_1", "label": "1er taux de TVA (%)", "type": "numeric", "answer": 20, "tolerance": 0 },
     { "key": "taux_tva_2", "label": "2e taux de TVA (%)", "type": "numeric", "answer": 5.5, "tolerance": 0 },
     { "key": "delai_reglement", "label": "Délai de règlement", "type": "keywords", "required": ["15"] },
-    { "key": "moyen_reglement", "label": "Moyen de règlement", "type": "keywords", "required": ["cheque"] },
+    { "key": "moyen_reglement", "label": "Moyen de règlement", "type": "keywords-any", "required": ["virement", "cheque"], "explanation": "Le document indique virement (reglement) et cheque ou virement (conditions de paiement) : les deux reponses sont acceptees." },
     { "key": "date_reglement", "label": "Date de règlement (échéance)", "type": "text", "answer": "12/12/20N" },
     { "key": "reduction", "label": "Réduction commerciale ?", "type": "select", "options": ["Oui", "Non"], "answer": "Oui" },
     { "key": "reduction_type", "label": "Type de réduction", "type": "keywords", "required": ["remise"] },
