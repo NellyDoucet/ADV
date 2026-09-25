@@ -22,24 +22,24 @@
       var num = parseFloat(value.replace(',', '.'));
       var tol = field.tolerance != null ? field.tolerance : Math.max(0.05, Math.abs(field.answer) * 0.01);
       var ok = !isNaN(num) && Math.abs(num - field.answer) <= tol;
-      return { ok: ok, got: value === '' ? null : value, expected: field.answer };
+      return { ok: ok, got: value === '' ? null : value, expected: field.answer, explanation: field.explanation };
     }
     if (field.type === 'select') {
       var ok2 = normalizeText(value) === normalizeText(field.answer);
-      return { ok: ok2, got: value === '' ? null : value, expected: field.answer };
+      return { ok: ok2, got: value === '' ? null : value, expected: field.answer, explanation: field.explanation };
     }
     if (field.type === 'keywords') {
       var normVal = normalizeText(value);
       var allFound = field.required.every(function (kw) {
         return normVal.indexOf(normalizeText(kw)) !== -1;
       });
-      return { ok: allFound, got: value === '' ? null : value, expected: field.required.join(', ') };
+      return { ok: allFound, got: value === '' ? null : value, expected: field.required.join(', '), explanation: field.explanation };
     }
     // text
     var normInput = normalizeText(value);
     var accepted = field.accepted || [field.answer];
     var ok3 = accepted.some(function (a) { return normalizeText(a) === normInput; });
-    return { ok: ok3, got: value === '' ? null : value, expected: field.answer };
+    return { ok: ok3, got: value === '' ? null : value, expected: field.answer, explanation: field.explanation };
   }
 
   function renderField(field) {
@@ -131,7 +131,7 @@
       }
       var result = gradeField(field, input.value);
       fieldEl.classList.add(result.ok ? 'is-correct' : 'is-incorrect');
-      feedback.textContent = result.ok ? '' : 'Attendu : ' + result.expected;
+      feedback.textContent = result.ok ? '' : 'Attendu : ' + result.expected + (result.explanation ? ' — ' + result.explanation : '');
       if (result.ok) {
         correct++;
       }

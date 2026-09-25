@@ -9,7 +9,7 @@
     { "key": "fournisseur", "label": "Nom du fournisseur", "type": "text", "answer": "BOULANGER" },
     { "key": "siret_fournisseur", "label": "N° SIRET fournisseur", "type": "text", "answer": "34738457000797" },
     { "key": "tva_fournisseur", "label": "N° TVA intracomm. fournisseur", "type": "text", "answer": "FR78347384570" },
-    { "key": "relation", "label": "Avec quel type de partenaire Naturalis est en relation ?", "type": "select", "options": ["Client", "Fournisseur"], "answer": "Client" },
+    { "key": "relation", "label": "Avec quel type de partenaire Naturalis est en relation ?", "type": "select", "options": ["Client", "Fournisseur"], "answer": "Fournisseur", "explanation": "Vous travaillez chez Naturalis Bio : ici Naturalis achete a Boulanger, donc Boulanger est le fournisseur de Naturalis." },
     { "key": "operation", "label": "Qu'avons-nous fait ?", "type": "select", "options": ["Achat", "Vente"], "answer": "Achat" },
     { "key": "bien_service", "label": "Bien ou service ?", "type": "select", "options": ["Bien", "Service"], "answer": "Bien" },
     { "key": "nature_document", "label": "Nature du document", "type": "select", "options": ["Bon de commande", "Bon de livraison", "Devis", "Facture de doit", "Facture d'avoir"], "answer": "Facture de doit" },

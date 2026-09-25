@@ -9,7 +9,7 @@
     { "key": "fournisseur", "label": "Nom du fournisseur", "type": "text", "answer": "NATURALIS BIO", "accepted": ["NATURALIS BIO", "NATURALIS"] },
     { "key": "siret_fournisseur", "label": "N° SIRET fournisseur", "type": "text", "answer": "3441908019012" },
     { "key": "tva_fournisseur", "label": "N° TVA intracomm. fournisseur", "type": "text", "answer": "FR43441908019" },
-    { "key": "relation", "label": "Avec quel type de partenaire Naturalis est en relation ?", "type": "select", "options": ["Client", "Fournisseur"], "answer": "Fournisseur" },
+    { "key": "relation", "label": "Avec quel type de partenaire Naturalis est en relation ?", "type": "select", "options": ["Client", "Fournisseur"], "answer": "Client", "explanation": "Vous travaillez chez Naturalis Bio : ici Naturalis vend a Arbre de Vie Z, donc Arbre de Vie Z est un client de Naturalis." },
     { "key": "operation", "label": "Qu'avons-nous fait ?", "type": "select", "options": ["Achat", "Vente"], "answer": "Vente" },
     { "key": "bien_service", "label": "Bien ou service ?", "type": "select", "options": ["Bien", "Service"], "answer": "Bien" },
     { "key": "nature_document", "label": "Nature du document", "type": "select", "options": ["Bon de commande", "Bon de livraison", "Devis", "Facture de doit", "Facture d'avoir"], "answer": "Facture de doit" },
