@@ -1,0 +1,19 @@
+{
+  "expected": [
+    { "path": "20260903_FACT_Thermogroupe_2026-114.pdf", "note": "Accent retire du nom du tiers." },
+    { "path": "20260902_DEV_Roux_D-058.docx", "note": "Espace remplace par un underscore." },
+    { "path": "20260903_BL_Thermogroupe.pdf", "note": "Date remise en AAAAMMJJ." },
+    { "path": "20260912_CR_reunion-equipe.pdf", "note": "Date remise en AAAAMMJJ." },
+    { "path": "20260711_CTR_LeCapitole_maintenance.pdf", "note": "Espace retire du nom du tiers." },
+    { "path": "20260115_FACT_EDF_2026-045.pdf", "note": "Mention \"final\" retiree." },
+    { "path": "20260820_FACT_ClimPro_F-2026-087.pdf", "note": "Elements remis dans l'ordre, type puis date." },
+    { "path": "20260918_COUR_Capitole_no12.docx", "note": "Caractere special retire." },
+    { "path": "20260905_DEV_Roux_D-060.docx", "note": "Type ecrit avec le code DEV." },
+    { "path": "20260930_FACT_Thermogroupe_2026-140.pdf", "note": "Espaces retires de la date." },
+    { "path": "20240101_TARIFS_Occitania.xlsx", "note": "Nom deja correct, a conserver." },
+    { "path": "20260910_BC_ClimPro_C-2026-033.pdf", "note": "Nom deja correct, a conserver." }
+  ],
+  "forbidden": [
+    { "path": "20240101_TARIFS_Occitania - Copie.xlsx", "note": "Doublon a supprimer." }
+  ]
+}

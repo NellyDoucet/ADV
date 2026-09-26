@@ -1,0 +1,19 @@
+{
+  "expected": [
+    { "path": "Achats-Fournisseurs/20260903_FACT_Thermogroupe_2026-114.pdf", "note": "Facture renommee et rangee dans Achats-Fournisseurs." },
+    { "path": "Ventes-Clients/20260902_DEV_Roux_D-058.docx", "note": "Devis renomme et range dans Ventes-Clients." },
+    { "path": "Achats-Fournisseurs/20260901_BL_Thermogroupe.pdf", "note": "Bon de livraison renomme et range dans Achats-Fournisseurs." },
+    { "path": "Direction-Administratif/2025_COMPTA_suivi.xlsx", "note": "Fichier de suivi comptable renomme et range." },
+    { "path": "Direction-Administratif/20260711_CTR_LeCapitole_maintenance.pdf", "note": "Contrat renomme et range." },
+    { "path": "Direction-Administratif/20260912_CR_reunion-equipe.pdf", "note": "Compte-rendu renomme et range." },
+    { "path": "Direction-Administratif/20260918_COUR_LeCapitole.docx", "note": "Courrier renomme et range." },
+    { "path": "Ventes-Clients/20240101_TARIFS_Occitania.xlsx", "note": "Tarifs renommes et ranges dans Ventes-Clients." }
+  ],
+  "forbidden": [
+    { "path": "Facture_final.pdf", "note": "Doublon / version anterieure a supprimer." },
+    { "path": "devis clim Mme Roux.docx", "note": "Version anterieure du devis, a supprimer ou archiver." },
+    { "path": "compta 2025 - Copie.xlsx", "note": "Doublon a supprimer." },
+    { "path": "Photodemesvacances.jpeg", "note": "Fichier personnel, n'a rien a faire dans le dossier professionnel." },
+    { "path": "trucs divers/vieux devis 2019.docx", "note": "Document obsolete a purger." }
+  ]
+}

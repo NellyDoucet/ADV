@@ -23,6 +23,8 @@
       <file href="assets/exercices/ged-02-audit-du-bazar.html" />
       <file href="assets/exercices/ged-03-ranger-renommer.html" />
       <file href="assets/exercices/ged-04-retrouver-document.html" />
+      <file href="assets/exercices-zip/chasse-erreurs-nommage.zip" />
+      <file href="assets/exercices-zip/occitania-confort-a-ranger.zip" />
       <file href="css/base/base.css" />
       <file href="css/base/reset.css" />
       <file href="css/components/badge.css" />
@@ -47,7 +49,10 @@
       <file href="css/tokens/spacing.css" />
       <file href="css/tokens/typography.css" />
       <file href="css/typography/typography.css" />
+      <file href="css/components/zip-exercise.css" />
       <file href="db/chapitres.json" />
+      <file href="db/exercices-zip/chasse-erreurs-nommage.json" />
+      <file href="db/exercices-zip/occitania-confort-a-ranger.json" />
       <file href="index.html" />
       <file href="js/app.js" />
       <file href="js/excel-exercise.js" />
@@ -56,8 +61,10 @@
       <file href="js/icons.js" />
       <file href="js/scorm/scorm-api.js" />
       <file href="js/student-identity.js" />
+      <file href="js/vendor/jszip.min.js" />
       <file href="js/vendor/lucide.js" />
       <file href="js/vendor/xlsx.full.min.js" />
+      <file href="js/zip-exercise.js" />
       <file href="pages/00-accueil.html" />
       <file href="pages/01-definition-enjeux.html" />
       <file href="pages/02-cycle-de-vie.html" />
@@ -68,6 +75,8 @@
       <file href="pages/07-audit-du-bazar.html" />
       <file href="pages/08-ranger-renommer.html" />
       <file href="pages/09-retrouver-document.html" />
+      <file href="pages/10-chasse-erreurs-nommage.html" />
+      <file href="pages/11-remettre-de-lordre.html" />
     </resource>
   </resources>
 </manifest>

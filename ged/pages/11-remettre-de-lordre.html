@@ -1,0 +1,31 @@
+<div class="chapter-badge">
+  <span class="chapter-badge__number">11</span>
+  <span class="chapter-badge__label">Application : remettre de l'ordre</span>
+</div>
+
+<p class="lead">Le dossier partagé d'Occitania Confort est en pagaille (vu au chapitre 07). À vous de le ranger pour de vrai : renommez, classez dans les trois rubriques, supprimez ce qui ne doit pas rester.</p>
+
+<div class="callout">
+  <strong>Arborescence attendue :</strong> trois dossiers, <code>Ventes-Clients</code>, <code>Achats-Fournisseurs</code>, <code>Direction-Administratif</code>. Renommez chaque fichier selon la charte, rangez-le dans le bon dossier, supprimez les doublons et le fichier personnel, puis recompressez le tout en zip.
+</div>
+
+<div class="callout">
+  <strong>Cas particulier :</strong> la photo <code>IMG_20260903.jpg</code> n'est pas une numérisation exploitable. Dans la vraie vie il faudrait la renumériser proprement (OCR) sous le nom <code>20260828_FACT_ClimPro_F-2026-087.pdf</code> dans Achats-Fournisseurs. Ce point n'est pas noté automatiquement ici, faute de scanner, mais gardez le réflexe.
+</div>
+
+<div class="zip-exercise" data-exercise="db/exercices-zip/occitania-confort-a-ranger.json" data-template="assets/exercices-zip/occitania-confort-a-ranger.zip">
+  <div class="zip-exercise__actions">
+    <a class="btn btn-secondary zip-exercise__download" href="assets/exercices-zip/occitania-confort-a-ranger.zip" download>
+      <span data-lucide="download" class="icon"></span> Télécharger le dossier à ranger
+    </a>
+  </div>
+  <div class="zip-exercise__upload">
+    <label for="ranger-ordre-file">Déposez votre zip rangé</label>
+    <input type="file" id="ranger-ordre-file" class="zip-exercise__input" accept=".zip">
+    <button type="button" class="btn btn-primary zip-exercise__correct-btn" disabled>
+      <span data-lucide="check" class="icon"></span> Corriger
+    </button>
+  </div>
+  <p class="zip-exercise__status" hidden></p>
+  <div class="zip-exercise__result"></div>
+</div>

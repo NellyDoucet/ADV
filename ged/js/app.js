@@ -303,6 +303,9 @@
       if (window.ExerciseFrame) {
         window.ExerciseFrame.init();
       }
+      if (window.ZipExercise) {
+        window.ZipExercise.init();
+      }
       els.content.scrollTop = 0;
     }).catch(function (err) {
       els.content.innerHTML = '<div class="app-main-inner"><div class="page"><p>Contenu introuvable.</p></div></div>';
