@@ -10,6 +10,9 @@
     { "id": "couverture-risque-client", "numero": "05", "titre": "La couverture du risque client", "fichier": "pages/05-couverture-risque-client.html", "icone": "shield" },
     { "id": "recours-facture-impayee", "numero": "06", "titre": "Les recours en cas de facture impayée", "fichier": "pages/06-recours-facture-impayee.html", "icone": "gavel" },
     { "id": "reduire-impayes", "numero": "07", "titre": "Application : réduire les impayés", "fichier": "pages/07-reduire-impayes.html", "icone": "shield-check", "hasExercise": true },
-    { "id": "procedure-relance", "numero": "08", "titre": "Application : la procédure de relance", "fichier": "pages/08-procedure-relance.html", "icone": "list-ordered", "hasExercise": true }
+    { "id": "procedure-relance", "numero": "08", "titre": "Application : la procédure de relance", "fichier": "pages/08-procedure-relance.html", "icone": "list-ordered", "hasExercise": true },
+    { "id": "lire-releve-factures", "numero": "09", "titre": "Application : lire un relevé de factures", "fichier": "pages/09-lire-releve-factures.html", "icone": "file-search", "hasExercise": true },
+    { "id": "mentions-cheque", "numero": "10", "titre": "Application : les moyens de paiement", "fichier": "pages/10-mentions-cheque.html", "icone": "credit-card", "hasExercise": true },
+    { "id": "sources-interne-externe", "numero": "11", "titre": "Application : sources internes ou externes ?", "fichier": "pages/11-sources-interne-externe.html", "icone": "shuffle", "hasExercise": true }
   ]
 }

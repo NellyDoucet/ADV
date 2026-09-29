@@ -1,0 +1,13 @@
+{
+  "id": "lire-releve-factures",
+  "title": "Lire un relevé de factures",
+  "fields": [
+    { "key": "zone_haut", "label": "En haut du document, le nom, le logo et l'adresse de l'entreprise qui envoie le relevé : c'est…", "type": "select", "options": ["L'identification du fournisseur", "Les coordonnées du destinataire", "Le mode de paiement", "Le numéro du document"], "answer": "L'identification du fournisseur" },
+    { "key": "zone_legal", "label": "Le RCS et le SIRET indiqués sur le document servent à…", "type": "select", "options": ["Donner les renseignements légaux de l'entreprise émettrice", "Indiquer le total net à payer", "Préciser la nature du document", "Numéroter le relevé"], "answer": "Donner les renseignements légaux de l'entreprise émettrice" },
+    { "key": "zone_destinataire", "label": "Le nom et l'adresse du client, sur le relevé, correspondent…", "type": "select", "options": ["Aux coordonnées du destinataire", "Au mode de paiement", "À la date de création", "Au fournisseur"], "answer": "Aux coordonnées du destinataire" },
+    { "key": "zone_titre", "label": "Le titre « Relevé de factures » suivi d'une période (du... au...) sert à…", "type": "select", "options": ["Identifier le document et la période concernée", "Donner le total des factures", "Donner les coordonnées bancaires", "Servir de signature"], "answer": "Identifier le document et la période concernée" },
+    { "key": "zone_lieu_date", "label": "« Fait à ... le ... », sur le relevé, indique…", "type": "select", "options": ["Le lieu et la date de création du document", "Le montant TTC", "Le nom du client", "Le taux de TVA"], "answer": "Le lieu et la date de création du document" },
+    { "key": "zone_paiement", "label": "La mention du mode de paiement et de la date de paiement sur le relevé répond à une obligation appelée…", "type": "select", "options": ["La loi Sapin", "Le Code du travail", "La loi RGPD", "Le Code civil"], "answer": "La loi Sapin", "explanation": "La loi Sapin impose d'indiquer le mode et les conditions de règlement sur les documents commerciaux." },
+    { "key": "zone_tableau", "label": "Le tableau central du relevé (dates, numéros, montants factures et avoirs) contient…", "type": "select", "options": ["Le détail des factures et avoirs de la période", "Les coordonnées du fournisseur uniquement", "Le mode de règlement uniquement", "La signature du client"], "answer": "Le détail des factures et avoirs de la période" }
+  ]
+}

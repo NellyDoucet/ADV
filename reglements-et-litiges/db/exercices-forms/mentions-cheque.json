@@ -1,0 +1,11 @@
+{
+  "id": "mentions-cheque",
+  "title": "Les moyens de paiement",
+  "fields": [
+    { "key": "nature_cheque", "label": "Le chèque est…", "type": "select", "options": ["Un instrument de crédit, payable plus tard", "Un titre de paiement, payable à vue", "Une simple demande de virement", "Un contrat de vente"], "answer": "Un titre de paiement, payable à vue" },
+    { "key": "mention_facultative", "label": "Laquelle de ces mentions n'est PAS obligatoire sur un chèque ?", "type": "select", "options": ["La signature manuscrite du tireur", "Le mandat de payer une somme déterminée", "Le motif de l'achat", "La date et le lieu de création"], "answer": "Le motif de l'achat" },
+    { "key": "lettre_change", "label": "Dans une lettre de change, qui rédige l'effet ?", "type": "select", "options": ["Le client (débiteur)", "Le fournisseur (créancier)", "La banque", "L'État"], "answer": "Le fournisseur (créancier)" },
+    { "key": "billet_ordre", "label": "Dans un billet à ordre, qui rédige l'effet et s'engage à payer ?", "type": "select", "options": ["Le fournisseur", "Le client lui-même", "La banque", "Un huissier"], "answer": "Le client lui-même" },
+    { "key": "paiement_immediat", "label": "Quel moyen de paiement permet un règlement immédiat et sécurisé, très utilisé entre professionnels ?", "type": "select", "options": ["Le billet à ordre", "La carte bancaire", "La lettre de change", "Le relevé de factures"], "answer": "La carte bancaire" }
+  ]
+}

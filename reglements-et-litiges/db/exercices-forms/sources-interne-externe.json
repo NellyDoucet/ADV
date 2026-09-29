@@ -1,0 +1,12 @@
+{
+  "id": "sources-interne-externe",
+  "title": "Sources d'information : interne ou externe ?",
+  "fields": [
+    { "key": "src_commerciaux", "label": "Les commerciaux de l'entreprise", "type": "select", "options": ["Source interne", "Source externe"], "answer": "Source interne" },
+    { "key": "src_comptable", "label": "Le service comptable de l'entreprise", "type": "select", "options": ["Source interne", "Source externe"], "answer": "Source interne" },
+    { "key": "src_client", "label": "Le client lui-même (bilan, projets, réponses à vos questions)", "type": "select", "options": ["Source interne", "Source externe"], "answer": "Source externe" },
+    { "key": "src_infogreffe", "label": "Infogreffe.fr ou Societe.com", "type": "select", "options": ["Source interne", "Source externe"], "answer": "Source externe" },
+    { "key": "src_banque", "label": "La banque de l'entreprise", "type": "select", "options": ["Source interne", "Source externe"], "answer": "Source externe" },
+    { "key": "src_specialisees", "label": "Une société spécialisée (Altares, Coface, Creditsafe…)", "type": "select", "options": ["Source interne", "Source externe"], "answer": "Source externe" }
+  ]
+}

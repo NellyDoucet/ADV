@@ -46,6 +46,9 @@
       <file href="db/chapitres.json" />
       <file href="db/exercices-forms/reduire-impayes.json" />
       <file href="db/exercices-forms/procedure-relance.json" />
+      <file href="db/exercices-forms/lire-releve-factures.json" />
+      <file href="db/exercices-forms/mentions-cheque.json" />
+      <file href="db/exercices-forms/sources-interne-externe.json" />
       <file href="index.html" />
       <file href="js/app.js" />
       <file href="js/form-exercise.js" />
@@ -62,6 +65,9 @@
       <file href="pages/06-recours-facture-impayee.html" />
       <file href="pages/07-reduire-impayes.html" />
       <file href="pages/08-procedure-relance.html" />
+      <file href="pages/09-lire-releve-factures.html" />
+      <file href="pages/10-mentions-cheque.html" />
+      <file href="pages/11-sources-interne-externe.html" />
     </resource>
   </resources>
 </manifest>
