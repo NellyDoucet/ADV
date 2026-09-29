@@ -13,6 +13,7 @@
     { "id": "procedure-relance", "numero": "08", "titre": "Application : la procédure de relance", "fichier": "pages/08-procedure-relance.html", "icone": "list-ordered", "hasExercise": true },
     { "id": "lire-releve-factures", "numero": "09", "titre": "Application : lire un relevé de factures", "fichier": "pages/09-lire-releve-factures.html", "icone": "file-search", "hasExercise": true },
     { "id": "mentions-cheque", "numero": "10", "titre": "Application : les moyens de paiement", "fichier": "pages/10-mentions-cheque.html", "icone": "credit-card", "hasExercise": true },
-    { "id": "sources-interne-externe", "numero": "11", "titre": "Application : sources internes ou externes ?", "fichier": "pages/11-sources-interne-externe.html", "icone": "shuffle", "hasExercise": true }
+    { "id": "sources-interne-externe", "numero": "11", "titre": "Application : sources internes ou externes ?", "fichier": "pages/11-sources-interne-externe.html", "icone": "shuffle", "hasExercise": true },
+    { "id": "suivi-reglements", "numero": "12", "titre": "Application : suivi des règlements", "fichier": "pages/12-suivi-reglements.html", "icone": "file-spreadsheet", "hasExercise": true }
   ]
 }

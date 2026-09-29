@@ -20,6 +20,7 @@
   <resources>
     <resource identifier="RES-1" type="webcontent" adlcp:scormtype="sco" href="index.html">
       <file href="assets/adrar-formation-logo.png" />
+      <file href="assets/exercices-excel/suivi-reglements.xlsx" />
       <file href="css/base/base.css" />
       <file href="css/base/reset.css" />
       <file href="css/components/badge.css" />
@@ -49,13 +50,16 @@
       <file href="db/exercices-forms/lire-releve-factures.json" />
       <file href="db/exercices-forms/mentions-cheque.json" />
       <file href="db/exercices-forms/sources-interne-externe.json" />
+      <file href="db/exercices-excel/suivi-reglements.json" />
       <file href="index.html" />
       <file href="js/app.js" />
+      <file href="js/excel-exercise.js" />
       <file href="js/form-exercise.js" />
       <file href="js/icons.js" />
       <file href="js/scorm/scorm-api.js" />
       <file href="js/student-identity.js" />
       <file href="js/vendor/lucide.js" />
+      <file href="js/vendor/xlsx.full.min.js" />
       <file href="pages/00-accueil.html" />
       <file href="pages/01-releve-de-factures.html" />
       <file href="pages/02-moyens-de-paiement.html" />
@@ -68,6 +72,7 @@
       <file href="pages/09-lire-releve-factures.html" />
       <file href="pages/10-mentions-cheque.html" />
       <file href="pages/11-sources-interne-externe.html" />
+      <file href="pages/12-suivi-reglements.html" />
     </resource>
   </resources>
 </manifest>

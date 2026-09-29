@@ -1,0 +1,10 @@
+{
+  "sheet": "Suivi reglements",
+  "type": "cells",
+  "cells": [
+    { "ref": "D37", "answer": 12285, "tolerance": 5, "explanation": "Somme des montants TTC des 30 factures." },
+    { "ref": "D38", "answer": 3, "tolerance": 0, "explanation": "Les factures F4707, F4725 et F4730 n'ont pas de date de règlement." },
+    { "ref": "D39", "answer": 949, "tolerance": 5, "explanation": "230 € + 99 € + 620 € (F4707 + F4725 + F4730)." },
+    { "ref": "D40", "answer": 10, "tolerance": 1, "explanation": "3 factures impayées sur 30, soit 10 %." }
+  ]
+}
