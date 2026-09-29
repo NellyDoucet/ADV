@@ -24,8 +24,7 @@
     { "id": "risque-client", "numero": "19", "titre": "Le risque client et le coût des impayés", "fichier": "pages/17-risque-client.html", "icone": "alert-triangle" },
     { "id": "sources-information-client", "numero": "20", "titre": "Les sources d'information sur le client", "fichier": "pages/18-sources-information-client.html", "icone": "search" },
     { "id": "couverture-risque-client", "numero": "21", "titre": "La couverture du risque client", "fichier": "pages/19-couverture-risque-client.html", "icone": "shield" },
-    { "id": "interets-legaux-retard", "numero": "22", "titre": "Les intérêts légaux de retard", "fichier": "pages/20-interets-legaux-retard.html", "icone": "percent" },
-    { "id": "recours-facture-impayee", "numero": "23", "titre": "Les recours en cas de facture impayée", "fichier": "pages/21-recours-facture-impayee.html", "icone": "gavel" },
+    { "id": "recours-facture-impayee", "numero": "22", "titre": "Les recours en cas de facture impayée", "fichier": "pages/21-recours-facture-impayee.html", "icone": "gavel" },
     { "id": "conclusion", "numero": null, "titre": "Conclusion", "fichier": "pages/07-conclusion.html", "icone": "flag" }
   ]
 }

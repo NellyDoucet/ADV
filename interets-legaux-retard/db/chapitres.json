@@ -1,0 +1,8 @@
+{
+  "titreModule": "Les intérêts légaux de retard",
+  "codeGlobalHash": null,
+  "chapitres": [
+    { "id": "accueil", "numero": null, "titre": "Accueil", "fichier": "pages/00-accueil.html", "icone": "house" },
+    { "id": "interets-retard", "numero": "01", "titre": "Les intérêts légaux de retard", "fichier": "pages/01-interets-retard.html", "icone": "percent" }
+  ]
+}
