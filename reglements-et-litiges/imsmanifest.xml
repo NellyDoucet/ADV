@@ -44,8 +44,11 @@
       <file href="css/tokens/typography.css" />
       <file href="css/typography/typography.css" />
       <file href="db/chapitres.json" />
+      <file href="db/exercices-forms/reduire-impayes.json" />
+      <file href="db/exercices-forms/procedure-relance.json" />
       <file href="index.html" />
       <file href="js/app.js" />
+      <file href="js/form-exercise.js" />
       <file href="js/icons.js" />
       <file href="js/scorm/scorm-api.js" />
       <file href="js/student-identity.js" />
@@ -57,6 +60,8 @@
       <file href="pages/04-sources-information-client.html" />
       <file href="pages/05-couverture-risque-client.html" />
       <file href="pages/06-recours-facture-impayee.html" />
+      <file href="pages/07-reduire-impayes.html" />
+      <file href="pages/08-procedure-relance.html" />
     </resource>
   </resources>
 </manifest>

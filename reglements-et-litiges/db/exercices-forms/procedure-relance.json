@@ -1,0 +1,12 @@
+{
+  "id": "procedure-relance",
+  "title": "Mettre en place une procédure de relance",
+  "fields": [
+    { "key": "etape_lettre_ar", "label": "Lettre recommandée avec accusé de réception", "type": "select", "options": ["1", "2", "3", "4", "5", "6"], "answer": "5", "explanation": "Échéance + 1 mois 1/2. Avant l'injonction, après les deux lettres simples." },
+    { "key": "etape_appel1", "label": "Appel téléphonique + mail (1re relance)", "type": "select", "options": ["1", "2", "3", "4", "5", "6"], "answer": "1", "explanation": "Échéance + 3 jours. C'est la toute première action." },
+    { "key": "etape_lettre2", "label": "Lettre simple n°2", "type": "select", "options": ["1", "2", "3", "4", "5", "6"], "answer": "4", "explanation": "Échéance + 1 mois." },
+    { "key": "etape_injonction", "label": "Injonction de payer transmise à l'avocat", "type": "select", "options": ["1", "2", "3", "4", "5", "6"], "answer": "6", "explanation": "Échéance + 2 mois. Dernière étape, après l'échec de la lettre recommandée." },
+    { "key": "etape_appel2", "label": "Appel téléphonique ferme + mail (2e relance)", "type": "select", "options": ["1", "2", "3", "4", "5", "6"], "answer": "2", "explanation": "Échéance + 7 jours." },
+    { "key": "etape_lettre1", "label": "Lettre simple n°1", "type": "select", "options": ["1", "2", "3", "4", "5", "6"], "answer": "3", "explanation": "Échéance + 15 jours." }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "reduire-impayes",
+  "title": "Réduire les impayés",
+  "fields": [
+    { "key": "delai_max", "label": "Sans clause particulière, quel est le délai maximum de paiement autorisé par la loi entre professionnels ?", "type": "select", "options": ["30 jours", "45 jours fin de mois ou 60 jours à compter de la facture", "90 jours", "6 mois"], "answer": "45 jours fin de mois ou 60 jours à compter de la facture" },
+    { "key": "escompte", "label": "Un escompte accordé à un client sert à…", "type": "select", "options": ["Augmenter le prix de vente", "Inciter le client à payer avant l'échéance", "Allonger le délai de paiement", "Annuler la TVA"], "answer": "Inciter le client à payer avant l'échéance" },
+    { "key": "garantie_saisie", "label": "Laquelle de ces garanties permet de faire saisir un bien du client pour rembourser sa dette ?", "type": "select", "options": ["L'escompte", "Le gage ou l'hypothèque", "La facture d'avoir", "Le relevé de factures"], "answer": "Le gage ou l'hypothèque" },
+    { "key": "reserve_propriete", "label": "La clause de réserve de propriété permet de…", "type": "select", "options": ["Baisser le prix de vente", "Retarder le transfert de propriété jusqu'au paiement intégral", "Supprimer les pénalités de retard", "Accélérer la livraison"], "answer": "Retarder le transfert de propriété jusqu'au paiement intégral", "explanation": "Tant que le bien n'est pas payé en totalité, il reste la propriété du vendeur." },
+    { "key": "premiere_action", "label": "Pour recouvrer une créance à l'amiable, que fait-on en premier ?", "type": "select", "options": ["Une injonction de payer", "Une relance téléphonique ferme et régulière", "Une saisie des biens", "Rien, on attend"], "answer": "Une relance téléphonique ferme et régulière" },
+    { "key": "procedure_rapide", "label": "Si les relances amiables échouent, quelle procédure judiciaire est rapide, simple et peu coûteuse ?", "type": "select", "options": ["Le dépôt de bilan", "L'injonction de payer", "La liquidation judiciaire", "Le redressement fiscal"], "answer": "L'injonction de payer" }
+  ]
+}

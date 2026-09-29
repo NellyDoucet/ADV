@@ -8,6 +8,8 @@
     { "id": "risque-client", "numero": "03", "titre": "Le risque client et le coût des impayés", "fichier": "pages/03-risque-client.html", "icone": "alert-triangle" },
     { "id": "sources-information-client", "numero": "04", "titre": "Les sources d'information sur le client", "fichier": "pages/04-sources-information-client.html", "icone": "search" },
     { "id": "couverture-risque-client", "numero": "05", "titre": "La couverture du risque client", "fichier": "pages/05-couverture-risque-client.html", "icone": "shield" },
-    { "id": "recours-facture-impayee", "numero": "06", "titre": "Les recours en cas de facture impayée", "fichier": "pages/06-recours-facture-impayee.html", "icone": "gavel" }
+    { "id": "recours-facture-impayee", "numero": "06", "titre": "Les recours en cas de facture impayée", "fichier": "pages/06-recours-facture-impayee.html", "icone": "gavel" },
+    { "id": "reduire-impayes", "numero": "07", "titre": "Application : réduire les impayés", "fichier": "pages/07-reduire-impayes.html", "icone": "shield-check", "hasExercise": true },
+    { "id": "procedure-relance", "numero": "08", "titre": "Application : la procédure de relance", "fichier": "pages/08-procedure-relance.html", "icone": "list-ordered", "hasExercise": true }
   ]
 }
