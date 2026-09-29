@@ -1,0 +1,13 @@
+{
+  "titreModule": "Règlements et litiges",
+  "codeGlobalHash": null,
+  "chapitres": [
+    { "id": "accueil", "numero": null, "titre": "Accueil", "fichier": "pages/00-accueil.html", "icone": "house" },
+    { "id": "releve-de-factures", "numero": "01", "titre": "Le relevé de factures", "fichier": "pages/01-releve-de-factures.html", "icone": "file-clock" },
+    { "id": "moyens-de-paiement", "numero": "02", "titre": "Les moyens de paiement", "fichier": "pages/02-moyens-de-paiement.html", "icone": "credit-card" },
+    { "id": "risque-client", "numero": "03", "titre": "Le risque client et le coût des impayés", "fichier": "pages/03-risque-client.html", "icone": "alert-triangle" },
+    { "id": "sources-information-client", "numero": "04", "titre": "Les sources d'information sur le client", "fichier": "pages/04-sources-information-client.html", "icone": "search" },
+    { "id": "couverture-risque-client", "numero": "05", "titre": "La couverture du risque client", "fichier": "pages/05-couverture-risque-client.html", "icone": "shield" },
+    { "id": "recours-facture-impayee", "numero": "06", "titre": "Les recours en cas de facture impayée", "fichier": "pages/06-recours-facture-impayee.html", "icone": "gavel" }
+  ]
+}

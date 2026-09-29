@@ -1,0 +1,72 @@
+.student-identity-banner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  background: var(--color-plum-900);
+  color: #fff;
+  padding: var(--space-2) var(--space-4);
+  border-bottom-left-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font: var(--text-label);
+}
+
+.student-identity-banner__change {
+  background: var(--accent-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-3);
+  cursor: pointer;
+  font: var(--text-label);
+}
+
+.student-identity-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.student-identity-modal {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.student-identity-modal h2 {
+  margin-top: 0;
+}
+
+.student-identity-modal__input {
+  width: 100%;
+  padding: var(--space-3);
+  margin: var(--space-4) 0;
+  border: 1px solid var(--surface-card-line);
+  border-radius: var(--radius-sm);
+  font: var(--text-body);
+  box-sizing: border-box;
+}
+
+.student-identity-modal__submit {
+  width: 100%;
+}
+
+.form-exercise__restored,
+.excel-exercise__restored {
+  background: var(--color-plum-100);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-4);
+  color: var(--color-plum-900);
+  font: var(--text-label);
+}

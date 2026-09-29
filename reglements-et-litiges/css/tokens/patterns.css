@@ -1,0 +1,6 @@
+/* Motif "papier quadrillé" observé sur les cartes de contenu du support. */
+:root {
+  --pattern-graph-paper: linear-gradient(var(--surface-card-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--surface-card-line) 1px, transparent 1px);
+  --pattern-graph-paper-size: 22px 22px;
+}

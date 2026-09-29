@@ -19,12 +19,6 @@
     { "id": "bio-5", "numero": "14", "titre": "BIO 5 - Factures (remises multiples)", "fichier": "pages/12-bio-5.html", "icone": "file-spreadsheet", "hasExercise": true, "codeHash": "c17edaae86e4016a583e098582f6dbf3eccade8ef83747df9ba617ded9d31309" },
     { "id": "controle-1", "numero": "15", "titre": "Controle documents commerciaux 1", "fichier": "pages/13-controle-1.html", "icone": "clipboard-list", "hasExercise": true, "codeHash": "226f76b55acb49701e06ded1d95165d179458f6fc37f5c6fc760ae30dec1c378" },
     { "id": "controle-2", "numero": "16", "titre": "Controle documents commerciaux 2", "fichier": "pages/14-controle-2.html", "icone": "clipboard-list", "hasExercise": true, "codeHash": "f6e0a1e2ac41945a9aa7ff8a8aaa0cebc12a3bcc981a929ad5cf810a090e11ae" },
-    { "id": "releve-de-factures", "numero": "17", "titre": "Le relevé de factures", "fichier": "pages/15-releve-de-factures.html", "icone": "file-clock" },
-    { "id": "moyens-de-paiement", "numero": "18", "titre": "Les moyens de paiement", "fichier": "pages/16-moyens-de-paiement.html", "icone": "credit-card" },
-    { "id": "risque-client", "numero": "19", "titre": "Le risque client et le coût des impayés", "fichier": "pages/17-risque-client.html", "icone": "alert-triangle" },
-    { "id": "sources-information-client", "numero": "20", "titre": "Les sources d'information sur le client", "fichier": "pages/18-sources-information-client.html", "icone": "search" },
-    { "id": "couverture-risque-client", "numero": "21", "titre": "La couverture du risque client", "fichier": "pages/19-couverture-risque-client.html", "icone": "shield" },
-    { "id": "recours-facture-impayee", "numero": "22", "titre": "Les recours en cas de facture impayée", "fichier": "pages/21-recours-facture-impayee.html", "icone": "gavel" },
     { "id": "conclusion", "numero": null, "titre": "Conclusion", "fichier": "pages/07-conclusion.html", "icone": "flag" }
   ]
 }
