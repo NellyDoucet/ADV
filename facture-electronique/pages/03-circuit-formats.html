@@ -1,0 +1,31 @@
+<div class="chapter-badge">
+  <span class="chapter-badge__number">03</span>
+  <span class="chapter-badge__label">Le circuit et les formats</span>
+</div>
+
+<h2>Une plateforme agréée obligatoire</h2>
+<p>Une <strong>plateforme agréée</strong> (PA) est un opérateur immatriculé par la DGFiP par lequel transitent obligatoirement les factures. Fini l'envoi direct par mail.</p>
+
+<h3>Le trajet d'une facture, étape par étape</h3>
+<ul class="key-points">
+  <li><strong>1. Émission</strong>, l'émetteur dépose sa facture sur sa plateforme agréée.</li>
+  <li><strong>2. Adressage</strong>, l'annuaire central identifie la plateforme du destinataire.</li>
+  <li><strong>3. Réception</strong>, la facture arrive sur la plateforme du destinataire, qui la récupère.</li>
+  <li><strong>4. Transmission des données</strong>, le concentrateur transmet les données utiles à l'administration.</li>
+</ul>
+
+<h2>Focus, comment marche Factur-X</h2>
+<p><strong>Factur-X</strong> est un format <strong>hybride</strong> : un fichier PDF lisible à l'œil, qui contient un fichier <strong>XML embarqué</strong> avec les données de la facture. L'humain voit un PDF normal, le logiciel lit le XML et traite tout automatiquement (fournisseur, montant, TVA), sans ressaisie.</p>
+
+<div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Format</th><th>Nature</th></tr></thead>
+    <tbody>
+      <tr><td>Factur-X</td><td>Hybride : PDF lisible + données XML embarquées. Le plus accessible.</td></tr>
+      <tr><td>UBL</td><td>XML pur, standard international.</td></tr>
+      <tr><td>CII</td><td>XML pur (Cross Industry Invoice).</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="callout">Point de vigilance : un PDF classique par e-mail n'est pas conforme, même bien présenté : il n'est ni structuré, ni passé par une plateforme agréée.</div>

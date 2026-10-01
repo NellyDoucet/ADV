@@ -1,0 +1,76 @@
+<?xml version="1.0" standalone="no" ?>
+<manifest identifier="COM.ADRARFORMATION.FACTURE.ELECTRONIQUE" version="1"
+  xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
+                      http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+  </metadata>
+  <organizations default="ORG-FACTURE-ELECTRONIQUE">
+    <organization identifier="ORG-FACTURE-ELECTRONIQUE">
+      <title>La facture électronique</title>
+      <item identifier="ITEM-1" identifierref="RES-1" isvisible="true">
+        <title>La facture électronique</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="assets/adrar-formation-logo.png" />
+      <file href="assets/exercices/c3-circuit-formats.html" />
+      <file href="assets/exercices/c3-conformite-sanctions.html" />
+      <file href="assets/exercices/c3-invoicing-reporting.html" />
+      <file href="assets/exercices/c3-obligations-dates.html" />
+      <file href="assets/exercices-source/factures-conformes-ou-non.zip" />
+      <file href="css/base/base.css" />
+      <file href="css/base/reset.css" />
+      <file href="css/components/badge.css" />
+      <file href="css/components/buttons.css" />
+      <file href="css/components/cards.css" />
+      <file href="css/components/example-doc.css" />
+      <file href="css/components/excel-exercise.css" />
+      <file href="css/components/exercise-frame.css" />
+      <file href="css/components/form-exercise.css" />
+      <file href="css/components/formula.css" />
+      <file href="css/components/gate.css" />
+      <file href="css/components/student-identity.css" />
+      <file href="css/components/nav.css" />
+      <file href="css/components/progressbar.css" />
+      <file href="css/components/table.css" />
+      <file href="css/layout/header.css" />
+      <file href="css/layout/shell.css" />
+      <file href="css/layout/sidebar.css" />
+      <file href="css/main.css" />
+      <file href="css/tokens/colors.css" />
+      <file href="css/tokens/patterns.css" />
+      <file href="css/tokens/spacing.css" />
+      <file href="css/tokens/typography.css" />
+      <file href="css/typography/typography.css" />
+      <file href="db/chapitres.json" />
+      <file href="db/exercices-forms/factures-conformes.json" />
+      <file href="index.html" />
+      <file href="js/app.js" />
+      <file href="js/exercise-frame.js" />
+      <file href="js/form-exercise.js" />
+      <file href="js/icons.js" />
+      <file href="js/scorm/scorm-api.js" />
+      <file href="js/student-identity.js" />
+      <file href="js/vendor/lucide.js" />
+      <file href="pages/00-accueil.html" />
+      <file href="pages/01-reforme-enjeux.html" />
+      <file href="pages/02-deux-obligations.html" />
+      <file href="pages/03-circuit-formats.html" />
+      <file href="pages/04-invoicing-reporting.html" />
+      <file href="pages/05-conformite.html" />
+      <file href="pages/06-cas-occitania.html" />
+      <file href="pages/07-circuit-formats-app.html" />
+      <file href="pages/08-conformite-sanctions-app.html" />
+      <file href="pages/09-invoicing-reporting-app.html" />
+      <file href="pages/10-obligations-dates-app.html" />
+      <file href="pages/11-factures-conformes.html" />
+    </resource>
+  </resources>
+</manifest>

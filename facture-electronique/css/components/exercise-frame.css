@@ -1,0 +1,15 @@
+.exercise-frame-wrap {
+  margin: var(--space-4) 0;
+  border: 1px solid var(--surface-card-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.exercise-frame {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: var(--color-white);
+  min-height: 600px;
+}

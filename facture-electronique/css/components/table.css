@@ -1,0 +1,43 @@
+.table-wrap {
+  overflow-x: auto;
+  margin: var(--space-4) 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--surface-card-line);
+}
+
+.data-table {
+  width: 100%;
+  min-width: 480px;
+  table-layout: fixed;
+  background: var(--surface-card);
+  font: var(--text-body-sm);
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--surface-card-line);
+}
+
+.data-table thead th {
+  font: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-on-dark);
+  background: var(--color-plum-300);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: rgba(95, 39, 86, 0.04);
+}
+
+.data-table td.is-answer {
+  font-weight: 700;
+  color: var(--accent-primary-strong);
+}

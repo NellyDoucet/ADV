@@ -1,0 +1,18 @@
+{
+  "titreModule": "La facture électronique",
+  "codeGlobalHash": null,
+  "chapitres": [
+    { "id": "accueil", "numero": null, "titre": "Accueil", "fichier": "pages/00-accueil.html", "icone": "house" },
+    { "id": "reforme-enjeux", "numero": "01", "titre": "La réforme et ses enjeux", "fichier": "pages/01-reforme-enjeux.html", "icone": "info" },
+    { "id": "deux-obligations", "numero": "02", "titre": "Les deux obligations", "fichier": "pages/02-deux-obligations.html", "icone": "calendar-check" },
+    { "id": "circuit-formats", "numero": "03", "titre": "Le circuit et les formats", "fichier": "pages/03-circuit-formats.html", "icone": "route" },
+    { "id": "invoicing-reporting", "numero": "04", "titre": "e-invoicing et e-reporting", "fichier": "pages/04-invoicing-reporting.html", "icone": "shuffle" },
+    { "id": "conformite", "numero": "05", "titre": "La conformité", "fichier": "pages/05-conformite.html", "icone": "shield-check" },
+    { "id": "cas-occitania", "numero": "06", "titre": "Le cas Occitania, de bout en bout", "fichier": "pages/06-cas-occitania.html", "icone": "flag" },
+    { "id": "circuit-formats-app", "numero": "07", "titre": "Application : circuit, plateforme et formats", "fichier": "pages/07-circuit-formats-app.html", "icone": "route" },
+    { "id": "conformite-sanctions-app", "numero": "08", "titre": "Application : conformité, mentions et sanctions", "fichier": "pages/08-conformite-sanctions-app.html", "icone": "shield-check" },
+    { "id": "invoicing-reporting-app", "numero": "09", "titre": "Application : e-invoicing ou e-reporting ?", "fichier": "pages/09-invoicing-reporting-app.html", "icone": "shuffle" },
+    { "id": "obligations-dates-app", "numero": "10", "titre": "Application : quelle obligation à quelle date ?", "fichier": "pages/10-obligations-dates-app.html", "icone": "calendar-check" },
+    { "id": "factures-conformes", "numero": "11", "titre": "Application : factures conformes ou non ?", "fichier": "pages/11-factures-conformes.html", "icone": "file-search", "hasExercise": true }
+  ]
+}

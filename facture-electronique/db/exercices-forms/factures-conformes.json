@@ -1,0 +1,14 @@
+{
+  "id": "factures-conformes",
+  "title": "Factures conformes ou non ?",
+  "fields": [
+    { "key": "f1", "label": "20260903_FACT_Thermogroupe_2026-114.pdf", "type": "select", "options": ["Conforme", "Non conforme"], "answer": "Conforme", "explanation": "Structurée, via plateforme agréée, mentions complètes, B2B." },
+    { "key": "f2", "label": "facture-climpro.pdf", "type": "select", "options": ["Conforme", "Non conforme"], "answer": "Non conforme", "explanation": "PDF simple envoyé par mail : ni structuré, ni via une plateforme agréée." },
+    { "key": "f3", "label": "20260915_FACT_LeCapitole_2026-058.pdf", "type": "select", "options": ["Conforme", "Non conforme"], "answer": "Conforme", "explanation": "Structurée (UBL), via plateforme agréée, B2B, mentions complètes." },
+    { "key": "f4", "label": "facture-photo.jpg", "type": "select", "options": ["Conforme", "Non conforme"], "answer": "Non conforme", "explanation": "Une photo n'est pas une facture électronique : non structurée, non transmise par plateforme." },
+    { "key": "f5", "label": "20260920_FACT_Thermogroupe_2026-140.pdf", "type": "select", "options": ["Conforme", "Non conforme"], "answer": "Non conforme", "explanation": "Via plateforme et structurée, mais une mention obligatoire manque (SIREN du client)." },
+    { "key": "f6", "label": "facture-particulier.pdf", "type": "select", "options": ["Conforme", "Non conforme"], "answer": "Non conforme", "explanation": "Une vente à un particulier ne relève pas de l'e-invoicing via plateforme, mais de l'e-reporting." },
+    { "key": "f7", "label": "20260925_FACT_ClimPro_2026-091.pdf", "type": "select", "options": ["Conforme", "Non conforme"], "answer": "Conforme", "explanation": "Structurée, via plateforme, mentions complètes, B2B." },
+    { "key": "f8", "label": "facture-serveur.pdf", "type": "select", "options": ["Conforme", "Non conforme"], "answer": "Non conforme", "explanation": "Non transmise par une plateforme agréée et non structurée (simplement déposée sur le serveur)." }
+  ]
+}
